@@ -141,3 +141,128 @@ def dummy_jes_syst(events, is_data):
         variations["up"] = jets.pt + (12 * awkward.ones_like(jets.pt))
         variations["down"] = jets.pt - (8 * awkward.ones_like(jets.pt))
     return variations
+
+def WvsQCD_jes_syst(event,year):
+
+    weight_PNet_WvsQCDW1_central = awkward.ones_like(event.category)
+    weight_PNet_WvsQCDW2_central = awkward.ones_like(event.category)
+    weight_PNet_WvsQCDW1_up = awkward.ones_like(event.category)
+    weight_PNet_WvsQCDW2_up = awkward.ones_like(event.category)
+    weight_PNet_WvsQCDW1_down = awkward.ones_like(event.category)
+    weight_PNet_WvsQCDW2_down = awkward.ones_like(event.category)
+    W1ptbin1=(event["fatjet_W_1_pt"]>200 )&( event["fatjet_W_1_pt"]<=300 )
+    W1ptbin2=(event["fatjet_W_1_pt"]>300 )&( event["fatjet_W_1_pt"]<=400 )
+    W1ptbin3=(event["fatjet_W_1_pt"]>400 )&( event["fatjet_W_1_pt"]<=800 )
+    W2ptbin1=(event["fatjet_W_2_pt"]>200 )&( event["fatjet_W_2_pt"]<=300 )
+    W2ptbin2=(event["fatjet_W_2_pt"]>300 )&( event["fatjet_W_2_pt"]<=400 )
+    W2ptbin3=(event["fatjet_W_2_pt"]>400 )&( event["fatjet_W_2_pt"]<=800 )
+    SF_W1_ptbin1=((event.category==1)|(event.category==7)) & W1ptbin1
+    SF_W1_ptbin2=((event.category==1)|(event.category==7)) & W1ptbin2
+    SF_W1_ptbin3=((event.category==1)|(event.category==7)) & W1ptbin3
+    SF_W2_ptbin1=(event.category==6) & W2ptbin1
+    SF_W2_ptbin2=(event.category==6) & W2ptbin2
+    SF_W2_ptbin3=(event.category==6) & W2ptbin3
+    if year=="2016UL_preVFP":
+        weight_PNet_WvsQCDW1_central = awkward.where(SF_W1_ptbin1, awkward.ones_like(weight_PNet_WvsQCDW1_central)*0.904261, weight_PNet_WvsQCDW1_central)
+        weight_PNet_WvsQCDW1_up = awkward.where(SF_W1_ptbin1, awkward.ones_like(weight_PNet_WvsQCDW1_up)*0.936451, weight_PNet_WvsQCDW1_up)
+        weight_PNet_WvsQCDW1_down = awkward.where(SF_W1_ptbin1, awkward.ones_like(weight_PNet_WvsQCDW1_down)*0.872640, weight_PNet_WvsQCDW1_down)
+        
+        weight_PNet_WvsQCDW1_central = awkward.where(SF_W1_ptbin2, awkward.ones_like(weight_PNet_WvsQCDW1_central)*0.875718, weight_PNet_WvsQCDW1_central)
+        weight_PNet_WvsQCDW1_up = awkward.where(SF_W1_ptbin2, awkward.ones_like(weight_PNet_WvsQCDW1_up)*0.910996, weight_PNet_WvsQCDW1_up)
+        weight_PNet_WvsQCDW1_down = awkward.where(SF_W1_ptbin2, awkward.ones_like(weight_PNet_WvsQCDW1_down)*0.841575, weight_PNet_WvsQCDW1_down)
+        
+        weight_PNet_WvsQCDW1_central = awkward.where(SF_W1_ptbin3, awkward.ones_like(weight_PNet_WvsQCDW1_central)*0.902272, weight_PNet_WvsQCDW1_central)
+        weight_PNet_WvsQCDW1_up = awkward.where(SF_W1_ptbin3, awkward.ones_like(weight_PNet_WvsQCDW1_up)*0.969975, weight_PNet_WvsQCDW1_up)
+        weight_PNet_WvsQCDW1_down = awkward.where(SF_W1_ptbin3, awkward.ones_like(weight_PNet_WvsQCDW1_down)*0.836782, weight_PNet_WvsQCDW1_down)
+        
+        weight_PNet_WvsQCDW2_central = awkward.where(SF_W2_ptbin1, awkward.ones_like(weight_PNet_WvsQCDW2_central)*0.904261, weight_PNet_WvsQCDW2_central)
+        weight_PNet_WvsQCDW2_up = awkward.where(SF_W2_ptbin1, awkward.ones_like(weight_PNet_WvsQCDW2_up)*0.936451, weight_PNet_WvsQCDW2_up)
+        weight_PNet_WvsQCDW2_down = awkward.where(SF_W2_ptbin1, awkward.ones_like(weight_PNet_WvsQCDW2_down)*0.872640, weight_PNet_WvsQCDW2_down)
+        
+        weight_PNet_WvsQCDW2_central = awkward.where(SF_W2_ptbin2, awkward.ones_like(weight_PNet_WvsQCDW2_central)*0.875718, weight_PNet_WvsQCDW2_central)
+        weight_PNet_WvsQCDW2_up = awkward.where(SF_W2_ptbin2, awkward.ones_like(weight_PNet_WvsQCDW2_up)*0.910996, weight_PNet_WvsQCDW2_up)
+        weight_PNet_WvsQCDW2_down = awkward.where(SF_W2_ptbin2, awkward.ones_like(weight_PNet_WvsQCDW2_down)*0.841575, weight_PNet_WvsQCDW2_down)
+        
+        weight_PNet_WvsQCDW2_central = awkward.where(SF_W2_ptbin3, awkward.ones_like(weight_PNet_WvsQCDW2_central)*0.902272, weight_PNet_WvsQCDW2_central)
+        weight_PNet_WvsQCDW2_up = awkward.where(SF_W2_ptbin3, awkward.ones_like(weight_PNet_WvsQCDW2_up)*0.969975, weight_PNet_WvsQCDW2_up)
+        weight_PNet_WvsQCDW2_down = awkward.where(SF_W2_ptbin3, awkward.ones_like(weight_PNet_WvsQCDW2_down)*0.836782, weight_PNet_WvsQCDW2_down)
+    elif year=="2016UL_postVFP":
+        weight_PNet_WvsQCDW1_central = awkward.where(SF_W1_ptbin1, awkward.ones_like(weight_PNet_WvsQCDW1_central)*0.887065, weight_PNet_WvsQCDW1_central)
+        weight_PNet_WvsQCDW1_up = awkward.where(SF_W1_ptbin1, awkward.ones_like(weight_PNet_WvsQCDW1_up)*0.934490, weight_PNet_WvsQCDW1_up)
+        weight_PNet_WvsQCDW1_down = awkward.where(SF_W1_ptbin1, awkward.ones_like(weight_PNet_WvsQCDW1_down)*0.843186, weight_PNet_WvsQCDW1_down)
+        
+        weight_PNet_WvsQCDW1_central = awkward.where(SF_W1_ptbin2, awkward.ones_like(weight_PNet_WvsQCDW1_central)*0.866233, weight_PNet_WvsQCDW1_central)
+        weight_PNet_WvsQCDW1_up = awkward.where(SF_W1_ptbin2, awkward.ones_like(weight_PNet_WvsQCDW1_up)*0.904293, weight_PNet_WvsQCDW1_up)
+        weight_PNet_WvsQCDW1_down = awkward.where(SF_W1_ptbin2, awkward.ones_like(weight_PNet_WvsQCDW1_down)*0.829220, weight_PNet_WvsQCDW1_down)
+        
+        weight_PNet_WvsQCDW1_central = awkward.where(SF_W1_ptbin3, awkward.ones_like(weight_PNet_WvsQCDW1_central)*0.786696, weight_PNet_WvsQCDW1_central)
+        weight_PNet_WvsQCDW1_up = awkward.where(SF_W1_ptbin3, awkward.ones_like(weight_PNet_WvsQCDW1_up)*0.854186, weight_PNet_WvsQCDW1_up)
+        weight_PNet_WvsQCDW1_down = awkward.where(SF_W1_ptbin3, awkward.ones_like(weight_PNet_WvsQCDW1_down)*0.720922, weight_PNet_WvsQCDW1_down)   
+             
+        weight_PNet_WvsQCDW2_central = awkward.where(SF_W2_ptbin1, awkward.ones_like(weight_PNet_WvsQCDW2_central)*0.887065, weight_PNet_WvsQCDW2_central)
+        weight_PNet_WvsQCDW2_up = awkward.where(SF_W2_ptbin1, awkward.ones_like(weight_PNet_WvsQCDW2_up)*0.934490, weight_PNet_WvsQCDW2_up)
+        weight_PNet_WvsQCDW2_down = awkward.where(SF_W2_ptbin1, awkward.ones_like(weight_PNet_WvsQCDW2_down)*0.843186, weight_PNet_WvsQCDW2_down)
+        
+        weight_PNet_WvsQCDW2_central = awkward.where(SF_W2_ptbin2, awkward.ones_like(weight_PNet_WvsQCDW2_central)*0.866233, weight_PNet_WvsQCDW2_central)
+        weight_PNet_WvsQCDW2_up = awkward.where(SF_W2_ptbin2, awkward.ones_like(weight_PNet_WvsQCDW2_up)*0.904293, weight_PNet_WvsQCDW2_up)
+        weight_PNet_WvsQCDW2_down = awkward.where(SF_W2_ptbin2, awkward.ones_like(weight_PNet_WvsQCDW2_down)*0.829220, weight_PNet_WvsQCDW2_down)
+        
+        weight_PNet_WvsQCDW2_central = awkward.where(SF_W2_ptbin3, awkward.ones_like(weight_PNet_WvsQCDW2_central)*0.786696, weight_PNet_WvsQCDW2_central)
+        weight_PNet_WvsQCDW2_up = awkward.where(SF_W2_ptbin3, awkward.ones_like(weight_PNet_WvsQCDW2_up)*0.854186, weight_PNet_WvsQCDW2_up)
+        weight_PNet_WvsQCDW2_down = awkward.where(SF_W2_ptbin3, awkward.ones_like(weight_PNet_WvsQCDW2_down)*0.720922, weight_PNet_WvsQCDW2_down)        
+    elif year=="2017":
+        weight_PNet_WvsQCDW1_central = awkward.where(SF_W1_ptbin1, awkward.ones_like(weight_PNet_WvsQCDW1_central)*0.918743, weight_PNet_WvsQCDW1_central)
+        weight_PNet_WvsQCDW1_up = awkward.where(SF_W1_ptbin1, awkward.ones_like(weight_PNet_WvsQCDW1_up)*0.961281, weight_PNet_WvsQCDW1_up)
+        weight_PNet_WvsQCDW1_down = awkward.where(SF_W1_ptbin1, awkward.ones_like(weight_PNet_WvsQCDW1_down)*0.878062, weight_PNet_WvsQCDW1_down)
+        
+        weight_PNet_WvsQCDW1_central = awkward.where(SF_W1_ptbin2, awkward.ones_like(weight_PNet_WvsQCDW1_central)*0.898412, weight_PNet_WvsQCDW1_central)
+        weight_PNet_WvsQCDW1_up = awkward.where(SF_W1_ptbin2, awkward.ones_like(weight_PNet_WvsQCDW1_up)*0.923404, weight_PNet_WvsQCDW1_up)
+        weight_PNet_WvsQCDW1_down = awkward.where(SF_W1_ptbin2, awkward.ones_like(weight_PNet_WvsQCDW1_down)*0.873408, weight_PNet_WvsQCDW1_down)
+        
+        weight_PNet_WvsQCDW1_central = awkward.where(SF_W1_ptbin3, awkward.ones_like(weight_PNet_WvsQCDW1_central)*0.903940, weight_PNet_WvsQCDW1_central)
+        weight_PNet_WvsQCDW1_up = awkward.where(SF_W1_ptbin3, awkward.ones_like(weight_PNet_WvsQCDW1_up)*0.949428, weight_PNet_WvsQCDW1_up)
+        weight_PNet_WvsQCDW1_down = awkward.where(SF_W1_ptbin3, awkward.ones_like(weight_PNet_WvsQCDW1_down)*0.858823, weight_PNet_WvsQCDW1_down)  
+              
+        weight_PNet_WvsQCDW2_central = awkward.where(SF_W2_ptbin1, awkward.ones_like(weight_PNet_WvsQCDW2_central)*0.918743, weight_PNet_WvsQCDW2_central)
+        weight_PNet_WvsQCDW2_up = awkward.where(SF_W2_ptbin1, awkward.ones_like(weight_PNet_WvsQCDW2_up)*0.961281, weight_PNet_WvsQCDW2_up)
+        weight_PNet_WvsQCDW2_down = awkward.where(SF_W2_ptbin1, awkward.ones_like(weight_PNet_WvsQCDW2_down)*0.878062, weight_PNet_WvsQCDW2_down)
+        
+        weight_PNet_WvsQCDW2_central = awkward.where(SF_W2_ptbin2, awkward.ones_like(weight_PNet_WvsQCDW2_central)*0.898412, weight_PNet_WvsQCDW2_central)
+        weight_PNet_WvsQCDW2_up = awkward.where(SF_W2_ptbin2, awkward.ones_like(weight_PNet_WvsQCDW2_up)*0.923404, weight_PNet_WvsQCDW2_up)
+        weight_PNet_WvsQCDW2_down = awkward.where(SF_W2_ptbin2, awkward.ones_like(weight_PNet_WvsQCDW2_down)*0.873408, weight_PNet_WvsQCDW2_down)
+        
+        weight_PNet_WvsQCDW2_central = awkward.where(SF_W2_ptbin3, awkward.ones_like(weight_PNet_WvsQCDW2_central)*0.903940, weight_PNet_WvsQCDW2_central)
+        weight_PNet_WvsQCDW2_up = awkward.where(SF_W2_ptbin3, awkward.ones_like(weight_PNet_WvsQCDW2_up)*0.949428, weight_PNet_WvsQCDW2_up)
+        weight_PNet_WvsQCDW2_down = awkward.where(SF_W2_ptbin3, awkward.ones_like(weight_PNet_WvsQCDW2_down)*0.858823, weight_PNet_WvsQCDW2_down)        
+    elif year=="2018":
+        weight_PNet_WvsQCDW1_central = awkward.where(SF_W1_ptbin1, awkward.ones_like(weight_PNet_WvsQCDW1_central)*0.863467, weight_PNet_WvsQCDW1_central)
+        weight_PNet_WvsQCDW1_up = awkward.where(SF_W1_ptbin1, awkward.ones_like(weight_PNet_WvsQCDW1_up)*0.883999, weight_PNet_WvsQCDW1_up)
+        weight_PNet_WvsQCDW1_down = awkward.where(SF_W1_ptbin1, awkward.ones_like(weight_PNet_WvsQCDW1_down)*0.843701, weight_PNet_WvsQCDW1_down)
+        
+        weight_PNet_WvsQCDW1_central = awkward.where(SF_W1_ptbin2, awkward.ones_like(weight_PNet_WvsQCDW1_central)*0.861461, weight_PNet_WvsQCDW1_central)
+        weight_PNet_WvsQCDW1_up = awkward.where(SF_W1_ptbin2, awkward.ones_like(weight_PNet_WvsQCDW1_up)*0.883182, weight_PNet_WvsQCDW1_up)
+        weight_PNet_WvsQCDW1_down = awkward.where(SF_W1_ptbin2, awkward.ones_like(weight_PNet_WvsQCDW1_down)*0.840135, weight_PNet_WvsQCDW1_down)
+        
+        weight_PNet_WvsQCDW1_central = awkward.where(SF_W1_ptbin3, awkward.ones_like(weight_PNet_WvsQCDW1_central)*0.815265, weight_PNet_WvsQCDW1_central)
+        weight_PNet_WvsQCDW1_up = awkward.where(SF_W1_ptbin3, awkward.ones_like(weight_PNet_WvsQCDW1_up)*0.949428, weight_PNet_WvsQCDW1_up)
+        weight_PNet_WvsQCDW1_down = awkward.where(SF_W1_ptbin3, awkward.ones_like(weight_PNet_WvsQCDW1_down)*0.853422, weight_PNet_WvsQCDW1_down)
+        
+        weight_PNet_WvsQCDW2_central = awkward.where(SF_W2_ptbin1, awkward.ones_like(weight_PNet_WvsQCDW2_central)*0.863467, weight_PNet_WvsQCDW2_central)
+        weight_PNet_WvsQCDW2_up = awkward.where(SF_W2_ptbin1, awkward.ones_like(weight_PNet_WvsQCDW2_up)*0.883999, weight_PNet_WvsQCDW2_up)
+        weight_PNet_WvsQCDW2_down = awkward.where(SF_W2_ptbin1, awkward.ones_like(weight_PNet_WvsQCDW2_down)*0.843701, weight_PNet_WvsQCDW2_down)
+        
+        weight_PNet_WvsQCDW2_central = awkward.where(SF_W2_ptbin2, awkward.ones_like(weight_PNet_WvsQCDW2_central)*0.861461, weight_PNet_WvsQCDW2_central)
+        weight_PNet_WvsQCDW2_up = awkward.where(SF_W2_ptbin2, awkward.ones_like(weight_PNet_WvsQCDW2_up)*0.883182, weight_PNet_WvsQCDW2_up)
+        weight_PNet_WvsQCDW2_down = awkward.where(SF_W2_ptbin2, awkward.ones_like(weight_PNet_WvsQCDW2_down)*0.840135, weight_PNet_WvsQCDW2_down)
+        
+        weight_PNet_WvsQCDW2_central = awkward.where(SF_W2_ptbin3, awkward.ones_like(weight_PNet_WvsQCDW2_central)*0.815265, weight_PNet_WvsQCDW2_central)
+        weight_PNet_WvsQCDW2_up = awkward.where(SF_W2_ptbin3, awkward.ones_like(weight_PNet_WvsQCDW2_up)*0.949428, weight_PNet_WvsQCDW2_up)
+        weight_PNet_WvsQCDW2_down = awkward.where(SF_W2_ptbin3, awkward.ones_like(weight_PNet_WvsQCDW2_down)*0.853422, weight_PNet_WvsQCDW2_down)
+    event["weight_PNet_WvsQCDW1_up"]=weight_PNet_WvsQCDW1_up
+    event["weight_PNet_WvsQCDW1_central"]=weight_PNet_WvsQCDW1_central
+    event["weight_PNet_WvsQCDW1_down"]=weight_PNet_WvsQCDW1_down
+    
+    event["weight_PNet_WvsQCDW2_up"]=weight_PNet_WvsQCDW2_up
+    event["weight_PNet_WvsQCDW2_central"]=weight_PNet_WvsQCDW2_central
+    event["weight_PNet_WvsQCDW2_down"]=weight_PNet_WvsQCDW2_down
+    return event
