@@ -3,7 +3,9 @@ import json
 import subprocess
 
 import logging
-logger = logging.getLogger(__name__)
+# logger = logging.getLogger(__name__)
+from higgs_dna.utils.logger_utils import simple_logger
+logger = simple_logger(__name__)
 
 from higgs_dna.utils.metis_utils import do_cmd
 from higgs_dna.utils.misc_utils import get_HiggsDNA_base, get_HiggsDNA_conda
@@ -170,11 +172,14 @@ class Job():
         lines.append("with open(config_file, 'r') as f_in:")
         lines.append("    config = json.load(f_in)")
         lines.append("")
-        lines.append("json_file = os.path.dirname(config_file)+'/'+'combined_eff.json'")
-        lines.append("if os.path.exists(json_file):")
-        lines.append("    os.remove(json_file)")
-        lines.append("else:")
-        lines.append("    print(f'{json_file} does not exist. No need to remove.')")          
+        # lines.append("files = config['files']")
+        # lines.append("for i in range(len(files)):")
+        # lines.append("    file = files[i]")
+        # lines.append("    localfile = os.path.join(os.getcwd(), os.path.basename(file))")
+        # lines.append("    if os.system('xrdcp \\'%s\\' \\'%s\\'' % (file, localfile)):")
+        # lines.append("        raise RuntimeError('xrdcp failed')")
+        # lines.append("    files[i] = 'file:' + localfile")
+        # lines.appendO("")
         lines.append("run_analysis(config)") # FIXME: not compatible if another function is specified
 
         if os.path.exists(self.python_executable_file):
@@ -217,6 +222,10 @@ class Job():
         :returns: whether the job was submitted (or is able to be submitted in the case of ``dry_run = True``)
         :rtype: bool
         """
+        if os.path.exists(self.summary_file):
+            self.status = "completed"
+            return False
+
         if reconfigure or (not self.wrote_config or not os.path.exists(self.config_file)):
             self.write_config()
 
@@ -232,6 +241,7 @@ class Job():
         if self.n_attempts >= 5 or self.force_retirement:
             logger.info("[Job : submit] Job '%s_%d' has been submitted %d times, retiring job. Jobs can be unretired with run_analysis.py through the `--unretire_jobs` option." % (self.name, self.idx, self.n_attempts))
             self.status = "retired"
+            self.n_attempts = 0
             return False
 
         if dry_run:
@@ -289,9 +299,9 @@ class CondorJob(Job):
 
     """
     REQUESTS = {
-            "REQ_MEMORY" : 2048, # request 2GB of memory
-            "REQ_DISK" : 5000, # request ~5GB of disk
-            "REQ_NCPUS" : 1 # just 1 CPU
+            "REQ_MEMORY" : 8192, # request 8GB of memory
+            "REQ_DISK" : 20000, # request ~20GB of disk
+            "REQ_NCPUS" : 2 # just 2 CPU
     }
 
     def write_condor_files(self):
@@ -312,8 +322,8 @@ class CondorJob(Job):
         self.hdna_base = get_HiggsDNA_base()
         self.hdna_conda = get_HiggsDNA_conda()
 
-        self.condor_exe_template = "/afs/cern.ch/user/s/shsong/HiggsDNA/higgs_dna/job_management/condor/%s/exe_template.sh" % self.host
-        self.condor_sub_template = "/afs/cern.ch/user/s/shsong/HiggsDNA/higgs_dna/job_management/condor/%s/submit_template.txt" % self.host
+        self.condor_exe_template = self.hdna_base + "/higgs_dna/job_management/condor/%s/exe_template.sh" % self.host
+        self.condor_sub_template = self.hdna_base + "/higgs_dna/job_management/condor/%s/submit_template.txt" % self.host
         
         self.write_condor_executable_file()
         self.write_condor_submit_file()
@@ -355,8 +365,8 @@ class CondorJob(Job):
 
         # update xrdcp placeholders for copying tar files into job
         if self.host_params["needs_tar"] and "xrd_redirector" in self.host_params.keys():
-            replacement_map["XRD_CONDA_TARFILE"] = self.xrd_conda_tarfile.replace("/ceph/cms","davs://redirector.t2.ucsd.edu:1095/")
-            replacement_map["XRD_ANALYSIS_TARFILE"] = self.xrd_analysis_tarfile.replace("/ceph/cms","davs://redirector.t2.ucsd.edu:1095/")
+            replacement_map["XRD_CONDA_TARFILE"] = self.xrd_conda_tarfile
+            replacement_map["XRD_ANALYSIS_TARFILE"] = self.xrd_analysis_tarfile
 
         # update gfal-copy placeholders
         if "gfal_redirector" in self.host_params.keys():
@@ -364,8 +374,8 @@ class CondorJob(Job):
             replacement_map["GFAL_BATCH_OUTPUT_DIR"] = self.output_dir.replace(to_replace, replace_with)    
 
         # if not a remote job, that means we are not sending a tar of the conda env and setting it up in the node, and we need to update the python path to point to our HiggsDNA version
-        #if not self.host_params["remote_job"]:
-        #    replacement_map["python"] = "%s/bin/python" % (self.hdna_conda)
+        if not self.host_params["remote_job"]:
+            replacement_map["python"] = "%s/bin/python" % (self.hdna_conda)
 
         self.update_file(
                 old = self.condor_exe_template,

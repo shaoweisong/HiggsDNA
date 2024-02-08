@@ -9,7 +9,9 @@ import numba
 from higgs_dna.utils import awkward_utils
 
 import logging
-logger = logging.getLogger(__name__)
+# logger = logging.getLogger(__name__)
+from higgs_dna.utils.logger_utils import simple_logger
+logger = simple_logger(__name__)
 
 def select_objects(objects, cuts = {}, clean = {}, name = "none", tagger = None):
     """
@@ -31,23 +33,20 @@ def select_objects(objects, cuts = {}, clean = {}, name = "none", tagger = None)
     cut_names = []
     cut_results = []
     for cut, value in cuts.items():
-        logger.debug("standard cut: Tagger '%s', applying cut '%s' with value '%s'" % (tagger_name, cut, str(value)))
         cut_ = None
         if cut == "pt":
             cut_ = objects.pt > value
             cut_names.append("pt > %.4f" % value)
-            logger.debug("noptcut")
-        if cut == "Tunept":
-            logger.debug("Tuneptcut will do outside standard cut")
         if cut in ["eta", "dxy", "dz"]:
             cut_ = abs(objects[cut]) < value
             cut_names.append("|%s| < %.4f" % (cut, value))
-        if cut in ["non_pfRelIso04_all"]and value is not None:
-            cut_ = objects.pfRelIso04_all >= value
-            logger.debug("non_pfRelIso04_all cut: %s" % str(cut_))
-        if cut in ["pfRelIso04_all","pfRelIso03_all", "pfRelIso03_chg"]and value is not None:
+        if cut in ["etasc"]:
+            cut_ = abs(objects.eta + objects.deltaEtaSC) < value
+            cut_names.append("|%s| < %.4f" % (cut, value))
+        if cut in ["pfRelIso03_all", "pfRelIso03_chg", "sip3d"]:
             cut_ = objects[cut] < value
             cut_names.append("%s < %.4f" % (cut, value))
+
         if cut_ is not None:
             cut_results.append(cut_)
 
@@ -84,8 +83,10 @@ def mass_veto(objects1, objects2, mass_range):
     :return: boolean array of objects in objects1 which pass mass veto requirement
     :rtype: awkward.highlevel.Array
     """
-    if awkward.count(objects1) == 0 or awkward.count(objects2) == 0:
-        return objects1.pt < 0. 
+    if awkward.count(objects1) == 0: # if no objects1 are present, return all False
+        return objects1.pt < 0.
+    if awkward.count(objects2) == 0: # if no objects2 are present, every object in objects1 passes by default
+        return objects1.pt >= 0.
 
     if not isinstance(objects1, vector.Vector4D):
         objects1 = awkward.Array(objects1, with_name = "Momentum4D")
@@ -114,13 +115,74 @@ def delta_R(objects1, objects2, min_dr):
     :return: boolean array of objects in objects1 which pass delta_R requirement
     :rtype: awkward.highlevel.Array
     """
-    #obj1:jet obj2:muon     
-    # if awkward.count(objects1) == 0 or awkward.count(objects2) == 0:
-    #     return objects1.pt < 0. 
-    if awkward.count(objects1) == 0: 
+    if awkward.count(objects1.pt) == 0: # if no objects1 are present, return all False
+        return objects1.pt < 0.
+    if awkward.count(objects2.pt) == 0: # if no objects2 are present, every object in objects1 passes by default
+        return objects1.pt >= 0.
+
+    if not isinstance(objects1, vector.Vector4D):
+        objects1 = awkward.Array(objects1, with_name = "Momentum4D")
+    if not isinstance(objects2, vector.Vector4D):
+        objects2 = awkward.Array(objects2, with_name = "Momentum4D")
+
+    obj1 = awkward.unflatten(objects1, counts = 1, axis = -1) # shape [n_events, n_obj, 1]
+    obj2 = awkward.unflatten(objects2, counts = 1, axis = 0) # shape [n_events, 1, n_obj]
+
+    dR = obj1.deltaR(obj2) # shape [n_events, n_obj1, n_obj2]
+
+    selection = awkward.all(dR >= min_dr, axis = -1)
+    return selection
+
+
+## bing
+def delta_R_fsrlep(objects1, objects2, min_dr):
+    """
+    Select objects from objects1 which are at least min_dr away from all objects in objects2.
+
+    :param objects1: objects which are required to be at least min_dr away from all objects in objects2 
+    :type objects1: awkward.highlevel.Array
+    :param objects2: objects which are all objects in objects1 must be at leats min_dr away from
+    :type objects2: awkward.highlevel.Array
+    :param min_dr: minimum delta R between objects
+    :type min_dr: float
+    :return: boolean array of objects in objects1 which pass delta_R requirement
+    :rtype: awkward.highlevel.Array
+    """
+    if awkward.count(objects1.pt) == 0: # if no objects1 are present, return all False ## bing
+        return objects1.pt < 0.
+    if awkward.count(objects2.pt) == 0: # if no objects2 are present, every object in objects1 failed by default ## bing
         return objects1.pt < 0. 
-    if awkward.count(objects2) == 0:
-        return objects1.pt > 0.
+
+    if not isinstance(objects1, vector.Vector4D):
+        objects1 = awkward.Array(objects1, with_name = "Momentum4D")
+    if not isinstance(objects2, vector.Vector4D):
+        objects2 = awkward.Array(objects2, with_name = "Momentum4D")
+
+    obj1 = awkward.unflatten(objects1, counts = 1, axis = -1) # shape [n_events, n_obj, 1]
+    obj2 = awkward.unflatten(objects2, counts = 1, axis = 0) # shape [n_events, 1, n_obj]
+
+    dR = obj1.deltaR(obj2) # shape [n_events, n_obj1, n_obj2]
+
+    selection = awkward.all(dR >= min_dr, axis = -1)
+    return selection
+
+def delta_R_fsrGamma(objects1, objects2, min_dr):
+    """
+    Select objects from objects1 which are at least min_dr away from all objects in objects2.
+
+    :param objects1: objects which are required to be at least min_dr away from all objects in objects2 
+    :type objects1: awkward.highlevel.Array
+    :param objects2: objects which are all objects in objects1 must be at leats min_dr away from
+    :type objects2: awkward.highlevel.Array
+    :param min_dr: minimum delta R between objects
+    :type min_dr: float
+    :return: boolean array of objects in objects1 which pass delta_R requirement
+    :rtype: awkward.highlevel.Array
+    """
+    if awkward.count(objects1.pt) == 0: # if no objects1 are present, return all False
+        return objects1.pt < 0.
+    if awkward.count(objects2.pt) == 0: # if no objects2 are present, every object in objects1 passes by default
+        return objects1.pt >= 0.
 
     if not isinstance(objects1, vector.Vector4D):
         objects1 = awkward.Array(objects1, with_name = "Momentum4D")
@@ -252,3 +314,4 @@ so in the photons collection, where you don't simply want the nearest photon, bu
     base_objects["%sdR" % name] = base_objects.deltaR(base_best_target)
 
     return base_objects
+

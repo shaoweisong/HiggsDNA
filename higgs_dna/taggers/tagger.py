@@ -1,20 +1,15 @@
 import awkward
-import numpy
 import vector
 import json
 import logging
-import io
-import os
-from higgs_dna.utils.metis_utils import do_cmd
-import inspect
-logger = logging.getLogger(__name__)
+from higgs_dna.utils.logger_utils import simple_logger
+# logger = logging.getLogger(__name__)
+logger = simple_logger(__name__)
+
+
 from higgs_dna.utils import misc_utils
+
 from higgs_dna.constants import NOMINAL_TAG
-from higgs_dna.utils.misc_utils import  get_HiggsDNA_base
-from higgs_dna.utils.metis_utils import do_cmd
-
-import sys
-
 
 class Tagger():
     """
@@ -28,12 +23,12 @@ class Tagger():
     :param year: which year this tagger is being run on
     :type year: str
     """
-    def __init__(self, name = "tagger", options = {}, is_data = None, year = None, output_dir = None):
+    def __init__(self, name = "tagger", options = {}, is_data = None, year = None):
         self.name = name
         self.options = options
         self.is_data = is_data
         self.year = year
-        self.output_dir = output_dir
+
         self.selection = {}
         self.events = {}
         self.cut_summary = {}
@@ -41,7 +36,7 @@ class Tagger():
         self.options = misc_utils.load_config(options)
 
 
-    def select(self, events,output_dir = None):
+    def select(self, events):
         """
         Convenience function for running tagger in standalone contexts.
 
@@ -50,12 +45,12 @@ class Tagger():
         :returns: awkward array of selected events
         :rtype: awkward.Array
         """
-        self.output_dir = output_dir
         self.current_syst = NOMINAL_TAG
-        selection, events_updated = self.calculate_selection(events)
+        selection, events_updated = self.get_selection(NOMINAL_TAG, events)
         return events_updated[selection]
 
-    def run(self, events, syst_tag = NOMINAL_TAG): 
+
+    def run(self, events): 
         """
         Return dictionary of boolean arrays of events to be selected
         by this tagger for each systematic variation,
@@ -66,95 +61,36 @@ class Tagger():
         :return: boolean arrays of events to be selected by this tagger for each systematic variation, events dict with added fields computed by this tagger
         :rtype: dict, dict 
         """
-        logger.debug("running......")
-        logger.debug(str(syst_tag))
-        self.current_syst = syst_tag
+
+        for syst_tag, syst_events in events.items():
+            self.current_syst = syst_tag
    
-        if not len(events) >= 1:
-            logger.debug("[Tagger] %s : event set : %s : 0 events passed to tagger, skipping running this tagger." % (self.name, syst_tag))
-            selection = awkward.ones_like(events, dtype=bool)
-            self.selection[syst_tag] = selection
+            if not len(syst_events) >= 1:
+                logger.debug("[Tagger] %s : event set : %s : 0 events passed to tagger, skipping running this tagger." % (self.name, syst_tag))
+                self.selection[syst_tag] = awkward.ones_like(syst_events, dtype=bool)
+                self.events[syst_tag] = syst_events
 
-        else:
-            selection, events = self.calculate_selection(events)
-            self.selection[syst_tag] = selection
-            logger.debug("[Tagger] %s : event set : %s : %d (%d) events before (after) selection" % (self.name, syst_tag, len(selection), awkward.sum(selection)))
-        #     file_path = self.output_dir + '/combined_eff.json' 
-        #     dic_eff_serializable = {key: float(value) for key, value in dic_eff.items()}
-
-        #     if os.path.exists(self.output_dir+'/combined_eff.json'):
-        #         file_path = self.output_dir + '/combined_eff.json'
-
-        #     with open(file_path, 'r') as file:
-        #         content = file.read()
-
-        #         content = content[:-1]
-
-        #     with open(file_path, 'w') as file:
-        #         file.write(content)
-        #         file.write(',')
-
-        #         json.dump(dic_eff_serializable, file, indent=4)
-        #         file.write('}')
-        #     with open(file_path, 'r') as file:
-        #         content = file.read()
-        #         if content.strip().endswith('}}'):
-        #             content = content[:-1] + ']'
-        #             with open(file_path, 'w') as file:
-        #                 file.write(content)
-        return selection, events
-        # if not self.is_data:
-        #     if not len(events) >= 1:
-        #         selection = awkward.ones_like(events, dtype=bool)
-        #         self.selection[syst_tag] = selection
-        #         syst_events_updated=events
-        #     else:
-        #         selection, syst_events_updated = self.get_selection(syst_tag, events)
-        #         self.selection[syst_tag] = selection
-        #         self.events[syst_tag] = syst_events_updated
-        #     updated_event=syst_events_updated[self.selection[syst_tag]]
-        #     logger.debug("[Tagger] %s : event set : %s : %d (%d) events before (after) selection" % (self.name, syst_tag, len(events), len(syst_events_updated[self.selection[syst_tag]])))
-        #     logger.debug("[Tagger] %s : event set : %s : %d (%d) positive events num - 2 negtive events num events before (after) selection" % (self.name, syst_tag, (len(events[events['genWeight']>0])-2*len(events[events['genWeight']<0])), (len(updated_event[updated_event['genWeight']>0])-2*len(updated_event[updated_event['genWeight']<0]))))
-        #     self.diphoton_yield = awkward.sum(updated_event['genWeight'])
-        #     self.diphoton_events = len(updated_event[updated_event['genWeight']>0])-2*len(updated_event[updated_event['genWeight']<0])
-        #     logger.debug("[Tagger] %s : event set : %s : %d yield after selection" % (self.name, syst_tag ,awkward.sum(updated_event['genWeight'])))
-        #     diphoton_preselection_eff = self.diphoton_events/(len(events[events['genWeight']>0])-2*len(events[events['genWeight']<0]))
-        #     #objeff: after tagger selection, n(+events) = 2n(-events)
-        #     #eveff: after tagger selection, yield
-        #     #event_number: after tagger selection, eff using n(+events) = 2n(-events)
-        #     dic_eff = {'[object_eff] -'+self.name+': '+self.name+' object efficiency':(len(updated_event[updated_event['genWeight']>0])-2*len(updated_event[updated_event['genWeight']<0])),'[event_eff]   -'+self.name+': '+self.name+' event efficiency':self.diphoton_yield,'[event_number]   -'+self.name+': '+self.name+' event number' :diphoton_preselection_eff }   
-        #     file_path = self.output_dir + '/combined_eff.json' 
-        #     dic_eff_serializable = {key: float(value) for key, value in dic_eff.items()}
-
-        #     if os.path.exists(self.output_dir+'/combined_eff.json'):
-        #         file_path = self.output_dir + '/combined_eff.json'
-
-        #     with open(file_path, 'r') as file:
-        #         content = file.read()
-
-        #         content = content[:-1]
-
-        #     with open(file_path, 'w') as file:
-        #         file.write(content)
-        #         file.write(',')
-
-        #         json.dump(dic_eff_serializable, file, indent=4)
-        #         file.write('}')
-        #     with open(file_path, 'r') as file:
-        #         content = file.read()
-        #         if content.strip().endswith('}}'):
-        #             content = content[:-1] + ']'
-        #             with open(file_path, 'w') as file:
-        #                 file.write(content)
-        # else:
-        #     selection, syst_events_updated = self.get_selection(syst_tag, events)
-        #     self.selection[syst_tag] = selection
-        #     self.events[syst_tag] = syst_events_updated
-
-        #     logger.debug("[Tagger] %s : event set : %s : %d (%d) events before (after) selection" % (self.name, syst_tag, len(events), len(syst_events_updated[self.selection[syst_tag]])))
+            else:
+                selection, syst_events_updated = self.get_selection(syst_tag, syst_events)
+                self.selection[syst_tag] = selection
+                self.events[syst_tag] = syst_events_updated
+                logger.debug("[Tagger] %s : event set : %s : %d (%d) events before (after) selection" % (self.name, syst_tag, len(syst_events), len(syst_events_updated[self.selection[syst_tag]])))
 
 
-        # return selection, events
+        return self.selection, self.events
+
+
+    def set_selection(self, selection):
+        """
+        Update selection (TagSequence will do this to remove overlap
+        with other tags)
+        :param selection: boolean array for each set of events
+        :type selection: dict
+        """
+        for name in selection.keys():
+            self.selection[name] = selection[name]
+
+
     def get_selection(self, syst_tag, syst_events): 
         """
         Return boolean array of events to be selected for a given event set.
@@ -171,6 +107,8 @@ class Tagger():
 
         else:
             return self.calculate_selection(syst_events) 
+
+        
     def calculate_selection(self, events): 
         """
         Abstract function that should be reimplemented for each tagger.
@@ -208,6 +146,49 @@ class Tagger():
                 final_cut = final_cut | cut
 
         return final_cut
+    
+    def register_event_cuts(self, names, results, events, cut_type = "event", weighted = False):
+        """
+        Record a given cut in the tagger instance.
+        cut_type could be event-level (default) or object-level ("photon", "muon", etc)
+        :param names: names to identify cuts
+        :type names: list of str or str
+        :param results: boolean arrays with results of applying given cut
+        :type results: list of awkward.Array
+        :param cut_type: flag to indicate the type of cut
+        :type cut_type: str, optional
+        """
+        if cut_type not in self.cut_summary.keys():
+            self.cut_summary[cut_type] = {}
+
+        if not isinstance(names, list):
+            names = [names]
+        if not isinstance(results, list):
+            results = [results]
+
+        for name, result in zip(names, results):
+            if awkward.count(result) > 0:
+                yields = 0
+                individual_eff = 0
+                if weighted:
+                    if float(awkward.count(events[result].genWeight)) > 0.:
+                        individual_eff = float(awkward.sum(events[result].genWeight)) / float(awkward.count(events[result].genWeight))
+                    else:
+                        individual_eff = 0.
+                    yields = float(awkward.sum(events[result].genWeight))
+                    if yields > 0:
+                        individual_eff = float(awkward.sum(events[result].genWeight)) / float(awkward.count(events[result].genWeight))
+                else:
+                    yields = float(awkward.sum(result))
+                    if yields > 0:
+                        individual_eff = float(awkward.sum(result)) / float(awkward.count(result))
+            self.cut_summary[cut_type][name] = {
+                    "individual_eff" : float(individual_eff) 
+                    #TODO: add eff as N-1 cut
+            }
+
+            logger.debug("[Tagger] : %s, syst variation : %s, cut type : %s, cut : %s, yields : %.3f"
+                    % (self.name, self.current_syst, cut_type, name, yields))
 
     def register_cuts(self, names, results, cut_type = "event"):
         """
@@ -228,76 +209,20 @@ class Tagger():
         if not isinstance(results, list):
             results = [results]
 
-        iter = 0
         for name, result in zip(names, results):
-            iter += 1
             if awkward.count(result) > 0:
                 individual_eff = float(awkward.sum(result)) / float(awkward.count(result))
+                yields = float(awkward.sum(result))
             else:
                 individual_eff = 0.
+                yields = 0
             self.cut_summary[cut_type][name] = {
-                    "individual_eff" : float(individual_eff)
+                    "individual_eff" : float(individual_eff) 
                     #TODO: add eff as N-1 cut
             }
-            logger.debug("[Tagger] : %s, syst variation : %s, cut type : %s, cut : %s, indiviual efficiency : %.4f"% (self.name, self.current_syst, cut_type, name, individual_eff))
-            # get the combined cuts and names
-            if(iter==1):
-                _tmp_cut = result
-                _tmp_name = name
-            else:
-                _tmp_cut = numpy.logical_and(_tmp_cut, result)
-                _tmp_name += "&" + name
-            if awkward.count(_tmp_cut) > 0:
-                ncandi_per_event = awkward.num(_tmp_cut[_tmp_cut==True],axis=-1) 
-                candi_event=_tmp_cut[ncandi_per_event!=0]
-                if type(candi_event) == bool:
-                # for event selection level, like "at least one diphoton pair", _tmp_cut is 1D array, ncandi_per_event is the number of the events which contians at least one diphoton pair
-                    combined_eff = float(ncandi_per_event) / float(len(_tmp_cut))
-                    n_candi_event = ncandi_per_event
-                else:
-                    n_candi_event = len(candi_event)
-                    combined_eff = float(n_candi_event) / float(len(_tmp_cut))
-                    # combined_candieff = float(awkward.sum(_tmp_cut)) / float(awkward.count(_tmp_cut))
-            else:
-                
-                combined_eff = 0.
-                n_candi_event=0.
-            self.cut_summary[cut_type][_tmp_name]={
-                "combined eff": float(combined_eff)
-            }
-            logger.debug("cut(e-level) : %s\n combined_eff : %.4f\n event_num : %.4f"% (_tmp_name, combined_eff, n_candi_event))
-            dic_eff = {'[object_eff] -'+cut_type+': '+name+' object efficiency':individual_eff,'[event_eff]   -'+cut_type+': '+_tmp_name+' event efficiency':combined_eff,'[event_number]   -'+cut_type+': '+_tmp_name+' event number' :n_candi_event}            
-            output_dir = self.output_dir
-            logger.debug("output dir is %s", output_dir)
-            # Check if the file already exists
-            if os.path.exists(output_dir+'/combined_eff.json'):
-                logger.debug("exist combined_eff.json")
-                file_size = os.path.getsize(output_dir+'/combined_eff.json')
-                if file_size > 0:
-                # Remove the closing bracket '}' from the existing file
-                    with open(output_dir+'/combined_eff.json', 'rb+') as f:
-                        f.seek(-1, os.SEEK_END)
-                        f.truncate()
-            else:
-                os.system("touch "+output_dir+'/combined_eff.json')
-            # Open the file in append mode
-            with open(output_dir+'/combined_eff.json', 'a') as f:
-                # Get the file size
-                file_size = os.path.getsize(output_dir+'/combined_eff.json')
 
-                # Add opening bracket '[' if the file is empty
-                if file_size == 0:
-                    f.write('[')
-                # Add comma ',' if the file is not empty
-                else:
-                    f.write(',')
-
-                # Write the new JSON object
-                json.dump(dic_eff, f, indent=4)
-
-                # Add closing bracket ']' for the new object
-                f.write(']')
-    
+            logger.debug("[Tagger] : %s, syst variation : %s, cut type : %s, cut : %s, yields : %d"
+                    % (self.name, self.current_syst, cut_type, name, yields))
 
 
     def get_summary(self):

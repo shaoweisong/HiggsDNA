@@ -431,11 +431,7 @@ class ObjectWeightSystematic(WeightSystematic):
             else:
                 target_branch = (self.target_collection,) + branch[1:]
 
-            jagged = "var" in str(events[target_branch].type)
-            if jagged:
-                weights[variation] = awkward.prod(events[target_branch], axis = 1)
-            else:
-                weights[variation] = events[target_branch]
+            weights[variation] = awkward.prod(events[target_branch], axis = 1)
 
             if self.normalization_factors is not None:
                 with open(misc_utils.expand_path(self.normalization_factors), "r") as f_in:
@@ -603,3 +599,4 @@ class SystematicWithIndependentCollection(Systematic):
             )
 
         return independent_collections
+

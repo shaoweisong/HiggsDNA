@@ -3,7 +3,9 @@ import uproot
 import numpy
 
 import logging
-logger = logging.getLogger(__name__)
+# logger = logging.getLogger(__name__)
+from higgs_dna.utils.logger_utils import simple_logger
+logger = simple_logger(__name__)
 
 class File():
     """
@@ -33,16 +35,10 @@ class File():
             runs = f["Runs"]
             if "genEventCount" in runs.keys() and "genEventSumw" in runs.keys():
                 self.n_events = int(numpy.sum(runs["genEventCount"].array()))
-                if "NMSSM" in name:
-                	self.sum_weights = self.n_events
-                else:
-                	self.sum_weights = numpy.sum(runs["genEventSumw"].array())
+                self.sum_weights = numpy.sum(runs["genEventSumw"].array())
             elif "genEventCount_" in runs.keys() and "genEventSumw_" in runs.keys():
                 self.n_events = int(numpy.sum(runs["genEventCount_"].array()))
-                if "NMSSM" in name:
-                	self.sum_weights = self.n_events
-                else:
-                	self.sum_weights = numpy.sum(runs["genEventSumw_"].array())
+                self.sum_weights = numpy.sum(runs["genEventSumw_"].array())
             else: 
                 self.n_events = 0
                 self.sum_weights = 0 

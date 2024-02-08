@@ -11,7 +11,6 @@ from higgs_dna.selections import object_selections, lepton_selections, jet_selec
 from higgs_dna.utils import awkward_utils, misc_utils
 
 DUMMY_VALUE = -9.
-GEN_WEIGHT_BAD_VAL = -99999.
 DEFAULT_OPTIONS = {
     "electrons" : {
         "pt" : 10.0,
@@ -24,28 +23,27 @@ DEFAULT_OPTIONS = {
     },
     "muons" : {
         "pt" : 15.0,
-        "eta" : 2.5,
+        "eta" : 2.4,
         "dxy" : 0.045,
         "dz" : 0.2,
         "id" : "medium",
         "pfRelIso03_all" : 0.3,
-        "dr_photons" : 0.2,
-        "global" : True
+        "dr_photons" : 0.2
     },
     "taus" : {
         "pt" : 20.0,
         "eta" : 2.3,
         "dz" : 0.2,
-        "deep_tau_vs_ele" : 1,
-        "deep_tau_vs_mu" : 0,
-        "deep_tau_vs_jet" : 7,
-        "dr_photons" : 0.5,
-        "dr_electrons" : 0.5,
-        "dr_muons" : 0.5
+        "deep_tau_vs_ele" : 2,
+        "deep_tau_vs_mu" : 1,
+        "deep_tau_vs_jet" : 8,
+        "dr_photons" : 0.2,
+        "dr_electrons" : 0.2,
+        "dr_muons" : 0.2
     },
     "iso_tracks" : {
         "pt" : 5.0,
-        "eta" : 2.5,
+        "eta" : 5.0,
         "dxy" : 0.2,
         "dz" : 0.1,
         "dr_photons" : 0.2,
@@ -61,17 +59,11 @@ DEFAULT_OPTIONS = {
         "dr_electrons" : 0.4,
         "dr_muons" : 0.4,
         "dr_taus" : 0.4,
-        "dr_iso_tracks" : 0.4,
-        "bjet_thresh" : {
-            "2016UL_postVFP" : 0.3093,
-            "2016UL_preVFP": 0.3093,
-            "2017" : 0.3033,
-            "2018" : 0.2770
-        }
+        "dr_iso_tracks" : 0.4
     },
     "z_veto" : [80., 100.],
     "m_llg_veto_window" : 10,
-    "photon_mvaID" : "WP90"
+    "photon_mvaID" : -0.7
 }
 
 class HHggTauTauPreselTagger(Tagger):
@@ -245,14 +237,6 @@ class HHggTauTauPreselTagger(Tagger):
                 name = "SelectedJet",
                 data = events.Jet[jet_cut]
         )
-        awkward_utils.add_object_fields(
-                events = events,
-                name = "jet",
-                objects = jets,
-                n_objects = 2,
-                fields = ["puId"],
-                dummy_value = DUMMY_VALUE
-        )
 
         bjets = jets[awkward.argsort(jets.btagDeepFlavB, axis = 1, ascending = False)]
         awkward_utils.add_object_fields(
@@ -300,8 +284,6 @@ class HHggTauTauPreselTagger(Tagger):
         n_jets = awkward.num(jets)
         awkward_utils.add_field(events, "n_jets", n_jets, overwrite=True)
 
-        n_bjets = awkward.num(bjets[bjets.btagDeepFlavB > self.options["jets"]["bjet_thresh"][self.year]]) 
-        awkward_utils.add_field(events, "n_bjets", n_bjets, overwrite=True)
 
         ### Presel step 2: Z veto ###
         # 2.1 Register objects as 4 vectors for appropriate overloading of operators
@@ -418,17 +400,6 @@ class HHggTauTauPreselTagger(Tagger):
                 "ditau_dR",
                 awkward.fill_none(ditau_pairs.ditau.dR, DUMMY_VALUE)
         )
-        awkward_utils.add_field(
-                events,
-                "ditau_dphi",
-                awkward.fill_none(ditau_pairs.LeadTauCand.deltaphi(ditau_pairs.SubleadTauCand), DUMMY_VALUE)
-        )
-        awkward_utils.add_field(
-                events,
-                "ditau_deta",
-                awkward.fill_none(ditau_pairs.LeadTauCand.deltaeta(ditau_pairs.SubleadTauCand), DUMMY_VALUE)
-        )
- 
 
         # Now assign the selected tau candidate pair in each event to a category integer
         category_map = {
@@ -455,8 +426,7 @@ class HHggTauTauPreselTagger(Tagger):
         category_cut = category > 0
 
         # Photon ID cut
-        if self.options["photon_mvaID"] == "WP90":
-            pho_id = (events.LeadPhoton.mvaID_WP90 == True) & (events.SubleadPhoton.mvaID_WP90 == True)
+        pho_id = (events.LeadPhoton.mvaID > self.options["photon_mvaID"]) & (events.SubleadPhoton.mvaID > self.options["photon_mvaID"])
 
         # Veto on m_llgamma to reject Z->eeg and Z->mmg events 
         dilep_lead_photon = ditau_pairs.ditau + events.LeadPhoton
@@ -478,12 +448,6 @@ class HHggTauTauPreselTagger(Tagger):
         events[("Diphoton", "pt_mgg")] = events.Diphoton.pt / events.Diphoton.mass
         events[("LeadPhoton", "pt_mgg")] = events.LeadPhoton.pt / events.Diphoton.mass
         events[("SubleadPhoton", "pt_mgg")] = events.SubleadPhoton.pt / events.Diphoton.mass 
-        events[("LeadPhoton", "chargedHadronIso")] = events.LeadPhoton.chargedHadronIso
-        events[("LeadPhoton", "pfRelIso03_all")] = events.LeadPhoton.pfRelIso03_all
-        events[("LeadPhoton", "pfRelIso03_chg")] = events.LeadPhoton.pfRelIso03_chg
-        events[("SubleadPhoton", "chargedHadronIso")] = events.SubleadPhoton.chargedHadronIso
-        events[("SubleadPhoton", "pfRelIso03_all")] 	= events.SubleadPhoton.pfRelIso03_all
-        events[("SubleadPhoton", "pfRelIso03_chg")] 	= events.SubleadPhoton.pfRelIso03_chg
         events[("Diphoton", "max_mvaID")] = awkward.where(
                 events.LeadPhoton.mvaID > events.SubleadPhoton.mvaID,
                 events.LeadPhoton.mvaID,
@@ -512,49 +476,10 @@ class HHggTauTauPreselTagger(Tagger):
                 events.Diphoton.deltaphi(met_p4)
         )
 
-        awkward_utils.add_field(
-                events,
-                "lead_lepton_met_dphi",
-                awkward.fill_none(awkward.firsts(tau_candidates).deltaphi(met_p4), DUMMY_VALUE)
-        )
-
-        # Fill lead/sublead lepton kinematics as:
-        #    if there is a ditau candidate
-        #        lead/sublead pt/eta = pt/eta of leading/subleading lepton in ditau candidate
-        #    if there is not a ditau candidate
-        #        lead pt/eta = pt/eta of leading lepton in event
-        #        sublead pt/eta = DUMMY_VALUE
-        for field in ["pt", "eta", "phi", "mass", "charge", "id"]:
-            awkward_utils.add_field(events, "lead_lepton_%s" % field, awkward.ones_like(events.ditau_pt) * DUMMY_VALUE)
-            awkward_utils.add_field(events, "sublead_lepton_%s" % field, awkward.ones_like(events.ditau_pt) * DUMMY_VALUE)
-            events["lead_lepton_%s" % field] = events["tau_candidate_1_%s" % field]
-            events["lead_lepton_%s" % field] = awkward.where(
-                    events["ditau_pt"] > 0,
-                    events["ditau_lead_lepton_%s" % field],
-                    events["lead_lepton_%s" % field]
-            )
-            events["sublead_lepton_%s" % field] = awkward.where(
-                    events["ditau_pt"] > 0,
-                    events["ditau_sublead_lepton_%s" % field],
-                    events["sublead_lepton_%s" % field]
-            )
-
-        if "weight" not in events.fields:
-            events["weight"] = awkward.ones_like(events.ditau_pt)
-        gen_weight_cut = events.weight != GEN_WEIGHT_BAD_VAL
-
-        #Add MET filters
-        METfilters_cut = gen_weight_cut
-        if self.is_data and '2016' in self.year:
-            METfilters_cut = events.Flag_goodVertices & events.Flag_globalSuperTightHalo2016Filter & events.Flag_HBHENoiseFilter & events.Flag_HBHENoiseIsoFilter & events.Flag_EcalDeadCellTriggerPrimitiveFilter & events.Flag_BadPFMuonFilter & events.Flag_BadPFMuonDzFilter & events.Flag_eeBadScFilter 
-        elif self.is_data and ( '2017' in self.year or '2018' in self.year ):
-            METfilters_cut = events.Flag_goodVertices & events.Flag_globalSuperTightHalo2016Filter & events.Flag_HBHENoiseFilter & events.Flag_HBHENoiseIsoFilter & events.Flag_EcalDeadCellTriggerPrimitiveFilter & events.Flag_BadPFMuonFilter & events.Flag_BadPFMuonDzFilter & events.Flag_eeBadScFilter & events.Flag_ecalBadCalibFilter 
-
-        presel_cut = category_cut & z_veto & pho_id & m_llg_veto & gen_weight_cut & METfilters_cut
-
+        presel_cut = category_cut & z_veto & pho_id & m_llg_veto
         self.register_cuts(
-            names = ["category", "z_veto", "photon ID MVA", "m_llg veto", "gen weight cut", "MET filter", "all cuts"],
-            results = [category_cut, z_veto, pho_id, m_llg_veto, gen_weight_cut, METfilters_cut, presel_cut]
+            names = ["category", "z_veto", "photon ID MVA", "m_llg veto", "all cuts"],
+            results = [category_cut, z_veto, pho_id, m_llg_veto, presel_cut]
         )
 
         return presel_cut, events 

@@ -3,7 +3,6 @@ import time
 import numpy
 import numba
 import vector
-import pandas
 
 vector.register_awkward()
 
@@ -17,12 +16,12 @@ from higgs_dna.selections import gen_selections
 DEFAULT_OPTIONS = {
     "photons" : {
         "use_central_nano" : True,
-        "pt" : 10.0,
+        "pt" : 25.0,
         "eta" : [
             [0.0, 1.4442],
             [1.566, 2.5]
         ],
-        "e_veto" : 1,
+        "e_veto" : 0.5,
         "hoe" : 0.08,
         "r9" : 0.8,
         "charged_iso" : 20.0,
@@ -78,8 +77,8 @@ DEFAULT_OPTIONS = {
 #   - https://indico.cern.ch/event/1071721/contributions/4551056/attachments/2320292/3950844/HiggsDNA_DiphotonPreselectionAndSystematics_30Sep2021.pdf
 
 class DiphotonTagger(Tagger):
-    def __init__(self, name = "default_diphoton_tagger", options = {}, is_data = None, year = None,output_dir=None):
-        super(DiphotonTagger, self).__init__(name, options, is_data, year,output_dir)
+    def __init__(self, name = "default_diphoton_tagger", options = {}, is_data = None, year = None):
+        super(DiphotonTagger, self).__init__(name, options, is_data, year)
 
         if not options:
             self.options = DEFAULT_OPTIONS
@@ -96,9 +95,22 @@ class DiphotonTagger(Tagger):
         Add a record "Diphoton" to events array with relevant information about each diphoton pair.
         In principle, there can be more than one Diphoton pair per event.
         """
+        
+        # Determine what type of rho variable is available in nanoAOD
+        # To be deleted once a standard rho variable is added to central nanoAOD
+        if not self.options["photons"]["use_central_nano"]:
+            if "fixedGridRhoAll" in events.fields:
+                rho = events.fixedGridRhoAll
+            elif "fixedGridRhoFastjetAll" in events.fields:
+                rho = events.fixedGridRhoFastjetAll
+            elif "Rho_fixedGridRhoAll" in events.fields:
+                rho = events.Rho_fixedGridRhoAll
+        else:
+            rho = awkward.ones_like(events.Photon)
+
         photon_selection = self.select_photons(
                 photons = events.Photon,
-                rho = events.fixedGridRhoAll if not self.options["photons"]["use_central_nano"] else awkward.ones_like(events.Photon), # FIXME: to be deleted once fixedGridRhoAll is added to central nanoAOD
+                rho = rho,
                 options = self.options["photons"]
         )
 
@@ -107,49 +119,12 @@ class DiphotonTagger(Tagger):
                 photons = events.Photon[photon_selection],
                 options = self.options["diphotons"]
         )
-        # diphotons =self.match_Gjet_photon(events,diphotons) #open for datadriven check
 
-        diphotons = self.calculate_min_max_ID(diphotons)
-        logger.debug("Is Data:  %s" %self.is_data)
-        logger.debug("With GEN info:  %s" %self.options["gen_info"]["calculate"])
         if not self.is_data and self.options["gen_info"]["calculate"]:
             diphotons = self.calculate_gen_info(diphotons, self.options["gen_info"])
 
         return diphoton_selection, diphotons 
-    def calculate_min_max_ID(self,diphotons):
-        # minID = awkward.min(diphotons.LeadPhoton.mvaID, diphotons.SubleadPhoton.mvaID)
-        # maxID = awkward.max(diphotons.LeadPhoton.mvaID, diphotons.SubleadPhoton.mvaID)
-        minID = numpy.minimum(diphotons.LeadPhoton.mvaID, diphotons.SubleadPhoton.mvaID)
-        maxID = numpy.maximum(diphotons.LeadPhoton.mvaID, diphotons.SubleadPhoton.mvaID)
 
-        diphotons[("Diphoton", "minID")] = minID
-        diphotons[("Diphoton", "maxID")] = maxID
-        return diphotons
-    def match_Gjet_photon(self,events,diphotons):
-        """
-        Calculate gen info for Gjet MC
-        match fake photons and real photon 
-        fake photons are selected from G+jets MC by requiring that the photon is not truth-matched to a
-        generator-level photon.
-
-        """
-        fake_photon,real_photon = gen_selections.select_fake_photon(events,diphotons)
-
-        awkward_utils.add_object_fields(
-            events = diphotons,
-            name = "GenMatchedfakephotons",
-            objects = fake_photon,
-            n_objects = 2,
-            dummy_value=-999
-        )
-        awkward_utils.add_object_fields(
-            events = diphotons,
-            name = "GenMatchedrealphotons",
-            objects = real_photon,
-            n_objects = 2,
-            dummy_value=-999
-        )
-        return diphotons
 
     def produce_and_select_diphotons(self, events, photons, options):
         """
@@ -181,17 +156,8 @@ class DiphotonTagger(Tagger):
 
         # Add sumPt and dR for convenience
         diphotons[("Diphoton", "sumPt")] = diphotons.LeadPhoton.pt + diphotons.SubleadPhoton.pt
-        diphotons[("Diphoton", "dR")] = diphotons.LeadPhoton.deltaR(diphotons.SubleadPhoton)   
-        if not self.is_data:
-            diphotons[("LeadPhoton","genPartFlav")] = diphotons.LeadPhoton.genPartFlav
-            diphotons[("SubleadPhoton","genPartFlav")] = diphotons.SubleadPhoton.genPartFlav
-            diphotons[("LeadPhoton","genPartIdx")] = diphotons.LeadPhoton.genPartIdx
-            diphotons[("SubleadPhoton","genPartIdx")] = diphotons.SubleadPhoton.genPartIdx
+        diphotons[("Diphoton", "dR")] = diphotons.LeadPhoton.deltaR(diphotons.SubleadPhoton)        
 
-
-        # diphotons[("Diphoton","genPartIdx")] = awkward.concatenate([diphotons[("SubleadPhoton","genPartFlav")].tolist(),diphotons[("LeadPhoton","genPartFlav")].tolist()],axis=1)
-# 
-        # diphotons["genPartIdx"]=awkward.concatenate([diphotons[("SubleadPhoton","genPartFlav")],diphotons[("LeadPhoton","genPartFlav")]],axis=1)
         # Add lead/sublead photons to additionally be accessible together as diphotons.Diphoton.Photon
         # This is in principle a bit redundant, but makes many systematics and selections much more convenient to implement.
         # lead/sublead photons have shape [n_events, n_diphotons_per_event], but to merge them we need to give them shape [n_events, n_diphotons_per_event, 1]
@@ -232,13 +198,7 @@ class DiphotonTagger(Tagger):
 
         # Sort by sumPt
         diphotons = diphotons[awkward.argsort(diphotons.Diphoton.sumPt, ascending=False, axis=1)]
-        # lead_genflav=awkward.pad_none(diphotons.LeadPhoton.genPartIdx,target=7)
-        # print(len(lead_genflav))
-        # sublead_genflav=awkward.pad_none(diphotons.SubleadPhoton.genPartIdx,target=7)
-        # print(len(sublead_genflav))
-        # lead_genflav=awkward.fill_none(lead_genflav,-999)
-        # sublead_genflav=awkward.fill_none(sublead_genflav,-999)
-        # diphotons["genPartIdx"] = awkward.concatenate([lead_genflav,sublead_genflav],axis=1)
+
         # Select highest pt sum diphoton
         if options["select_highest_pt_sum"]:
             logger.debug("[DiphotonTagger : produce_and_select_diphotons] %s, selecting the highest pt_sum diphoton pair from each event." % (self.name))
@@ -247,8 +207,7 @@ class DiphotonTagger(Tagger):
             diphotons = awkward.singletons(awkward.firsts(diphotons)) # ak.firsts takes the first diphoton in each event (highest sumpt) and ak.singletons makes it variable length again
             n_diphotons_selected = awkward.sum(awkward.num(diphotons)) 
 
-            if(n_diphotons_total>0):
-                logger.debug("[DiphotonTagger : produce_and_select_diphotons] %s, syst variation : %s. Number of total diphoton candidates: %d, number of diphoton candidates after selecting candidate with highest pt sum in each event: %d (%.2f percent of diphoton events removed)." % (self.name, self.current_syst, n_diphotons_total, n_diphotons_selected, 100. * (float(n_diphotons_total - n_diphotons_selected) / float(n_diphotons_total))))
+            logger.debug("[DiphotonTagger : produce_and_select_diphotons] %s, syst variation : %s. Number of total diphoton candidates: %d, number of diphoton candidates after selecting candidate with highest pt sum in each event: %d (%.2f percent of diphoton events removed)." % (self.name, self.current_syst, n_diphotons_total, n_diphotons_selected, 100. * (float(n_diphotons_total - n_diphotons_selected) / float(n_diphotons_total))))
 
         # Otherwise, keep all diphotons
         else:
@@ -267,43 +226,13 @@ class DiphotonTagger(Tagger):
             dipho_events[(field, "eta")] = diphotons[field].eta
             dipho_events[(field, "phi")] = diphotons[field].phi
             dipho_events[(field, "mass")] = diphotons[field].mass
-        dipho_events[("LeadPhoton", "energyErr")] = dipho_events.LeadPhoton.energyErr
-        dipho_events[("LeadPhoton", "mvaID_WP80")] = dipho_events.LeadPhoton.mvaID_WP80
-        dipho_events[("LeadPhoton", "mvaID_WP90")] = dipho_events.LeadPhoton.mvaID_WP90
-        dipho_events[("SubleadPhoton", "energyErr")] = dipho_events.SubleadPhoton.energyErr
-        dipho_events[("SubleadPhoton", "mvaID_WP80")] = dipho_events.SubleadPhoton.mvaID_WP80
-        dipho_events[("SubleadPhoton", "mvaID_WP90")] = dipho_events.SubleadPhoton.mvaID_WP90
-        dipho_events[("LeadPhoton","Photon_r9")] = dipho_events.LeadPhoton.r9
-        # dipho_events[("LeadPhoton","Photon_s4")] = dipho_events.LeadPhoton.s4
-        # dipho_events[("LeadPhoton","Photon_sieip")] = dipho_events.LeadPhoton.sieip
-        # dipho_events[("LeadPhoton","Photon_sieie")] = dipho_events.LeadPhoton.sieie
-        # dipho_events[("LeadPhoton","Photon_etaWidth")] = dipho_events.LeadPhoton.etaWidth
-        # dipho_events[("LeadPhoton","Photon_phiWidth")] = dipho_events.LeadPhoton.phiWidth
-        # dipho_events[("LeadPhoton","Photon_pfPhoIso03")] = dipho_events.LeadPhoton.pfPhoIso03
-        # dipho_events[("LeadPhoton","Photon_pfChargedIsoPFPV")] = dipho_events.LeadPhoton.pfChargedIsoPFPV
-        # dipho_events[("LeadPhoton","Photon_pfChargedIsoWorstVtx")] = dipho_events.LeadPhoton.pfChargedIsoWorstVtx
-        # dipho_events[("LeadPhoton","Photon_energyRaw")] = dipho_events.LeadPhoton.energyRaw
-        # dipho_events[("LeadPhoton","Photon_scEta")] = dipho_events.LeadPhoton.scEta
-        # dipho_events[("LeadPhoton","Photon_esEnergyOverRawE")] = dipho_events.LeadPhoton.esEnergyOverRawE
-        # dipho_events[("LeadPhoton","Photon_esEffSigmaRR")] = dipho_events.LeadPhoton.esEffSigmaRR
-        dipho_events[("SubleadPhoton","Photon_r9")] = dipho_events.SubleadPhoton.r9
-        # dipho_events[("SubleadPhoton","Photon_s4")] = dipho_events.SubleadPhoton.s4
-        # dipho_events[("SubleadPhoton","Photon_sieip")] = dipho_events.SubleadPhoton.sieip
-        # dipho_events[("SubleadPhoton","Photon_sieie")] = dipho_events.SubleadPhoton.sieie
-        # dipho_events[("SubleadPhoton","Photon_etaWidth")] = dipho_events.SubleadPhoton.etaWidth
-        # dipho_events[("SubleadPhoton","Photon_phiWidth")] = dipho_events.SubleadPhoton.phiWidth
-        # dipho_events[("SubleadPhoton","Photon_pfPhoIso03")] = dipho_events.SubleadPhoton.pfPhoIso03
-        # dipho_events[("SubleadPhoton","Photon_pfChargedIsoPFPV")] = dipho_events.SubleadPhoton.pfChargedIsoPFPV
-        # dipho_events[("SubleadPhoton","Photon_pfChargedIsoWorstVtx")] = dipho_events.SubleadPhoton.pfChargedIsoWorstVtx
-        # dipho_events[("SubleadPhoton","Photon_energyRaw")] = dipho_events.SubleadPhoton.energyRaw
-        # dipho_events[("SubleadPhoton","Photon_scEta")] = dipho_events.SubleadPhoton.scEta
-        # dipho_events[("SubleadPhoton","Photon_esEnergyOverRawE")] = dipho_events.SubleadPhoton.esEnergyOverRawE
-        # dipho_events[("SubleadPhoton","Photon_esEffSigmaRR")] = dipho_events.SubleadPhoton.esEffSigmaRR
-        dipho_presel_cut = awkward.num(dipho_events.Diphoton) == 1
+
+        dipho_presel_cut = awkward.num(dipho_events.Diphoton) >= 1
         if self.is_data and self.year is not None:
-            trigger_cut = awkward.num(dipho_events.Diphoton) < 0 # dummy cut, all False
-            for hlt in self.options["trigger"][self.year]: # logical OR of all triggers
-                trigger_cut = (trigger_cut) | (dipho_events[hlt] == True)
+            #trigger_cut = awkward.num(dipho_events.Diphoton) < 0 # dummy cut, all False
+            trigger_cut = awkward.num(dipho_events.Diphoton) > 0 # dummy cut, all True 
+            #for hlt in self.options["trigger"][self.year]: # logical OR of all triggers
+            #    trigger_cut = (trigger_cut) | (dipho_events[hlt] == True)
         else:
             trigger_cut = awkward.num(dipho_events.Diphoton) >= 0 # dummy cut, all True
 
@@ -324,7 +253,7 @@ class DiphotonTagger(Tagger):
         dummy_cut = dipho_events.Diphoton.pt > 0
         return dummy_cut, dipho_events 
 
-
+    
     def calculate_gen_info(self, diphotons, options):
         """
         Calculate gen info, adding the following fields to the events array:
@@ -333,7 +262,7 @@ class DiphotonTagger(Tagger):
             GenHggSubleadPhoton : [pt, eta, phi, mass, dR, pt_diff]
             LeadPhoton : [gen_dR, gen_pt_diff]
             SubleadPhoton : [gen_dR, gen_pt_diff]
-            
+
         Perform both matching of
             - closest gen photons from Higgs to reco lead/sublead photons from diphoton candidate
             - closest reco photons to gen photons from Higgs
@@ -389,9 +318,10 @@ class DiphotonTagger(Tagger):
         eta_cut = (photons.isScEtaEB | photons.isScEtaEE)
 
         # electron veto
-        e_veto_cut = photons.electronVeto == options["e_veto"]
+        e_veto_cut = photons.electronVeto > options["e_veto"]
 
         use_central_nano = options["use_central_nano"] # indicates whether we are using central nanoAOD (with some branches that are necessary for full diphoton preselection missing) or custom nanoAOD (with these branches added)
+
         # r9/isolation cut
         r9_cut = photons.r9 > options["r9"]
 
@@ -428,9 +358,19 @@ class DiphotonTagger(Tagger):
 
         low_eta = abs(photons.eta) < options["hlt"]["eta_rho_corr"]
 
+        # Check which type of photonIso name is present in these nanoAODs
+        if not use_central_nano: # FIXME: to be deleted once Photon.photonIso is added to central nanoAOD
+            if "pfPhoIso03" in photons.fields:
+                photon_iso = photons.pfPhoIso03
+            elif "photonIso" in photons.fields:
+                photon_iso = photons.photonIso
+            else:
+                logger.warning("[DiphotonTagger : select_photons] Did not find an appropriate photon isolation variable in events array.")
+
         if not use_central_nano:
-            eb_low_r9_pho_iso_low_eta_cut = low_eta & (photons.photonIso - rho * options["hlt"]["low_eta_rho_corr"] < options["hlt"]["eb_low_r9"]["pho_iso"]) 
-            eb_low_r9_pho_iso_high_eta_cut = ~low_eta & (photons.photonIso - rho * options["hlt"]["high_eta_rho_corr"] < options["hlt"]["eb_low_r9"]["pho_iso"]) 
+            
+            eb_low_r9_pho_iso_low_eta_cut = low_eta & (photon_iso - rho * options["hlt"]["low_eta_rho_corr"] < options["hlt"]["eb_low_r9"]["pho_iso"]) 
+            eb_low_r9_pho_iso_high_eta_cut = ~low_eta & (photon_iso - rho * options["hlt"]["high_eta_rho_corr"] < options["hlt"]["eb_low_r9"]["pho_iso"]) 
         else: # FIXME: to be deleted once Photon.photonIso is added to central nanoAOD
             eb_low_r9_pho_iso_low_eta_cut = low_eta & ((photons.pfRelIso03_all * photons.pt * options["hlt"]["low_eta_rho_corr"]) < options["hlt"]["eb_low_r9"]["pho_iso"])
             eb_low_r9_pho_iso_high_eta_cut = ~low_eta & ((photons.pfRelIso03_all * photons.pt * options["hlt"]["high_eta_rho_corr"]) < options["hlt"]["eb_low_r9"]["pho_iso"])
@@ -438,8 +378,8 @@ class DiphotonTagger(Tagger):
         eb_low_r9_pho_iso_cut = eb_low_r9_pho_iso_low_eta_cut | eb_low_r9_pho_iso_high_eta_cut
 
         if not use_central_nano:
-            ee_low_r9_pho_iso_low_eta_cut = low_eta & (photons.photonIso - rho * options["hlt"]["low_eta_rho_corr"] < options["hlt"]["ee_low_r9"]["pho_iso"]) 
-            ee_low_r9_pho_iso_high_eta_cut = ~low_eta & (photons.photonIso - rho * options["hlt"]["high_eta_rho_corr"] < options["hlt"]["ee_low_r9"]["pho_iso"]) 
+            ee_low_r9_pho_iso_low_eta_cut = low_eta & (photon_iso - rho * options["hlt"]["low_eta_rho_corr"] < options["hlt"]["ee_low_r9"]["pho_iso"]) 
+            ee_low_r9_pho_iso_high_eta_cut = ~low_eta & (photon_iso - rho * options["hlt"]["high_eta_rho_corr"] < options["hlt"]["ee_low_r9"]["pho_iso"]) 
         else: # FIXME: to be deleted once Photon.photonIso is added to central nanoAOD
             ee_low_r9_pho_iso_low_eta_cut = low_eta & ((photons.pfRelIso03_all * photons.pt * options["hlt"]["low_eta_rho_corr"]) < options["hlt"]["ee_low_r9"]["pho_iso"])
             ee_low_r9_pho_iso_high_eta_cut = ~low_eta & ((photons.pfRelIso03_all * photons.pt * options["hlt"]["high_eta_rho_corr"]) < options["hlt"]["ee_low_r9"]["pho_iso"])
@@ -451,7 +391,7 @@ class DiphotonTagger(Tagger):
         hlt_cut = hlt_cut | (photons_eb_low_r9 & eb_low_r9_track_pt_cut & eb_low_r9_sigma_ieie_cut & eb_low_r9_pho_iso_cut)
         hlt_cut = hlt_cut | photons_ee_high_r9
         hlt_cut = hlt_cut | (photons_ee_low_r9 & ee_low_r9_track_pt_cut & ee_low_r9_sigma_ieie_cut & ee_low_r9_pho_iso_cut)
-        # hlt_cut = hlt_cut | (photons.pt > 0) # attention: only for debug, all true
+
         all_cuts = pt_cut & eta_cut & e_veto_cut & r9_iso_cut & hoe_cut & hlt_cut
 
         self.register_cuts(

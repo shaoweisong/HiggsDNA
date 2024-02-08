@@ -1,13 +1,13 @@
 import os
-import sys
 import glob
-import fnmatch
 import json
 import copy
 from tqdm import tqdm 
 
 import logging
-logger = logging.getLogger(__name__)
+# logger = logging.getLogger(__name__)
+from higgs_dna.utils.logger_utils import simple_logger
+logger = simple_logger(__name__)
 
 from higgs_dna.samples.sample import Sample
 from higgs_dna.samples.file import File
@@ -41,19 +41,6 @@ class SampleManager():
             return self.data
 
         samples = []
-
-        # Expand any wildcards
-        for x in self.sample_list:
-            if "*" in x:
-                matches = fnmatch.filter(list(self.catalog.keys()), x)
-                if len(matches) > 0:
-                    self.sample_list.remove(x)
-                    self.sample_list += matches
-                    logger.info("[SampleManager : get_samples] Matched wildcard expression '%s' to %d samples." % (x, len(matches)))
-                else:
-                    logger.warning("[SampleManager : get_samples] Did not match wildcard expression '%s' to any samples." % (x))
-
-
         # Loop through each sample
         logger.info("[SampleManager : get_samples] Fetching input files for %d samples." % (len(self.sample_list)))
         for s_idx, sample in enumerate(tqdm(self.sample_list)):
@@ -114,11 +101,7 @@ class SampleManager():
 
                 # Is this a list? Could be a list of hard-coded files (Option 1) or list of dirs (Option 2b) 
                 elif isinstance(info["files"][year], list):
-                    if "*" in info["files"][year][0] and "*" in info["files"][year][1] : # directory with wildcards
-                        files = self.get_files_from_wildcard(info["files"][year][0], is_data) + self.get_files_from_wildcard(info["files"][year][1], is_data)
-                        grabbed_files = True
-
-                    elif info["files"][year][0].endswith(".root"): # Option 1
+                    if info["files"][year][0].endswith(".root"): # Option 1
                         logger.debug("[SampleManager : get_samples] For sample '%s', year '%s', getting files from hard-coded list." % (sample, year))
                         files = [File(name = x, is_data = is_data) for x in info["files"][year]]
                         grabbed_files = True
@@ -187,12 +170,6 @@ class SampleManager():
                 else:
                     fpo = None
 
-                # Check if scale1fb is specified
-                if "scale1fb" in info.keys():
-                    scale1fb = info["scale1fb"][year]
-                else:
-                    scale1fb = None
-
                 samples.append(
                         Sample(
                             process = sample,
@@ -200,18 +177,12 @@ class SampleManager():
                             files = files,
                             xs = xs,
                             bf = bf,
-                            process_id = info["process_id"],
+                            process_id = s_idx,
                             fpo = fpo,
-                            scale1fb = scale1fb,
                             systematics = systematics
                         )
                 )
-                #Check if process_id_map specified
-                if "process_id" in info.keys():
-                	self.process_id_map[sample] = info["process_id"]
-                else:
-                	logger.exception("[SampleManager : get_samples] Please specify process_id_map, otherwise it will be chaos!")
-                	raise ValueError()
+                self.process_id_map[sample] = s_idx
 
         self.data = samples
         self.loaded_samples = True
@@ -303,7 +274,6 @@ class SampleManager():
         """
         #files_dir = glob.glob(info["files"][year] + "/*.root")
         files_dir = glob.glob(directory + "/*.root")
-        files_dir = glob.glob(directory + "/*/*/*/*.root")
         logger.debug("[SampleManager : get_files_from_local_dir] Found %d files in dir '%s'." % (len(files_dir), directory))
         files = []
         for f in files_dir:

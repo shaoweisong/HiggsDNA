@@ -75,11 +75,7 @@ def parse_arguments():
         required=False,
         action="store_true",
         help="just run 1 job for each sample/year to test workflow")
-    parser.add_argument(
-        "--yield_table",
-        required=False,
-        action="store_true",
-        help="create yield table or not ")
+
     parser.add_argument(
         "--years",
         required=False,
@@ -121,7 +117,8 @@ def main(args):
     logger = setup_logger(args.log_level, args.log_file)
 
     if args.config is not None:
-        with open(expand_path(args.config), "r") as f_in:
+        # with open(expand_path(args.config), "r") as f_in:
+        with open(args.config, "r") as f_in:
             args.config = json.load(f_in)
 
     logger.debug("Running HiggsDNA analysis with config:")

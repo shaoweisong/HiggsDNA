@@ -4,7 +4,9 @@ import json
 import copy
 
 import logging
-logger = logging.getLogger(__name__)
+# logger = logging.getLogger(__name__)
+from higgs_dna.utils.logger_utils import simple_logger
+logger = simple_logger(__name__)
 
 from higgs_dna.utils.metis_utils import do_cmd
 
@@ -126,13 +128,6 @@ def update_dict(original, new):
     """
 
     updated = copy.deepcopy(original)
-
-    for key, value in new.items():
-        if key not in original.keys():
-            if isinstance(value, dict):
-                updated[key] = copy.deepcopy(value)
-            else:
-                updated[key] = value
 
     for key, value in original.items():
         if key in new.keys():

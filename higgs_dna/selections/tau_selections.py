@@ -1,7 +1,9 @@
 import awkward
 
 import logging
-logger = logging.getLogger(__name__)
+# logger = logging.getLogger(__name__)
+from higgs_dna.utils.logger_utils import simple_logger
+logger = simple_logger(__name__)
 
 from higgs_dna.selections import object_selections
 from higgs_dna.utils import misc_utils
@@ -13,9 +15,9 @@ DEFAULT_TAUS = {
     "deep_tau_vs_ele" : 1,
     "deep_tau_vs_mu" : 2,
     "deep_tau_vs_jet" : 8,
-    "dr_photons" : 0.5,
-    "dr_electrons" : 0.5,
-    "dr_muons" : 0.5,
+    "dr_photons" : 0.2,
+    "dr_electrons" : 0.2,
+    "dr_muons" : 0.2,
     "decay_mode" : False 
 }
 

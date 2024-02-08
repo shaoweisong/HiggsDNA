@@ -6,10 +6,13 @@ import os
 import importlib
 
 import logging
-logger = logging.getLogger(__name__)
+# logger = logging.getLogger(__name__)
+from higgs_dna.utils.logger_utils import simple_logger
+logger = simple_logger(__name__)
 
 from higgs_dna.constants import NOMINAL_TAG
 from higgs_dna.taggers.tagger import Tagger
+from higgs_dna.taggers.golden_json_tagger import GoldenJsonTagger
 from higgs_dna.utils import awkward_utils
 
 class TagSequence():
@@ -25,14 +28,13 @@ class TagSequence():
     :param ext: string to identify the output files from this :class:`higgs-dna.taggers.tag_sequence.TagSequence` object
     :type ext: str, optional
     """
-    def __init__(self, tag_list, name = "default", sample = None,output_dir=None):
+    def __init__(self, tag_list, name = "default", sample = None):
         self.name = name
         self.sample = sample
 
         self.tag_list = []
         self.selections = {}
         self.summary = {}
-        self.output_dir = output_dir
 
             
         logger.info("[TagSequence : __init__] Creating tag sequence with the following tags and priority:")
@@ -59,6 +61,14 @@ class TagSequence():
             self.tag_list.append(m_tag_set)
             logger.info("[TagSequence : __init__] The %d-th tag set has taggers %s (listed in order priority will be given)." % (i, str([t.name for t in m_tag_set])))
 
+        # If this is data, insert a golden json tagger at the beginning of the tag sequence
+        if self.tag_list[0][0].is_data:
+            logger.info("[TagSequence : __init__] Inserting a golden json tagger at beginning of tag sequence since this is data.")
+            self.tag_list.insert(
+                    0,
+                    [GoldenJsonTagger(is_data=True, year=m_tag_set[0].year)]
+            )
+
 
     def create_tagger(self, config):
         module = importlib.import_module(config["module_name"])
@@ -69,7 +79,6 @@ class TagSequence():
         if self.sample is not None:
             config["kwargs"]["is_data"] = self.sample.is_data
             config["kwargs"]["year"] = self.sample.year
-            config['kwargs']['output_dir']=self.output_dir
 
         tagger = getattr(
             module,
@@ -79,7 +88,7 @@ class TagSequence():
         return tagger
 
 
-    def run(self, events, syst_tag = NOMINAL_TAG):
+    def run(self, events):
         """
         Get initial tag selections (potentially with overlap),remove overlap between tags,
         add a field 'tag_idx' indicating which tag each event belongs to, and return selected events. 
@@ -90,21 +99,33 @@ class TagSequence():
         :rtype: dict, dict
         """
 
+        if not isinstance(events, dict):
+            events = { NOMINAL_TAG : events}
+
+        logger.info("For all tags, performing selection on the following sets of events, each corresponding to a separate independent collection.")
+        for syst_tag in events.keys():
+            logger.info("\t%s" % syst_tag)
+
+        self.selected_events = events
+
+        # Loop through sets of tags
+        # If there is only 1 tag, we run this tag and give its output as input to the next set of tags
+        # If there is more than 1 tag, we also make sure that their selections are orthogonal
         for i, tag_set in enumerate(self.tag_list):
             n_taggers = len(tag_set)
 
-            events = self.run_taggers(events, syst_tag, tag_set)
+            self.run_taggers(tag_set)
             if n_taggers > 1:
-                events = self.orthogonalize_tags(events, syst_tag, tag_set)
-            events = self.select_events(events, syst_tag, tag_set)
+                self.orthogonalize_tags(tag_set)
+            self.select_events(tag_set)
 
 
         self.summarize()
 
-        return events, self.tag_idx_map
+        return self.selected_events, self.tag_idx_map
 
 
-    def run_taggers(self, events, syst_tag, tag_list):
+    def run_taggers(self, tag_list):
         """
         Get initial selection for each tag and allow taggers to add fields to events array.
         There is still overlap between tags at this step (if more than one tagger present).
@@ -113,13 +134,14 @@ class TagSequence():
         :type tag_list: list of higgs_dna.taggers.tagger.Tagger
         """
         for idx, tagger in enumerate(tag_list):
-            if tagger.name not in self.selections.keys():
-                self.selections[tagger.name] = {}
-            self.selections[tagger.name][syst_tag], events = tagger.run(events, syst_tag)
+            self.selections[tagger.name], self.selected_events = tagger.run(self.selected_events)
             self.summary[tagger.name] = { "priority" : idx }
 
-            self.summary[tagger.name][syst_tag] = int(awkward.sum(self.selections[tagger.name][syst_tag]))
-        return events
+            for name in self.selections[tagger.name].keys():
+                self.summary[tagger.name][name] = { 
+                            "n_events_pre_overlap_removal" : int(awkward.sum(self.selections[tagger.name][name]))
+                            # add int() because json does not recgonize numpy int64 dtype
+                }
 
 
     def orthogonalize_tags(self, tag_list):
@@ -131,21 +153,24 @@ class TagSequence():
         :type tag_list: list of higgs_dna.taggers.tagger.Tagger
         """
 
-        for idx, tagger in enumerate(tag_list):
-            tagger_name = tagger.name
-            selection = self.selections[tagger_name][syst_tag]
-            if idx == 0: # first tag in sequence, no overlap removal needed 
-                prev_selected_events = selection
-            else:
-                selection = selection & (~self.prev_selected_events)
-                self.selections[tagger_name][syst_tag] = selection
-                self.summary[tagger_name][syst_tag]["n_events_post_overlap_removal"] = int(awkward.sum(selection))
-                logger.debug("[TagSequence : othogonalize_tags] tag : %s, syst tag : %s, %d (%d) events before (after) overlap removal" % (tagger_name, syst_tag, self.summary[tagger_name][syst_tag]["n_events_pre_overlap_removal"], self.summary[tagger_name][syst_tag]["n_events_post_overlap_removal"]))
+        for syst_tag, syst_events in self.selected_events.items():
+            for idx, tagger in enumerate(tag_list):
+                tagger_name = tagger.name
+                selection = self.selections[tagger_name][syst_tag]
+                if idx == 0: # first tag in sequence, no overlap removal needed 
+                    self.prev_selected_events = selection
 
-                prev_selected_events = selection & prev_selected_events
+                else:
+                    selection = selection & (~self.prev_selected_events)
+                    self.selections[tagger_name][syst_tag] = selection
+                    self.summary[tagger_name][syst_tag]["n_events_post_overlap_removal"] = int(awkward.sum(selection)) 
+
+                    logger.debug("[TagSequence : othogonalize_tags] tag : %s, syst tag : %s, %d (%d) events before (after) overlap removal" % (tagger_name, syst_tag, self.summary[tagger_name][syst_tag]["n_events_pre_overlap_removal"], self.summary[tagger_name][syst_tag]["n_events_post_overlap_removal"])) 
+
+                    self.prev_selected_events = selection & self.prev_selected_events
 
 
-    def select_events(self, events, syst_tag, tag_list):
+    def select_events(self, tag_list):
         """
         Add a column to indicate which tag each event belongs to.
         Create trimmed awkward.Array for each systematic variation,
@@ -158,15 +183,17 @@ class TagSequence():
         for idx, tagger in enumerate(tag_list):
             self.tag_idx_map[tagger.name] = idx
 
+        for syst_tag, syst_events in self.selected_events.items(): 
+            tag_idx = numpy.ones_like(awkward.to_numpy(syst_events.run)) * -1
 
-        tag_idx = numpy.ones_like(awkward.to_numpy(events.run)) * -1
-        if len(events) >= 1:
-            for tagger_name, idx in self.tag_idx_map.items():
-                tag_idx[self.selections[tagger_name][syst_tag]] = idx
-        awkward_utils.add_field(events, "tag_idx", tag_idx, overwrite = True)
-        selection = events.tag_idx >= 0
+            if len(syst_events) >= 1:
+                for tagger_name, idx in self.tag_idx_map.items():
+                    tag_idx[self.selections[tagger_name][syst_tag]] = idx    
+            awkward_utils.add_field(syst_events, "tag_idx", tag_idx, overwrite = True)
 
-        return events[selection] 
+            # Keep only selected events
+            selection = syst_events.tag_idx >= 0
+            self.selected_events[syst_tag] = syst_events[selection] 
 
 
     def summarize(self):

@@ -66,5 +66,6 @@ fi
 
   python scripts/run_analysis.py --log-level "DEBUG" --config "metadata/analysis/wwgg_nosys/HHWW_preselection_bkg_FHSL.json" --sample_list "DiPhotonJetsBox_M40_80-sherpa","DiPhotonJetsBox_MGG-80toInf_13TeV-sherpa"  --output_dir "/eos/user/s/shsong/HiggsDNA/fakephoton16pre" --yield_table --no_systematics --unretire_jobs
   python scripts/run_analysis.py --log-level "DEBUG" --config "metadata/analysis/wwgg_nosys/HHWW_preselection_bkg_FHSL.json" --sample_list "DiPhotonJetsBox_M40_80-sherpa","DiPhotonJetsBox_MGG-80toInf_13TeV-sherpa"  --output_dir "/eos/user/s/shsong/HiggsDNA/fakephoton16post" --yield_table --no_systematics --unretire_jobs
+  python scripts/run_analysis.py --log-level "DEBUG" --config "metadata/analysis/wwgg_nosys/HHWW_preselection_bkg_FHSL.json" --sample_list "DiPhotonJetsBox_M40_80-sherpa"  --output_dir "/eos/user/s/shsong/HiggsDNA/ttesttt" --yield_table --short  --unretire_jobs
 
 
