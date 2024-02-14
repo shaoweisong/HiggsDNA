@@ -418,6 +418,7 @@ class ObjectWeightSystematic(WeightSystematic):
         weights = {}
 
         for variation, branch in self.branches.items():
+            print("see branches",events)
             if central_only and not variation == "central":
                 continue
 
@@ -431,7 +432,11 @@ class ObjectWeightSystematic(WeightSystematic):
             else:
                 target_branch = (self.target_collection,) + branch[1:]
 
-            weights[variation] = awkward.prod(events[target_branch], axis = 1)
+            jagged = "var" in str(events[target_branch].type)
+            if jagged:
+                weights[variation] = awkward.prod(events[target_branch], axis = 1)
+            else:
+                weights[variation] = events[target_branch]
 
             if self.normalization_factors is not None:
                 with open(misc_utils.expand_path(self.normalization_factors), "r") as f_in:
@@ -599,4 +604,3 @@ class SystematicWithIndependentCollection(Systematic):
             )
 
         return independent_collections
-
