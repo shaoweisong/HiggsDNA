@@ -306,6 +306,72 @@ def photon_mva_id_sf(events, year, central_only, input_collection, working_point
 
     return variations
  
+def photon_mva_id_sf(events, year, central_only, input_collection, working_point = "none"):
+    """
+    See: 
+        - https://cms-nanoaod-integration.web.cern.ch/commonJSONSFs/EGM_photon_Run2_UL/EGM_photon_2017_UL.html
+        - https://gitlab.cern.ch/cms-nanoAOD/jsonpog-integration/-/blob/master/examples/photonExample.py
+    """
+
+    required_fields = [
+        (input_collection, "eta"), (input_collection, "pt")
+    ]
+
+    missing_fields = awkward_utils.missing_fields(events, required_fields)
+
+    evaluator = _core.CorrectionSet.from_file(misc_utils.expand_path(PHOTON_ID_SF_FILE[year]))
+
+    photons = events[input_collection]
+
+    # Flatten photons then convert to numpy for compatibility with correctionlib
+    n_photons = awkward.num(photons)
+    photons_flattened = awkward.flatten(photons)
+
+    pho_pt = numpy.clip(
+        awkward.to_numpy(photons_flattened.pt),
+        20.0, # SFs only valid for pT >= 20.0
+        999999999.
+    )
+
+    pho_eta = awkward.to_numpy(photons_flattened.eta)
+
+    # Calculate SF and syst
+    variations = {} 
+    sf = evaluator["UL-Photon-ID-SF"].evalv(
+            PHOTON_ID_SF[year],
+            "sf",
+            working_point,
+            pho_eta,
+            pho_pt
+    )
+    variations["central"] = awkward.unflatten(sf, n_photons)
+
+    if not central_only:
+        syst_vars = ["sfup", "sfdown"]
+        for syst_var in syst_vars:
+            syst = evaluator["UL-Photon-ID-SF"].evalv(
+                    PHOTON_ID_SF[year],
+                    syst_var,
+                    working_point,
+                    pho_eta,
+                    pho_pt
+            )
+            if "up" in syst_var:
+                syst_var_name = "up"
+            elif "down" in syst_var:
+                syst_var_name = "down"
+            variations[syst_var_name] = awkward.unflatten(syst, n_photons)
+
+    for var in variations.keys():
+        # Set SFs = 1 for leptons which are not applicable
+        variations[var] = awkward.where(
+                photons.pt < 20.0,
+                awkward.ones_like(variations[var]),
+                variations[var]
+        )
+
+    return variations
+ 
     
 ############
 ### FNUF ###

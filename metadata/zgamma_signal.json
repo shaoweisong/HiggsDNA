@@ -20,6 +20,20 @@
     ],
     "systematics" : {
         "weights" : {
+            "photon_id_sf" : {
+                "type" : "object",
+                "method" : "from_function",
+                "function" : {
+                    "module_name" : "higgs_dna.systematics.photon_systematics",
+                    "name" : "photon_mva_id_sf"
+                },
+                "modify_central_weight" : true,
+                "input_collection" : "Photon",
+                "target_collections" : [["Photon"]],
+                "kwargs" : {
+                    "working_point" : "wp80"
+                }
+            },
             "electron_veto_sf" : {
                 "type" : "object",
                 "method" : "from_function",
@@ -30,6 +44,31 @@
                  "modify_central_weight" : true,
                  "input_collection" : "Photon",
                  "target_collections" : [["Photon"]]
+            },
+            "isoelectron_id_sf" : {
+                "type" : "object",
+                "method" : "from_function",
+                "function" : {
+                    "module_name" : "higgs_dna.systematics.lepton_systematics",
+                    "name" : "electron_id_sf"
+                },
+                "modify_central_weight" : true,
+                "input_collection" : "Electron",
+                "target_collections" : ["SelectedElectron"],
+                "kwargs" : {
+                    "working_point" : "wp90iso"
+                }    
+            },
+            "loosemuon_id_sf" : {
+                "type" : "object",
+                "method" : "from_function",
+                "function" : {
+                    "module_name" : "higgs_dna.systematics.lepton_systematics",
+                    "name" : "muon_looseid_sf"
+                },
+                "modify_central_weight" : true,
+                "input_collection" : "Muon",
+                "target_collections" : ["SelectedMuon"]
             },
             "photon_presel_sf" : {
                 "type" : "object",
