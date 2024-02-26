@@ -135,11 +135,7 @@
         "Muon_corrected_pt","Muon_correctedUp_pt","Muon_correctedDown_pt","LHEScaleWeight_Zero", "LHEScaleWeight_One", "LHEScaleWeight_Three", "LHEScaleWeight_Four", "LHEScaleWeight_Five", "LHEScaleWeight_Seven", "LHEScaleWeight_Eight","Photon_dEsigmaDown","Photon_dEsigmaUp","Photon_pt_ScaleUp","Photon_pt_ScaleDown","Jet_pt_nom", "Jet_pt_jerUp", "Jet_pt_jerDown", "Jet_pt_jesTotalUp", "Jet_pt_jesTotalDown","MET_T1_pt","MET_T1_pt_jerUp","MET_T1_pt_jerDown","MET_T1_pt_jesTotalUp","MET_T1_pt_jesTotalDown","MET_T1_pt_unclustEnUp","MET_T1_pt_unclustEnDown","Muon_corrected_pt","Muon_correctedUp_pt","Muon_correctedDown_pt"
         ],
         "branch_map" : {
-            "mc" : [
-                [["Jet", "pt"], ["Jet", "pt_nom"]],
-                [["Muon", "pt"], ["Muon", "corrected_pt"]],
-                ["MET_pt", "MET_T1_pt"]
-            ],
+            "mc" : [],
             "data" : []
         }
 }
