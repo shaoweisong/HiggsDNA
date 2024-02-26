@@ -1,4 +1,14 @@
 {
+    "ggH_customised_test": {
+        "xs": 48.52,
+        "bf": 0.000154793142,
+        "files": {
+            "2017": [
+                "/eos/user/s/shsong/HiggsDNA/hzginput/0F9A99B7-6A7F-D644-B5E7-5CBF2C7F7D81_Skim.root",
+                "/eos/user/s/shsong/HiggsDNA/hzginput/skimmed_nano_mc.root"
+            ]
+        }
+    },
     "addition": {
         "xs": 48.52,
         "bf": 0.000154793142,
@@ -14,12 +24,7 @@
         "files": {
             "20165": "/GluGluHToZG_ZToLL_M-125_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL16NanoAODAPVv9-106X_mcRun2_asymptotic_preVFP_v11-v1/NANOAODSIM",
             "2016": "/GluGluHToZG_ZToLL_M-125_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL16NanoAODv9-106X_mcRun2_asymptotic_v17-v1/NANOAODSIM",
-            "2017": [
-                "root://cmsxrootd.fnal.gov//store/mc/RunIISummer20UL17NanoAODv9/GluGluHToZG_ZToLL_M-125_TuneCP5_13TeV-powheg-pythia8/NANOAODSIM/106X_mc2017_realistic_v9-v1/70000/93B37B9F-16D5-6F4F-B920-3B9C682CA8A8.root",
-                "root://cmsxrootd.fnal.gov//store/mc/RunIISummer20UL17NanoAODv9/GluGluHToZG_ZToLL_M-125_TuneCP5_13TeV-powheg-pythia8/NANOAODSIM/106X_mc2017_realistic_v9-v1/70000/AED2B035-3C41-E044-92B7-5A908898EE0F.root",
-                "root://cmsxrootd.fnal.gov//store/mc/RunIISummer20UL17NanoAODv9/GluGluHToZG_ZToLL_M-125_TuneCP5_13TeV-powheg-pythia8/NANOAODSIM/106X_mc2017_realistic_v9-v1/70000/E3D30224-C63D-CC48-9259-B0BE9FED9BB1.root",
-                "root://cmsxrootd.fnal.gov//store/mc/RunIISummer20UL17NanoAODv9/GluGluHToZG_ZToLL_M-125_TuneCP5_13TeV-powheg-pythia8/NANOAODSIM/106X_mc2017_realistic_v9-v1/70000/E794DDC9-6560-064E-B36C-4E0D9DEF8556.root"
-            ],
+            "2017": "/GluGluHToZG_ZToLL_M-125_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL17NanoAODv9-106X_mc2017_realistic_v9-v1/NANOAODSIM",
             "2018": "/GluGluHToZG_ZToLL_M-125_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM"
         }
     },

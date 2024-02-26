@@ -1,0 +1,1 @@
+python scripts/run_analysis.py --sample_list "ggH_customised_test" --config "metadata/zgamma_signal_run2_sys.json" --log-level "DEBUG" --n_cores 5 --output_dir /eos/user/s/shsong/HiggsDNA/hzgtest --unretire_jobs --short --batch_system "local"

@@ -1,4 +1,10 @@
 {
+    "ggH_customised_test":{
+        "xs": 48.52,
+        "bf": 0.000154793142,
+        "files": {
+            "2017": "/eos/user/s/shsong/HiggsDNA/hzginput"
+        }},
     "addition": {
         "xs": 48.52,
         "bf": 0.000154793142,
