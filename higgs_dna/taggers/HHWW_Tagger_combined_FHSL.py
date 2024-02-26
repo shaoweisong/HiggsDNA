@@ -723,11 +723,13 @@ class HHWW_Preselection_FHSL(Tagger):
         WP90cut=events.is_passPhotonMVA90==True
         if not self.is_data and self.options["gen_info"]["is_Signal"]:    
             self.register_cuts(
-                names=["Photon id Selection","category_cut", "Z_veto_cut","WP90cut"],
-                results=[photon_id_cut, category_cut, Z_veto_cut,WP90cut])
+                # names=["Photon id Selection","category_cut", "Z_veto_cut","WP90cut"],
+                # results=[photon_id_cut, category_cut, Z_veto_cut,WP90cut])
+                names=["Z_veto_cut","Photon id Selection", "category_cut"],
+                results=[Z_veto_cut, Z_veto_cut&WP90cut, Z_veto_cut&WP90cut&category_cut])
         else:
             self.register_cuts(
-                names=["Photon id Selection","category_cut", "Z_veto_cut"],
-                results=[photon_id_cut, category_cut, Z_veto_cut])
+                names=["Z_veto_cut","Photon id Selection", "category_cut"],
+                results=[Z_veto_cut, Z_veto_cut&WP90cut, Z_veto_cut&WP90cut&category_cut])
 
         return presel_cut, events
