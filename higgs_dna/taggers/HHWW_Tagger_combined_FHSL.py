@@ -113,11 +113,12 @@ DEFAULT_OPTIONS = {
         "dr_electrons": 0.4,
         "dr_muons": 0.4,
         "dr_jets": 0.4,
+        "btagDeepFlavB":-999 #no btag for AK4 jet. Using the btagDeepFlavB score information to train the BDT
     },
     "fatjets": {
         "pt": 100.0,
         "eta": 2.4,
-        # "Hqqqq_vsQCDTop": 0.4,
+        "xbb_over_qcd":0.9,
         "dr_photons": 0.8,
         "dr_electrons": 0.8,
         "dr_muons": 0.8
@@ -474,6 +475,8 @@ class HHWW_Preselection_FHSL(Tagger):
         PN_bkgs_4q = events.FatJet.inclParTMDV1_probQCDb+events.FatJet.inclParTMDV1_probQCDbb+events.FatJet.inclParTMDV1_probQCDc+events.FatJet.inclParTMDV1_probQCDcc+events.FatJet.inclParTMDV1_probQCDothers+events.FatJet.inclParTMDV1_probTopbWq0c+events.FatJet.inclParTMDV1_probTopbWq1c+events.FatJet.inclParTMDV1_probTopbWqq0c+events.FatJet.inclParTMDV1_probTopbWqq1c
         
         fatjet_tmp = events.FatJet
+        fatjet_tmp["xbb_over_qcd"] = events["FatJet"]["particleNetMD_Xbb"]/(events["FatJet"]["particleNetMD_Xbb"]+events["FatJet"]["particleNetMD_QCD"])
+
         fatjet_tmp['METoverfatjetPt'] = events.MET_pt / fatjet_tmp.pt
         fatjet_tmp['PuppiMEToverfatjetPt'] = events.PuppiMET_pt / fatjet_tmp.pt
         # fatjet_tmp['dphi_puppiMET']=(awkward.unflatten(events.PuppiMET_phi,counts=1)-fatjet_tmp.phi)
