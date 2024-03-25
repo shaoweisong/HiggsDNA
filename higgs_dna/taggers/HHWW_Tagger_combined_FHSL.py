@@ -7,7 +7,6 @@ from higgs_dna.selections import (fatjet_selections, jet_selections,
                                   lepton_selections,gen_selections)
 from higgs_dna.taggers.tagger import NOMINAL_TAG, Tagger
 from higgs_dna.utils import awkward_utils, misc_utils
-from higgs_dna.systematics.lepton_systematics import highptmuonsf
 from higgs_dna.systematics.jet_systematics import WvsQCD_jes_syst
 vector.register_awkward()
 
