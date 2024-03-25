@@ -143,7 +143,12 @@ def dummy_jes_syst(events, is_data):
     return variations
 
 def WvsQCD_jes_syst(event,year):
+    """
+    See:
+        - https://github.com/cms-jet/ParticleNetSF/blob/ParticleNet_TopW_SFs_NanoV9/Csv/W_MD_Run2_SF.csv
 
+    Note: Particle Net WvsQCD Nanov9 SFs are applied to the W jets in the event.
+    """
     weight_PNet_WvsQCDW1_central = awkward.ones_like(event.category)
     weight_PNet_WvsQCDW2_central = awkward.ones_like(event.category)
     weight_PNet_WvsQCDW1_up = awkward.ones_like(event.category)
