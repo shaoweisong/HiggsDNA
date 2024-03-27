@@ -125,7 +125,6 @@ DEFAULT_OPTIONS = {
     "fatjets_H": {
         "pt": 300,
         "eta": 2.4,
-        # "Hqqqq_qqlv_vsQCDTop" :0.2,
         "Hqqqq_vsQCDTop" :0.4,
         "dr_photons": 0.8,
         "dr_electrons": 0.8,

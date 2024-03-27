@@ -7,7 +7,6 @@ from higgs_dna.selections import (fatjet_selections, jet_selections,
                                   lepton_selections,gen_selections)
 from higgs_dna.taggers.tagger import NOMINAL_TAG, Tagger
 from higgs_dna.utils import awkward_utils, misc_utils
-from higgs_dna.systematics.lepton_systematics import highptmuonsf
 vector.register_awkward()
 
 def delta_R(objects1, objects2, max_dr):
@@ -123,7 +122,7 @@ DEFAULT_OPTIONS = {
     "fatjets": {
         "pt": 100.0,
         "eta": 2.4,
-        # "Hqqqq_vsQCDTop": 0.4,
+        "xbb_over_qcd":0.9,
         "dr_photons": 0.8,
         "dr_electrons": 0.8,
         "dr_muons": 0.8
@@ -131,13 +130,11 @@ DEFAULT_OPTIONS = {
     "fatjets_H": {
         "pt": 300,
         "eta": 2.4,
-        # "Hqqqq_qqlv_vsQCDTop" :0.2,
         "Hqqqq_vsQCDTop" :0.4,
         "dr_photons": 0.8,
         "dr_electrons": 0.8,
         "dr_muons": 0.8
     },
-    # "photon_id": -0.9,
     "photon_id": -0.9,
     "btag_wp": {
         "2016": 0.3093,
@@ -502,6 +499,7 @@ class HHWW_Tagger_combinedYH_FHSL(Tagger):
         PN_bkgs_4q = events.FatJet.inclParTMDV1_probQCDb+events.FatJet.inclParTMDV1_probQCDbb+events.FatJet.inclParTMDV1_probQCDc+events.FatJet.inclParTMDV1_probQCDcc+events.FatJet.inclParTMDV1_probQCDothers+events.FatJet.inclParTMDV1_probTopbWq0c+events.FatJet.inclParTMDV1_probTopbWq1c+events.FatJet.inclParTMDV1_probTopbWqq0c+events.FatJet.inclParTMDV1_probTopbWqq1c
         
         fatjet_tmp = events.FatJet
+        fatjet_tmp["xbb_over_qcd"] = events["FatJet"]["particleNetMD_Xbb"]/(events["FatJet"]["particleNetMD_Xbb"]+events["FatJet"]["particleNetMD_QCD"])
         # fatjet_tmp['dphi_puppiMET']=(awkward.unflatten(events.PuppiMET_phi,counts=1)-fatjet_tmp.phi)
         fatjet_tmp['Hqqqq_vsQCDTop'] = PN_sigs_4q / (PN_bkgs_4q + PN_sigs_4q)  
         fatjet_tmp['WvsQCDMD']=(events.FatJet.particleNetMD_Xcc + events.FatJet.particleNetMD_Xqq)/(events.FatJet.particleNetMD_Xcc + events.FatJet.particleNetMD_Xqq + events.FatJet.particleNetMD_QCD)
@@ -628,6 +626,8 @@ class HHWW_Tagger_combinedYH_FHSL(Tagger):
 
         awkward_utils.add_field(events,"nGoodAK8jets",n_fatjets)
 
+        # photon_id_cut = (events.LeadPhoton.mvaID_modified > self.options["photon_id"]) & (
+        #     events.SubleadPhoton.mvaID_modified > self.options["photon_id"])
         photon_id_cut = (events.LeadPhoton.mvaID_modified > self.options["photon_id"]) & (
             events.SubleadPhoton.mvaID_modified > self.options["photon_id"])
         # ----------------------------------------------------------------------------------------------------#
