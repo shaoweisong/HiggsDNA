@@ -628,8 +628,8 @@ class HHWW_Tagger_combinedYH_FHSL(Tagger):
 
         awkward_utils.add_field(events,"nGoodAK8jets",n_fatjets)
 
-        photon_id_cut = (events.LeadPhoton.mvaID > self.options["photon_id"]) & (
-            events.SubleadPhoton.mvaID > self.options["photon_id"])
+        photon_id_cut = (events.LeadPhoton.mvaID_modified > self.options["photon_id"]) & (
+            events.SubleadPhoton.mvaID_modified > self.options["photon_id"])
         # ----------------------------------------------------------------------------------------------------#
   
 
