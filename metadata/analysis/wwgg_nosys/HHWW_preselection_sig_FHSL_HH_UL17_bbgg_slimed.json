@@ -88,7 +88,7 @@
 
     ],
     "branches": [
-        "PuppiMET_phi","PuppiMET_pt","PuppiMET_sumEt",
+        "HLT_Diphoton30_22_R9Id_OR_IsoCaloId_AND_HE_R9Id_Mass90","HLT_Diphoton30_18_R9Id_OR_IsoCaloId_AND_HE_R9Id_Mass90","PuppiMET_phi","PuppiMET_pt","PuppiMET_sumEt",
         "SubJet_eta","SubJet_mass", "SubJet_phi",	"SubJet_pt",
         "Photon_pt", "Photon_eta", "Photon_phi", "Photon_mass",
         "Photon_pixelSeed", "Photon_mvaID", "Photon_electronVeto","Pileup_nTrueInt",
