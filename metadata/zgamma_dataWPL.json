@@ -9,7 +9,7 @@
             "module_name": "higgs_dna.taggers.zgamma_tagger_data",
             "tagger": "ZGammaTaggerData",
             "kwargs": {
-                "name": "zgamma_tagger_data",
+                "name": "zgamma_tagger_dataWPL",
                 "options": {
                     "gen_info": {
                         "calculate": true

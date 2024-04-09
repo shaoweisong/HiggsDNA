@@ -45,7 +45,7 @@ DEFAULT_OPTIONS = {
     }, 
     "electrons" : {
         "pt" : 7.0,
-        "id": "HZZ"
+        "id": "WPL"
     },
     "muons" : {
         "pt" : 5.0

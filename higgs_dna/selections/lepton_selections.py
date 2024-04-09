@@ -40,6 +40,20 @@ def select_electrons(electrons, options, clean, name = "none", tagger = None):
     elif options["id"] == "WPL":
         # id_cut = electrons.mvaIso_WPL == True # run3
         id_cut = electrons.mvaFall17V2Iso_WPL == True # run2 nanoaodv9
+    elif options["id"] == "HZZ":
+        ptbin1=(electrons.pt>5)&(electrons.pt<=10)
+        ptbin2=electrons.pt>10
+        etabin1=electrons.eta<0.8
+        etabin2=(electrons.eta>=0.8)&(electrons.eta<1.479)
+        etabin3=(electrons.eta>=1.479)&(electrons.eta<2.5)
+        cat1=ptbin1*etabin1*(electrons.mvaHZZIso>0.9128577458)
+        cat2=ptbin1*etabin2*(electrons.mvaHZZIso>0.9056792368)
+        cat3=ptbin1*etabin3*(electrons.mvaHZZIso>0.9439440575)
+        cat4=ptbin2*etabin1*(electrons.mvaHZZIso>0.1559788054)
+        cat5=ptbin2*etabin2*(electrons.mvaHZZIso>0.0273863727)
+        cat6=ptbin2*etabin3*(electrons.mvaHZZIso>-0.5532483665)
+        HZZID=(cat1|cat2|cat3|cat4|cat5|cat6)
+        id_cut = HZZID # run2 nanoaodv9
     elif not options["id"] or options["id"].lower() == "none":
         id_cut = electrons.pt > 0.
     else:
