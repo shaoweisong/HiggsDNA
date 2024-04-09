@@ -24,38 +24,25 @@
                 "name": "HHWW_Tagger_combinedYH_FHSL",
                 "options": {
                     "gen_info": {
-                        "is_Signal": true
+                        "is_Signal": false
                     }
                 }
             }
         }
     ],
-    "systematics" : {
+        "systematics" : {
         "weights" : {
-            },
-        "independent_collections" : { }
-            },
+        
+    },
+    "independent_collections" : {
+        }},
 
     "samples": {
-        "catalog": "metadata/samples/hhww_sig_slimed_UL17_bbgg.json",
+        "catalog": "metadata/samples/hhww_data_bkg_UL17.json",
         "sample_list": [
-            "GluGluToRadionToHHTo2B2G_M-1000",
-            "GluGluToRadionToHHTo2B2G_M-1100",
-            "GluGluToRadionToHHTo2B2G_M-1200",
-            "GluGluToRadionToHHTo2B2G_M-1300",
-            "GluGluToRadionToHHTo2B2G_M-1400",
-            "GluGluToRadionToHHTo2B2G_M-1500",
-            "GluGluToRadionToHHTo2B2G_M-1600",
-            "GluGluToRadionToHHTo2B2G_M-1700",
-            "GluGluToRadionToHHTo2B2G_M-1800",
-            "GluGluToRadionToHHTo2B2G_M-1900",
-            "GluGluToRadionToHHTo2B2G_M-2000",
-            "GluGluToRadionToHHTo2B2G_M-2200",
-            "GluGluToRadionToHHTo2B2G_M-2400",
-            "GluGluToRadionToHHTo2B2G_M-2600",
-            "GluGluToRadionToHHTo2B2G_M-2800",
-            "GluGluToRadionToHHTo2B2G_M-3000"
-        ],
+            "DoubleEG_Run2017B","DoubleEG_Run2017C","DoubleEG_Run2017D","DoubleEG_Run2017E","DoubleEG_Run2017F",
+            "DiPhotonJetsBox_M40_80-sherpa","DiPhotonJetsBox_MGG-80toInf_13TeV-sherpa"
+         ],
         "years": [
             "2017"
         ]
