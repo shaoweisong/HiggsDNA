@@ -443,7 +443,13 @@ class HHWW_Tagger_combinedYH_FHSL(Tagger):
             name="SelectedMuon_iso",
             data=events.Muon[muon_iso_cut]
         )
-        
+        awkward_utils.add_object_fields(
+            events = events,
+            name = "muon_iso",
+            objects = muons_iso,
+            n_objects = 1,
+            dummy_value = -999
+        )   
         muons_all_cut = lepton_selections.select_muons(
             muons=events.Muon,
             options=self.options["muons_all"],
