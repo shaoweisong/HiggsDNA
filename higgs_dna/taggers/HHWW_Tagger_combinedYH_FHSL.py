@@ -685,6 +685,8 @@ class HHWW_Tagger_combinedYH_FHSL(Tagger):
         # ----------------------------------------------------------------------------------------------------#
         category_cut = (category > 0) # cut the events with category == 0
         awkward_utils.add_field(events, "category", category) 
+        if not self.is_data and self.options["gen_info"]["is_Signal"]: 
+            events=WvsQCD_loose_jes_syst(events,self.year)
         # if not self.is_data and self.options["gen_info"]["is_Signal"]: 
         #     events=highptmuonsf(events)
         WP80=awkward.concatenate([awkward.unflatten(events.LeadPhoton.mvaID_WP80,counts=1),awkward.unflatten(events.SubleadPhoton.mvaID_WP80,counts=1)],axis=-1)
