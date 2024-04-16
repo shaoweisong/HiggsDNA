@@ -84,3 +84,15 @@ python -m unittest -v
 ``` 
 
 Please note that this is good practice even if CI is available. It is indeed a waste of time and resources to trigger a build if there is something clearly wrong that can be spotted by simply running the above mentioned command.
+### Tests to preselect wwgg events
+Preselecting data
+
+```
+python scripts/run_analysis.py --log-level "DEBUG" --config "metadata/analysis/wwgg_nosys/HHWW_preselection_data_FHSL_YH_UL17_slimed.json" --sample_list "DoubleEG_Run2017B" --output_dir "/eos/user/{your_path}/" --short --batch_system "local"
+```
+
+preselecting signal with systematic uncertainties correction
+```
+python scripts/run_analysis.py --log-level "DEBUG" --config "metadata/analysis/wwgg_sys/HHWW_preselection_sig_FHSL_YH_UL17_slimed.json" --sample_list "GluGluToRadionToHHTo2G2WTo2G4Q_M-250" --output_dir "/eos/user/{your_path}/"  --batch_system "local" --short
+```
+Please note that this step can only be successfully executed if you have stored systematic branches using the official NanoAOD tool.
