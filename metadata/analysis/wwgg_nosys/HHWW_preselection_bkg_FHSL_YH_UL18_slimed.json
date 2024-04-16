@@ -12,7 +12,7 @@
                 "name": "diphoton_tagger",
                 "options": {
                     "gen_info": {
-                        "calculate": false
+                        "calculate": true
                     }
                 }
             }
@@ -50,7 +50,7 @@
     "variables_of_interest" : [
         "gen_obj_1_eta","gen_obj_1_mass","gen_obj_1_phi","gen_obj_1_pt","gen_obj_1_genPartIdxMother","gen_obj_1_pdgId","gen_obj_1_status","gen_obj_1_statusFlags","gen_obj_2_eta","gen_obj_2_mass","gen_obj_2_phi","gen_obj_2_pt","gen_obj_2_genPartIdxMother","gen_obj_2_pdgId","gen_obj_2_status","gen_obj_2_statusFlags","gen_obj_3_eta","gen_obj_3_mass","gen_obj_3_phi","gen_obj_3_pt","gen_obj_3_genPartIdxMother","gen_obj_3_pdgId","gen_obj_3_status","gen_obj_3_statusFlags","gen_obj_4_eta","gen_obj_4_mass","gen_obj_4_phi","gen_obj_4_pt","gen_obj_4_genPartIdxMother","gen_obj_4_pdgId","gen_obj_4_status","gen_obj_4_statusFlags",
         "PuppiMET_pt","PuppiMET_sumEt",
-        ["Diphoton","maxID_modified"],["Diphoton","minID_modified"],["Diphoton", "mass"], ["Diphoton", "pt"], ["Diphoton", "eta"], ["Diphoton", "phi"], ["Diphoton", "dR"],["Diphoton","genPartFlav"],["Diphoton","is_LeadPhoton"],["Diphoton","is_SubleadPhoton"],["Diphoton","minID"],["Diphoton","maxID"],["LeadPhoton", "pt"], ["LeadPhoton", "mvaID"],["LeadPhoton", "eta"], ["LeadPhoton", "phi"], ["LeadPhoton", "mass"],["SubleadPhoton", "pt"], ["SubleadPhoton", "eta"], ["SubleadPhoton", "phi"], ["SubleadPhoton", "mass"], ["SubleadPhoton", "mvaID"],["SubleadPhoton", "mvaID_modified"],["LeadPhoton", "mvaID_modified"],["LeadPhoton", "genPartFlav"], ["LeadPhoton", "pixelSeed"],["LeadPhoton","genPartFlav"],["LeadPhoton","genPartIdx"],["LeadPhoton","energyErr"], ["SubleadPhoton", "genPartFlav"], ["SubleadPhoton", "pixelSeed"],["SubleadPhoton","genPartFlav"],["SubleadPhoton","genPartIdx"],["Diphoton","minID_modified"],["Diphoton","maxID_modified"],
+        ["Diphoton", "mass"], ["Diphoton", "pt"], ["Diphoton", "eta"], ["Diphoton", "phi"], ["Diphoton", "dR"],["Diphoton","genPartFlav"],["Diphoton","is_LeadPhoton"],["Diphoton","is_SubleadPhoton"],["Diphoton","minID"],["Diphoton","maxID"],["LeadPhoton", "pt"], ["LeadPhoton", "mvaID"],["LeadPhoton", "eta"], ["LeadPhoton", "phi"], ["LeadPhoton", "mass"],["SubleadPhoton", "pt"], ["SubleadPhoton", "eta"], ["SubleadPhoton", "phi"], ["SubleadPhoton", "mass"], ["SubleadPhoton", "mvaID"],["SubleadPhoton", "mvaID_modified"],["LeadPhoton", "mvaID_modified"],["LeadPhoton", "genPartFlav"], ["LeadPhoton", "pixelSeed"],["LeadPhoton","genPartFlav"],["LeadPhoton","genPartIdx"],["LeadPhoton","energyErr"], ["SubleadPhoton", "genPartFlav"], ["SubleadPhoton", "pixelSeed"],["SubleadPhoton","genPartFlav"],["SubleadPhoton","genPartIdx"],["Diphoton","minID_modified"],["Diphoton","maxID_modified"],
         "jet_1_pt","jet_1_eta","jet_1_mass","jet_1_phi","jet_1_btagDeepFlavB",
         "jet_2_pt","jet_2_eta","jet_2_mass","jet_2_phi","jet_2_btagDeepFlavB",
         "jet_3_pt","jet_3_eta","jet_3_mass","jet_3_phi","jet_3_btagDeepFlavB",
@@ -58,14 +58,13 @@
         "jet_5_pt","jet_5_eta","jet_5_mass","jet_5_phi","jet_5_btagDeepFlavB",
         "jet_6_pt","jet_6_eta","jet_6_mass","jet_6_phi","jet_6_btagDeepFlavB",
         "electron_iso_pt", "electron_iso_eta", "electron_iso_phi", "electron_iso_mass",
-        "muon_iso_pt", "muon_iso_eta", "muon_iso_phi", "muon_iso_mass",
         "electrons_all_1_pt", "electrons_all_1_eta", "electrons_all_1_phi", "electrons_all_1_mass",
         "electrons_all_2_pt", "electrons_all_2_eta", "electrons_all_2_phi", "electrons_all_2_mass",
         "electrons_all_3_pt", "electrons_all_3_eta", "electrons_all_3_phi", "electrons_all_3_mass",
         "muons_all_1_pt", "muons_all_1_eta", "muons_all_1_phi", "muons_all_1_mass",
         "muons_all_2_pt", "muons_all_2_eta", "muons_all_2_phi", "muons_all_2_mass",
         "muons_all_3_pt", "muons_all_3_eta", "muons_all_3_phi", "muons_all_3_mass",
-        
+        "muon_iso_pt", "muon_iso_eta", "muon_iso_phi", "muon_iso_mass",
         "nGoodAK4jets","nGoodAK8jets","nGoodisoleptons","nGoodnonisoleptons","nGoodisoelectrons","nGoodnonisoelectrons","nGoodisomuons","nGoodnonisomuons",
         "fatjet_1_pt","fatjet_1_eta","fatjet_1_phi","fatjet_1_particleNetMD_Xbb","fatjet_1_particleNetMD_QCD","fatjet_1_Hqqqq_vsQCDTop","fatjet_1_WvsQCDMD","fatjet_1_particleNet_ZvsQCD","fatjet_1_msoftdrop","fatjet_1_subJetIdx1","fatjet_1_subJetIdx2",
         "fatjet_2_pt","fatjet_2_eta","fatjet_2_phi","fatjet_2_particleNetMD_Xbb","fatjet_2_particleNetMD_QCD","fatjet_2_Hqqqq_vsQCDTop","fatjet_2_WvsQCDMD","fatjet_2_particleNet_ZvsQCD","fatjet_2_msoftdrop","fatjet_2_subJetIdx1","fatjet_2_subJetIdx2",

@@ -12,7 +12,7 @@
                 "name": "diphoton_tagger",
                 "options": {
                     "gen_info": {
-                        "calculate": true
+                        "calculate": false
                     }
                 }
             }
@@ -32,9 +32,226 @@
     ],
     "systematics" : {
         "weights" : {
-           },
+            "electron_veto_sf" : {
+                "type" : "object",
+                "method" : "from_function",
+                "function" : {
+                    "module_name" : "higgs_dna.systematics.photon_systematics",
+                    "name" : "photon_electron_veto_sf"
+                 },
+                 "modify_central_weight" : true,
+                 "input_collection" : "Photon",
+                 "target_collections" : [["Diphoton", "Photon"]]
+            },
+            "photon_id_sf" : {
+                "type" : "object",
+                "method" : "from_function",
+                "function" : {
+                    "module_name" : "higgs_dna.systematics.photon_systematics",
+                    "name" : "photon_mva_id_sf"
+                },
+                "modify_central_weight" : true,
+                "input_collection" : "Photon",
+                "target_collections" : [["Diphoton", "Photon"]],
+                "kwargs" : {
+                    "working_point" : "wp90"
+                }
+            },
+            "photon_presel_sf" : {
+                "type" : "object",
+                "method" : "from_function",
+                "function" : {
+                    "module_name" : "higgs_dna.systematics.photon_systematics",
+                    "name" : "photon_presel_sf_lowmass"
+                },
+                "modify_central_weight" : true,
+                "input_collection" : "Photon",
+                "target_collections" : [["Diphoton", "Photon"]] 
+            },
+            "nonisoelectron_id_sf" : {
+                "type" : "object",
+                "method" : "from_function",
+                "function" : {
+                    "module_name" : "higgs_dna.systematics.lepton_systematics",
+                    "name" : "electron_id_sf"
+                },
+                "modify_central_weight" : true,
+                "input_collection" : "Electron",
+                "target_collections" : ["SelectedElectron_noiso"],
+                "kwargs" : {
+                    "working_point" : "wp90noiso"
+                }
+            },
+            "isoelectron_id_sf" : {
+                "type" : "object",
+                "method" : "from_function",
+                "function" : {
+                    "module_name" : "higgs_dna.systematics.lepton_systematics",
+                    "name" : "electron_id_sf"
+                },
+                "modify_central_weight" : true,
+                "input_collection" : "Electron",
+                "target_collections" : ["SelectedElectron_iso","SelectedElectron_noiso"],
+                "kwargs" : {
+                    "working_point" : "wp80iso"
+                }
+                
+            },
+            "isomuon_id_sf" : {
+                "type" : "object",
+                "method" : "from_function",
+                "function" : {
+                    "module_name" : "higgs_dna.systematics.lepton_systematics",
+                    "name" : "muon_tightid_tightiso_sf"
+                },
+                "modify_central_weight" : true,
+                "input_collection" : "Muon",
+                "target_collections" : ["SelectedMuon_iso"]
+                
+            },
+            "nonisomuon_highptid_sf" : {
+                "type" : "object",
+                "method" : "from_function",
+                "function" : {
+                    "module_name" : "higgs_dna.systematics.lepton_systematics",
+                    "name" : "highptmuonid_sf"
+                },
+                "modify_central_weight" : true,
+                "input_collection" : "Muon",
+                "target_collections" : ["SelectedMuon_noiso"]
+                
+            },
+            "nonisomuon_highptreco_sf" : {
+                "type" : "object",
+                "method" : "from_function",
+                "function" : {
+                    "module_name" : "higgs_dna.systematics.lepton_systematics",
+                    "name" : "highptmuonreco_sf"
+                },
+                "modify_central_weight" : true,
+                "input_collection" : "Muon",
+                "target_collections" : ["SelectedMuon_noiso"]
+                
+            },
+            "pu_reweight_sf" : {
+                "type" : "event",
+                "method" : "from_function",
+                "function" : {
+                    "module_name" : "higgs_dna.systematics.pileup_systematics",
+                    "name" : "pu_reweight_sf"
+                },
+                "modify_central_weight" : true,
+                "requires_branches" : ["Pileup_nTrueInt"]
+                
+            },
+            "L1_prefiring_sf" : {
+                "type" : "event",
+                "method" : "from_branch",
+                "branches" : {
+                    "central" : "L1PreFiringWeight_Nom",
+                    "up" : "L1PreFiringWeight_Up",
+                    "down" : "L1PreFiringWeight_Dn"
+                },
+                "modify_central_weight" : true            },
+            "trigger_sf" : {
+                "type" : "event",
+                "method" : "from_function",
+                "function" : {
+                    "module_name" : "higgs_dna.systematics.photon_systematics",
+                    "name" : "trigger_lowmass_sf"
+                },
+                "modify_central_weight" : true,
+                "requires_branches" : ["Diphoton", "LeadPhoton", "SubleadPhoton"]
+            }},
     "independent_collections" : {
-       }},
+        "fnuf" : {
+            "method" : "from_function",
+            "branch_modified" : ["Photon", "pt"],
+            "function" : {
+                "module_name" : "higgs_dna.systematics.photon_systematics",
+                "name" : "fnuf_unc"
+            }
+        },
+        "material" : {
+            "method" : "from_function",
+            "branch_modified" : ["Photon", "pt"],
+            "function" : {
+                "module_name" : "higgs_dna.systematics.photon_systematics",
+                "name" : "material_unc"
+            }
+        },
+        "scale" : {
+            "method" : "from_branch",
+            "branch_modified" : ["Photon", "pt"],
+            "branches" : {
+                "up" : ["Photon", "pt_ScaleUp"],
+                "down" : ["Photon", "pt_ScaleDown"]
+            }
+        },
+        "smear" : {
+            "method" : "from_branch",
+            "branch_modified" : ["Photon", "pt"],
+            "branches" : {
+                "up" : ["Photon", "dEsigmaUp"],
+                "down" : ["Photon", "dEsigmaDown"]
+            },
+            "additive" : true
+        }, 
+        "JER" : {
+            "method" : "from_branch",
+            "branch_modified" : ["Jet", "pt"],
+            "branches" : {
+                "up" : ["Jet", "pt_jerUp"],
+                "down" : ["Jet", "pt_jerDown"]
+            }
+        },
+        "JES" : {
+            "method" : "from_branch",
+            "branch_modified" : ["Jet", "pt"],
+            "branches" : {
+                "up" : ["Jet", "pt_jesTotalUp"],
+                "down" : ["Jet", "pt_jesTotalDown"]
+            }
+        },
+        "FJES" :{
+            "method" : "from_branch",
+            "branch_modified" : ["FatJet", "pt"],
+            "branches" : {
+                "up" : ["FatJet", "pt_jesTotalUp"],
+                "down" : ["FatJet", "pt_jesTotalDown"]
+            }
+        },
+        "FJER" : {
+            "method" : "from_branch",
+            "branch_modified" : ["FatJet", "pt"],
+            "branches" : {
+                "up" : ["FatJet", "pt_jerUp"],
+                "down" : ["FatJet", "pt_jerDown"]
+            }},
+        "MET_JES" : {
+            "method" : "from_branch",
+            "branch_modified" : "MET_pt",
+            "branches" : {
+                "up" : "MET_T1_pt_jesTotalUp",
+                "down" : "MET_T1_pt_jesTotalDown"
+            }
+        },
+        "MET_Unclustered" : {
+            "method" : "from_branch",
+            "branch_modified" : "MET_pt",
+            "branches" : {
+                "up" : "MET_T1_pt_unclustEnUp",
+                "down" : "MET_T1_pt_unclustEnDown"
+            }
+        },
+        "Muon_pt" : {
+                "method" : "from_branch",
+                "branch_modified" : ["Muon", "pt"],
+                "branches" : {
+                    "up" : ["Muon", "correctedUp_pt"],
+                    "down" : ["Muon", "correctedDown_pt"]
+                }
+            }}},
 
 
     "samples": {
@@ -368,13 +585,12 @@
             "GluGluToRadionToHHTo2G2ZTo2G4Q_M-3000_TuneCP5_PSWeights_narrow_13TeV"
         ],
         "years": [
-            "2017"
+            "2016UL_preVFP"
         ]
     },
     "variables_of_interest" : [
-        "gen_obj_1_eta","gen_obj_1_mass","gen_obj_1_phi","gen_obj_1_pt","gen_obj_1_genPartIdxMother","gen_obj_1_pdgId","gen_obj_1_status","gen_obj_1_statusFlags","gen_obj_2_eta","gen_obj_2_mass","gen_obj_2_phi","gen_obj_2_pt","gen_obj_2_genPartIdxMother","gen_obj_2_pdgId","gen_obj_2_status","gen_obj_2_statusFlags","gen_obj_3_eta","gen_obj_3_mass","gen_obj_3_phi","gen_obj_3_pt","gen_obj_3_genPartIdxMother","gen_obj_3_pdgId","gen_obj_3_status","gen_obj_3_statusFlags","gen_obj_4_eta","gen_obj_4_mass","gen_obj_4_phi","gen_obj_4_pt","gen_obj_4_genPartIdxMother","gen_obj_4_pdgId","gen_obj_4_status","gen_obj_4_statusFlags",
         "PuppiMET_pt","PuppiMET_sumEt",
-        ["Diphoton","maxID_modified"],["Diphoton","minID_modified"],["Diphoton", "mass"], ["Diphoton", "pt"], ["Diphoton", "eta"], ["Diphoton", "phi"], ["Diphoton", "dR"],["Diphoton","genPartFlav"],["Diphoton","is_LeadPhoton"],["Diphoton","is_SubleadPhoton"],["Diphoton","minID"],["Diphoton","maxID"],["LeadPhoton", "pt"], ["LeadPhoton", "eta"], ["LeadPhoton", "phi"], ["LeadPhoton", "mass"], ["LeadPhoton", "mvaID"], ["LeadPhoton", "mvaID_modified"], ["LeadPhoton", "genPartFlav"], ["LeadPhoton", "pixelSeed"],["LeadPhoton","genPartFlav"],["LeadPhoton","genPartIdx"],["LeadPhoton","energyErr"],["LeadPhoton","mvaID_WP80"],["LeadPhoton","mvaID_WP90"],["LeadPhoton","r9"],["LeadPhoton","s4"],["LeadPhoton","sieip"],["LeadPhoton","sieie"],["LeadPhoton","etaWidth"],["LeadPhoton","phiWidth"],["LeadPhoton","pfPhoIso03"],["LeadPhoton","pfChargedIsoPFPV"],["LeadPhoton","pfChargedIsoWorstVtx"],["LeadPhoton","energyRaw"],["LeadPhoton","scEta"],["LeadPhoton","esEnergyOverRawE"],["LeadPhoton","esEffSigmaRR"],["SubleadPhoton","r9"],["SubleadPhoton","s4"],["SubleadPhoton","sieip"],["SubleadPhoton","sieie"],["SubleadPhoton","etaWidth"],["SubleadPhoton","phiWidth"],["SubleadPhoton","pfPhoIso03"],["SubleadPhoton","pfChargedIsoPFPV"],["SubleadPhoton","pfChargedIsoWorstVtx"],["SubleadPhoton","energyRaw"],["SubleadPhoton","scEta"],["SubleadPhoton","esEnergyOverRawE"],["SubleadPhoton","esEffSigmaRR"],
+        ["Diphoton","maxID_modified"],["Diphoton","minID_modified"],["Diphoton", "mass"], ["Diphoton", "pt"], ["Diphoton", "eta"], ["Diphoton", "phi"], ["Diphoton", "dR"],["Diphoton","genPartFlav"],["Diphoton","is_LeadPhoton"],["Diphoton","is_SubleadPhoton"],["Diphoton","minID"],["Diphoton","maxID"],["Diphoton","minID"],["Diphoton","minID_modified"],["Diphoton","maxID_modified"],["LeadPhoton", "pt"], ["LeadPhoton", "eta"], ["LeadPhoton", "phi"], ["LeadPhoton", "mass"], ["LeadPhoton", "mvaID"], ["LeadPhoton", "mvaID_modified"], ["LeadPhoton", "genPartFlav"], ["LeadPhoton", "pixelSeed"],["LeadPhoton","genPartFlav"],["LeadPhoton","genPartIdx"],["LeadPhoton","energyErr"],["LeadPhoton","mvaID_WP80"],["LeadPhoton","mvaID_WP90"],["LeadPhoton","r9"],["LeadPhoton","s4"],["LeadPhoton","sieip"],["LeadPhoton","sieie"],["LeadPhoton","etaWidth"],["LeadPhoton","phiWidth"],["LeadPhoton","pfPhoIso03"],["LeadPhoton","pfChargedIsoPFPV"],["LeadPhoton","pfChargedIsoWorstVtx"],["LeadPhoton","energyRaw"],["LeadPhoton","scEta"],["LeadPhoton","esEnergyOverRawE"],["LeadPhoton","esEffSigmaRR"],["SubleadPhoton","r9"],["SubleadPhoton","s4"],["SubleadPhoton","sieip"],["SubleadPhoton","sieie"],["SubleadPhoton","etaWidth"],["SubleadPhoton","phiWidth"],["SubleadPhoton","pfPhoIso03"],["SubleadPhoton","pfChargedIsoPFPV"],["SubleadPhoton","pfChargedIsoWorstVtx"],["SubleadPhoton","energyRaw"],["SubleadPhoton","scEta"],["SubleadPhoton","esEnergyOverRawE"],["SubleadPhoton","esEffSigmaRR"],
         ["SubleadPhoton", "pt"], ["SubleadPhoton", "eta"], ["SubleadPhoton", "phi"], ["SubleadPhoton", "mass"], ["SubleadPhoton", "mvaID"],["SubleadPhoton", "mvaID_modified"], ["SubleadPhoton", "genPartFlav"], ["SubleadPhoton", "pixelSeed"],["SubleadPhoton","genPartFlav"],["SubleadPhoton","genPartIdx"],["SubleadPhoton","energyErr"], ["SubleadPhoton","mvaID_WP80"],["SubleadPhoton","mvaID_WP90"],
         "jet_1_pt","jet_1_eta","jet_1_mass","jet_1_phi","jet_1_btagDeepFlavB",
         "jet_2_pt","jet_2_eta","jet_2_mass","jet_2_phi","jet_2_btagDeepFlavB",
