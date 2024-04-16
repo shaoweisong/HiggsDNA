@@ -161,12 +161,12 @@ def WvsQCD_medium_jes_syst(event,year):
     W2ptbin1=(event["fatjet_W_2_pt"]>200 )&( event["fatjet_W_2_pt"]<=300 )
     W2ptbin2=(event["fatjet_W_2_pt"]>300 )&( event["fatjet_W_2_pt"]<=400 )
     W2ptbin3=(event["fatjet_W_2_pt"]>400 )&( event["fatjet_W_2_pt"]<=800 )
-    SF_W1_ptbin1=((event.category==1)|(event.category==7)) & W1ptbin1
-    SF_W1_ptbin2=((event.category==1)|(event.category==7)) & W1ptbin2
-    SF_W1_ptbin3=((event.category==1)|(event.category==7)) & W1ptbin3
-    SF_W2_ptbin1=(event.category==6) & W2ptbin1
-    SF_W2_ptbin2=(event.category==6) & W2ptbin2
-    SF_W2_ptbin3=(event.category==6) & W2ptbin3
+    SF_W1_ptbin1=((event.category==1)|(event.category==7)) & W1ptbin1  & event['has_one_WJet']
+    SF_W1_ptbin2=((event.category==1)|(event.category==7)) & W1ptbin2 & event['has_one_WJet']
+    SF_W1_ptbin3=((event.category==1)|(event.category==7)) & W1ptbin3 & event['has_one_WJet']
+    SF_W2_ptbin1=(event.category==6) & W2ptbin1 & event['has_two_WJet']
+    SF_W2_ptbin2=(event.category==6) & W2ptbin2 & event['has_two_WJet']
+    SF_W2_ptbin3=(event.category==6) & W2ptbin3 & event['has_two_WJet']
     if year=="2016UL_preVFP":
         weight_PNet_WvsQCDW1_central = awkward.where(SF_W1_ptbin1, awkward.ones_like(weight_PNet_WvsQCDW1_central)*0.904261, weight_PNet_WvsQCDW1_central)
         weight_PNet_WvsQCDW1_up = awkward.where(SF_W1_ptbin1, awkward.ones_like(weight_PNet_WvsQCDW1_up)*0.936451, weight_PNet_WvsQCDW1_up)

@@ -562,7 +562,18 @@ class HHWW_Tagger_combinedYH_FHSL(Tagger):
         dummy_value=-999
         )
         fatjets=fatjets[awkward.argsort(fatjets.pt, ascending=False, axis=-1)]
-
+        fatjets_W = awkward_utils.add_field(
+            events = events,
+            name = "SelectedFatJet_W",
+            data = events.FatJet
+        )   
+        awkward_utils.add_object_fields(
+        events=events,
+        name="fatjet_W",
+        objects=fatjets_W[awkward.argsort(fatjets_W.WvsQCDMD, ascending=False, axis=-1)],
+        n_objects=2,
+        dummy_value=-999
+        ) 
        
         
         # Jets
@@ -654,6 +665,8 @@ class HHWW_Tagger_combinedYH_FHSL(Tagger):
         WvsQCD_loose_workingpoints = {"2016UL_preVFP": 0.64,"2016UL_postVFP":0.64, "2017": 0.58, "2018": 0.59} #Loose working point
         Wtag=WvsQCD_loose_workingpoints[self.year]
         selection_fatjet_WvsQCD = awkward.num(fatjets.WvsQCDMD[(fatjets.WvsQCDMD > Wtag)]) >= 1
+        events['has_one_WJet'] = awkward.num(fatjets.WvsQCDMD[(fatjets.WvsQCDMD > Wtag)]) == 1
+        events['has_two_WJet'] = awkward.num(fatjets.WvsQCDMD[(fatjets.WvsQCDMD > Wtag)]) >= 2
         boosted_YH_SL_cat = (((n_leptons_iso >= 1) | (n_leptons_noiso >= 1)) & (n_fatjets >=1)) # boosted 1 jet for SL channel with isolated lep
         # boosted_YH_SL_cat_v2 = ((n_leptons_all_electrons==1) & (n_fatjets >=1) & (selection_fatjet_WvsQCD)) # boosted 1 jet for SL channel with isolated lep
         # second category: 0 lepton + 1 Wfatjet or 1 Higgs fatjet
