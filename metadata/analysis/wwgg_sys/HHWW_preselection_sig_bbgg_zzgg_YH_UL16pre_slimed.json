@@ -18,7 +18,7 @@
             }
         },
         {
-            "module_name": "higgs_dna.taggers.HHWW_Tagger_combinedYH_FHSL",
+            "module_name": "higgs_dna.taggers.HHWW_Tagger_bbgg_zzgg",
             "tagger": "HHWW_Tagger_combinedYH_FHSL",
             "kwargs": {
                 "name": "HHWW_Tagger_combinedYH_FHSL",
@@ -611,8 +611,7 @@
         "fatjet_2_pt","fatjet_2_eta","fatjet_2_phi","fatjet_2_particleNetMD_Xbb","fatjet_2_particleNetMD_QCD","fatjet_2_Hqqqq_vsQCDTop","fatjet_2_WvsQCDMD","fatjet_2_particleNet_ZvsQCD","fatjet_2_msoftdrop","fatjet_2_subJetIdx1","fatjet_2_subJetIdx2",
         "fatjet_3_pt","fatjet_3_eta","fatjet_3_phi","fatjet_3_particleNetMD_Xbb","fatjet_3_particleNetMD_QCD","fatjet_3_Hqqqq_vsQCDTop","fatjet_3_WvsQCDMD","fatjet_3_particleNet_ZvsQCD","fatjet_3_msoftdrop","fatjet_3_subJetIdx1","fatjet_3_subJetIdx2",
         "weight_PNet_WvsQCDW1_up","weight_PNet_WvsQCDW1_central","weight_PNet_WvsQCDW1_down",
-        "weight_PNet_WvsQCDW2_up","weight_PNet_WvsQCDW2_central","weight_PNet_WvsQCDW2_down",
-        "weight_central",
+        "weight_central","pass_H","pass_WvsQCD_failed_H",
         "category",
         "event"
 

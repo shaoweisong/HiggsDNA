@@ -709,12 +709,12 @@ class Task():
 
             logger.debug("[Task : add_process_id] Task '%s' : adding field 'year' with value '%s' in output file '%s'." % (self.name, self.year, merged_output))
 
-            year_array = numpy.empty(len(events), dtype="S10")
-            year_array[:] = int(self.year)
+            # year_array = numpy.empty(len(events), dtype="S10")
+            # year_array[:] = int(self.year)
             awkward_utils.add_field(
                     events = events,
                     name = "year",
-                    data = year_array 
+                    data = awkward.ones_like(events.Diphoton_pt, int(self.year)) 
             )
 
             awkward.to_parquet(events, merged_output)

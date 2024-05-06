@@ -1,7 +1,7 @@
 {
     "DoubleEG_Run2017B": {
         "process_id": 0,
-        "fpo": 3,
+        "fpo": 4,
         "files": {
             "2017": [
                 "/eos/cms/store/group/phys_b2g/shsong/nanoAODnTuples/nanoAOD_Mar2024/UL2017data/UL2017/DoubleEG_Run2017B/000E31B3-CCA4-184F-87B9-AA5B20CBCB1D.root",
@@ -652,7 +652,7 @@
     },
     "DoubleEG_Run2017C": {
         "process_id": 0,
-        "fpo": 3,
+        "fpo": 4,
         "files": {
             "2017": [
                 "/eos/cms/store/group/phys_b2g/shsong/nanoAODnTuples/nanoAOD_Mar2024/UL2017data/UL2017/DoubleEG_Run2017C/0027B81A-F2A1-074B-B048-44A6FD0B5AB2.root",
@@ -1343,7 +1343,7 @@
     },
     "DoubleEG_Run2017D": {
         "process_id": 0,
-        "fpo": 3,
+        "fpo": 4,
         "files": {
             "2017": [
                 "/eos/cms/store/group/phys_b2g/shsong/nanoAODnTuples/nanoAOD_Mar2024/UL2017data/UL2017/DoubleEG_Run2017D/018751E9-0090-CF4C-ABDA-FE7897FF46B1.root",
@@ -1621,7 +1621,7 @@
     },
     "DoubleEG_Run2017E": {
         "process_id": 0,
-        "fpo": 3,
+        "fpo": 4,
         "files": {
             "2017": [
                 "/eos/cms/store/group/phys_b2g/shsong/nanoAODnTuples/nanoAOD_Mar2024/UL2017data/UL2017/DoubleEG_Run2017E/00527C92-E1C9-4746-BB4F-AC78E3850A7E.root",
@@ -2378,7 +2378,7 @@
     },
     "DoubleEG_Run2017F": {
         "process_id": 0,
-        "fpo": 3,
+        "fpo": 4,
         "files": {
             "2017": [
                 "/eos/cms/store/group/phys_b2g/shsong/nanoAODnTuples/nanoAOD_Mar2024/UL2017data/UL2017/DoubleEG_Run2017F/002D5995-E791-B849-B2F9-9FC1B8D7E46D.root",
