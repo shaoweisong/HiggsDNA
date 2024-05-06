@@ -124,6 +124,7 @@
         "event"
     ],
     "branches": [
+        "Electron_mvaHZZIso",
         "L1PreFiringWeight_Nom",
         "L1PreFiringWeight_Up",
         "L1PreFiringWeight_Dn",

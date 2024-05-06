@@ -373,7 +373,7 @@ class Task():
         self.wrote_process_ids = False
         self.wrote_years = False
         self.merged_output_files = True
-        self.yield_table()
+        # self.yield_table()
 
     def add_process_id(self):
         """
