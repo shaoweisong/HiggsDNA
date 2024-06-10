@@ -38,7 +38,7 @@
         }},
 
     "samples": {
-        "catalog": "metadata/samples/hhww_data_bkg_UL17.json",
+        "catalog": "metadata/samples/hhww_data_bkg_UL16.json",
         "sample_list": [
             "DoubleEG_Run2017B","DoubleEG_Run2017C","DoubleEG_Run2017D","DoubleEG_Run2017E","DoubleEG_Run2017F",
             "DiPhotonJetsBox_M40_80-sherpa","DiPhotonJetsBox_MGG-80toInf_13TeV-sherpa"

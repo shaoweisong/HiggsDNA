@@ -711,11 +711,11 @@ class Task():
 
             # year_array = numpy.empty(len(events), dtype="S10")
             # year_array[:] = int(self.year)
-            awkward_utils.add_field(
-                    events = events,
-                    name = "year",
-                    data = awkward.ones_like(events.Diphoton_pt, int(self.year)) 
-            )
+            # awkward_utils.add_field(
+            #         events = events,
+            #         name = "year",
+            #         data = awkward.ones_like(events.Diphoton_pt, int(self.year)) 
+            # )
 
             awkward.to_parquet(events, merged_output)
 

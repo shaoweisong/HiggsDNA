@@ -1,4 +1,17 @@
 {
+    "failed": {
+        "process_id": 0,
+        "fpo": 1,
+        "files": {
+            "2018": [
+                "/eos/cms/store/group/phys_b2g/zhenxuan/custom_nanoAOD/nanoAOD_newPhotonID/UL2018/UL2018/EGamma_Run2018D/BA62A4DA-AFA9-3441-A1F2-03F332FACC00.root",
+                "/eos/cms/store/group/phys_b2g/zhenxuan/custom_nanoAOD/nanoAOD_newPhotonID/UL2018/UL2018/EGamma_Run2018D/BA65810B-2FA4-3E43-B07E-9708394CF92A.root",
+                "/eos/cms/store/group/phys_b2g/zhenxuan/custom_nanoAOD/nanoAOD_newPhotonID/UL2018/UL2018/EGamma_Run2018D/BA6AF22F-38D9-2243-8DBC-8FC9B1EC8114.root",
+                "/eos/cms/store/group/phys_b2g/zhenxuan/custom_nanoAOD/nanoAOD_newPhotonID/UL2018/UL2018/EGamma_Run2018D/BA760C5B-891A-3A41-A047-125128C8B2A8.root",
+                "/eos/cms/store/group/phys_b2g/zhenxuan/custom_nanoAOD/nanoAOD_newPhotonID/UL2018/UL2018/EGamma_Run2018D/BA917F69-DA71-924D-A97C-2712BFDFE8DE.root"
+            ]
+        }
+    },
     "EGamma_Run2018A_1": {
         "process_id": 0,
         "fpo": 5,
