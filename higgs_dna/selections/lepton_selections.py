@@ -40,18 +40,55 @@ def select_electrons(electrons, options, clean, name = "none", tagger = None):
     elif options["id"] == "WPL":
         # id_cut = electrons.mvaIso_WPL == True # run3
         id_cut = electrons.mvaFall17V2Iso_WPL == True # run2 nanoaodv9
-    elif options["id"] == "HZZ":
+    elif options["id"] == "WP90_run3":
+        print(electrons.fields)
+        id_cut = electrons.mvaIso_WP90 == True 
+    elif options["id"] == "WPL_run3":
+        print(electrons.fields)
+        id_cut = electrons.mvaIso_WPL == True # only v10 has
+    elif options["id"] == "HZZ_2017":
+        #2017
         ptbin1=(electrons.pt>5)&(electrons.pt<=10)
         ptbin2=electrons.pt>10
-        etabin1=electrons.eta<0.8
-        etabin2=(electrons.eta>=0.8)&(electrons.eta<1.479)
-        etabin3=(electrons.eta>=1.479)&(electrons.eta<2.5)
+        etabin1=abs(electrons.eta)<0.8
+        etabin2=(abs(electrons.eta)>=0.8)&(abs(electrons.eta)<1.479)
+        etabin3=(abs(electrons.eta)>=1.479)&(abs(electrons.eta)<2.5)
         cat1=ptbin1*etabin1*(electrons.mvaHZZIso>0.9128577458)
         cat2=ptbin1*etabin2*(electrons.mvaHZZIso>0.9056792368)
         cat3=ptbin1*etabin3*(electrons.mvaHZZIso>0.9439440575)
         cat4=ptbin2*etabin1*(electrons.mvaHZZIso>0.1559788054)
         cat5=ptbin2*etabin2*(electrons.mvaHZZIso>0.0273863727)
         cat6=ptbin2*etabin3*(electrons.mvaHZZIso>-0.5532483665)
+        HZZID=(cat1|cat2|cat3|cat4|cat5|cat6)
+        id_cut = HZZID # run2 nanoaodv9
+    elif options["id"] == "HZZ_2018":
+        #2018
+        ptbin1=(electrons.pt>5)&(electrons.pt<=10)
+        ptbin2=electrons.pt>10
+        etabin1=abs(electrons.eta)<0.8
+        etabin2=(abs(electrons.eta)>=0.8)&(abs(electrons.eta)<1.479)
+        etabin3=(abs(electrons.eta)>=1.479)&(abs(electrons.eta)<2.5)
+        cat1=ptbin1*etabin1*(electrons.mvaHZZIso>0.9044286167)
+        cat2=ptbin1*etabin2*(electrons.mvaHZZIso>0.9094166886)
+        cat3=ptbin1*etabin3*(electrons.mvaHZZIso>0.9443653660)
+        cat4=ptbin2*etabin1*(electrons.mvaHZZIso>0.1968600840)
+        cat5=ptbin2*etabin2*(electrons.mvaHZZIso>0.0759172100)
+        cat6=ptbin2*etabin3*(electrons.mvaHZZIso>-0.5169136775)
+        HZZID=(cat1|cat2|cat3|cat4|cat5|cat6)
+        id_cut = HZZID # run2 nanoaodv9
+    elif options["id"] == "HZZ_2022":
+        #2018
+        ptbin1=(electrons.pt>5)&(electrons.pt<=10)
+        ptbin2=electrons.pt>10
+        etabin1=abs(electrons.eta)<0.8
+        etabin2=(abs(electrons.eta)>=0.8)&(abs(electrons.eta)<1.479)
+        etabin3=(abs(electrons.eta)>=1.479)&(abs(electrons.eta)<2.5)
+        cat1=ptbin1*etabin1*(electrons.mvaHZZIso>0.9266149787239708)
+        cat2=ptbin1*etabin2*(electrons.mvaHZZIso>0.9137689890022296)
+        cat3=ptbin1*etabin3*(electrons.mvaHZZIso>0.9682122522847973)
+        cat4=ptbin2*etabin1*(electrons.mvaHZZIso>0.35267898161657985)
+        cat5=ptbin2*etabin2*(electrons.mvaHZZIso>0.26008539939704667)
+        cat6=ptbin2*etabin3*(electrons.mvaHZZIso>-0.4963113728762747)
         HZZID=(cat1|cat2|cat3|cat4|cat5|cat6)
         id_cut = HZZID # run2 nanoaodv9
     elif not options["id"] or options["id"].lower() == "none":

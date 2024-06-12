@@ -1,4 +1,23 @@
-{
+
+{"gghzg_run3":
+{"xs": 48.52,
+"bf": 0.000154793142,
+"fpo":5,
+"files":{
+    "2022":["/GluGluHtoZG_Zto2L_M-125_TuneCP5_13p6TeV_powheg-pythia8/Run3Summer22NanoAODv12-130X_mcRun3_2022_realistic_v5-v2/NANOAODSIM"]}},
+"gghzg_run3v6":
+{"xs": 48.52,
+"bf": 0.000154793142,
+"fpo":5,
+"files":{
+    "2022":["/GluGluHtoZG_Zto2L_M-125_TuneCP5_13p6TeV_powheg-pythia8/Run3Summer22EENanoAODv12-130X_mcRun3_2022_realistic_postEE_v6-v2/NANOAODSIM"]}},
+"DYJetsToLL_Run3":{
+    "xs":5558,
+    "fpo":10,
+    "files":{"2022":[
+        "/DYJetsToLL_M-50_TuneCP5_13p6TeV-madgraphMLM-pythia8/Run3Summer22NanoAODv12-forPOG_130X_mcRun3_2022_realistic_v5-v2/NANOAODSIM"
+    ]}
+},
 "ZGToLLG_01J_5f_lowMLL_lowGPt_TuneCP5_13TeV-amcatnloFXFX-pythia8":
 {"xs":55.6,
 "fpo":5,
@@ -1578,6 +1597,7 @@
             ]
         }
     },
+
     "DYJetsToLL_amc": {
         "xs": 6077.22,
         "files": {
@@ -1934,8 +1954,14 @@
             ]
         }
     },
+    "testdata":{
+        "fpo":1,
+        "files":{
+            "2022":["/SingleMuon/Run2022A-22Sep2023-v1/NANOAOD"]
+        }
+    },
     "Data_CD": {
-        "fpo": 1,
+        "fpo": 5,
         "files": {
             "2022": [
                 "/Muon/Run2022C-ReRecoNanoAODv11-v1/NANOAOD",
@@ -1949,7 +1975,7 @@
         }
     },
     "Data_E": {
-        "fpo": 1,
+        "fpo": 5,
         "files": {
             "2022": [
                 "/Muon/Run2022E-ReRecoNanoAODv11-v1/NANOAOD",
@@ -1959,7 +1985,7 @@
         }
     },
     "Data_FG": {
-        "fpo": 1,
+        "fpo": 5,
         "files": {
             "2022": [
                 "/Muon/Run2022G-PromptNanoAODv11_v1-v2/NANOAOD",

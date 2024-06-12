@@ -6,7 +6,7 @@
     },
     "tag_sequence": [
         {
-            "module_name": "higgs_dna.taggers.zgamma_tagger_data_run3",
+            "module_name": "higgs_dna.taggers.zgamma_tagger_data_run3HZZ",
             "tagger": "ZGammaTaggerData",
             "kwargs": {
                 "name": "zgamma_tagger_data",

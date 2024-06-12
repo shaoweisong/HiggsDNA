@@ -121,7 +121,7 @@ class ZGammaTaggerData(Tagger):
 
         return zgamma_selection, zgammas 
 
-        def overlap_removal(self, events):
+    def overlap_removal(self, events):
         """
         Select isolation photons in events
         Add number of isolation photons (n_iso_photons) in output .parquet file to indetify thé overlap events
