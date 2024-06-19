@@ -68,6 +68,20 @@
                 "input_collection" : "Photon",
                 "target_collections" : [["Diphoton", "Photon"]] 
             },
+            "jet_puid_sf" : {
+                "type" : "object",
+                "method" : "from_function",
+                "function" : {
+                    "module_name" : "higgs_dna.systematics.jet_systematics",
+                    "name" : "PUJetID_sf"
+                },
+                "modify_central_weight" : true,
+                "input_collection" : "Jet",
+                "target_collections" : ["SelectedJet"],
+                "kwargs" : {
+                    "working_point" : "T"
+                }
+            },                
             "nonisoelectron_id_sf" : {
                 "type" : "object",
                 "method" : "from_function",
