@@ -24,6 +24,19 @@ DEEPJET_RESHAPE_SF = {
     "2017" : "deepJet_shape",
     "2018" : "deepJet_shape"
 }
+PUJETID_SF_FILE = {
+    "2016UL_preVFP" : "jsonpog-integration/POG/JME/2016preVFP_UL/jmar.json", 
+    "2016UL_postVFP" : "jsonpog-integration/POG/JME/2016postVFP_UL/jmar.json", 
+    "2017" : "jsonpog-integration/POG/JME/2017_UL/jmar.json",
+    "2018" : "jsonpog-integration/POG/JME/2018_UL/jmar.json"
+}
+
+PUJETID_SF = {
+    "2016UL_preVFP" : "PUJetID_eff",
+    "2016UL_postVFP" : "PUJetID_eff",
+    "2017" : "PUJetID_eff",
+    "2018" : "PUJetID_eff"
+}
 
 DEEPJET_VARIATIONS = { 
     "up_jes" : [5, 0], # applicable to b (5) and light (0) jets, but not charm (4)
@@ -286,3 +299,65 @@ def WvsQCD_loose_jes_syst(event,year):
     event["weight_PNet_WvsQCDW1_down"]=weight_PNet_WvsQCDW1_down
 
     return event
+def PUJetID_sf(events, year,central_only, input_collection, working_point = "none"):
+    """
+    See:
+        -https://twiki.cern.ch/twiki/bin/view/CMS/PileupJetIDUL
+        
+    Note: PUJetID SFs are applied to the jets in the event.
+    """
+    required_fields = [
+        (input_collection, "eta"), (input_collection, "pt")
+    ]
+
+    missing_fields = awkward_utils.missing_fields(events, required_fields)
+
+    evaluator = _core.CorrectionSet.from_file(misc_utils.expand_path(PUJETID_SF_FILE[year]))
+
+    jets = events[input_collection]
+
+    # Flatten jets then convert to numpy for compatibility with correctionlib
+    n_jets = awkward.num(jets)
+    jets_flattened = awkward.flatten(jets)
+
+    jet_pt = numpy.clip(
+        awkward.to_numpy(jets_flattened.pt),
+        12.5, # SFs only valid for pT >= 20.0
+        57.49999
+    )
+
+    jet_eta = awkward.to_numpy(jets_flattened.eta)
+    # Calculate SF and syst
+    variations = {} 
+    PUJETID_SFNAME = PUJETID_SF[year]
+    sf = evaluator[PUJETID_SFNAME].evalv(
+            jet_eta,
+            jet_pt,            
+            "nom",
+            working_point
+    )
+    variations["central"] = awkward.unflatten(sf, n_jets)
+    if not central_only:
+        syst_vars = ["up", "down"]
+        for syst_var in syst_vars:
+            syst = evaluator[PUJETID_SFNAME].evalv(
+            jet_eta,
+            jet_pt,            
+            syst_var,
+            working_point
+    )
+            if "up" in syst_var:
+                syst_var_name = "up"
+            elif "down" in syst_var:
+                syst_var_name = "down"
+            variations[syst_var_name] = awkward.unflatten(syst, n_jets)
+
+    for var in variations.keys():
+        # Set SFs = 1 for jets which are not applicable
+        variations[var] = awkward.where(
+                jets.pt > 57.49999,
+                awkward.ones_like(variations[var]),
+                variations[var]
+        )
+
+    return variations

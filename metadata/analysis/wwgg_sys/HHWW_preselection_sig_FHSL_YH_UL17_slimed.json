@@ -133,6 +133,20 @@
                 "target_collections" : ["SelectedMuon_noiso"]
                 
             },
+            "jet_puid_sf" : {
+                "type" : "object",
+                "method" : "from_function",
+                "function" : {
+                    "module_name" : "higgs_dna.systematics.jet_systematics",
+                    "name" : "PUJetID_sf"
+                },
+                "modify_central_weight" : true,
+                "input_collection" : "Jet",
+                "target_collections" : ["SelectedJet"],
+                "kwargs" : {
+                    "working_point" : "T"
+                }
+            },            
             "pu_reweight_sf" : {
                 "type" : "event",
                 "method" : "from_function",
