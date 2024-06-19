@@ -264,11 +264,10 @@ def photon_mva_id_sf(events, year, central_only, input_collection, working_point
     pho_pt = numpy.clip(
         awkward.to_numpy(photons_flattened.pt),
         20.0, # SFs only valid for pT >= 20.0
-        999999999.
+        499.999
     )
 
     pho_eta = awkward.to_numpy(photons_flattened.eta)
-
     # Calculate SF and syst
     variations = {} 
     sf = evaluator["UL-Photon-ID-SF"].evalv(
@@ -279,7 +278,6 @@ def photon_mva_id_sf(events, year, central_only, input_collection, working_point
             pho_pt
     )
     variations["central"] = awkward.unflatten(sf, n_photons)
-
     if not central_only:
         syst_vars = ["sfup", "sfdown"]
         for syst_var in syst_vars:

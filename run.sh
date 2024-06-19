@@ -69,3 +69,7 @@
 
   python scripts/run_analysis.py --log-level "DEBUG" --config "metadata/analysis/wwgg_sys/HHWW_preselection_sig_FHSL_YH_UL18_slimed.json" --sample_list "GluGluToRadionToHHTo2G2WTo2G4Q_M-400" --output_dir "/eos/user/s/shsong/HiggsDNA/HHFH18lowmassfailed/"  --batch_system "condor"
   python scripts/run_analysis.py --log-level "DEBUG" --config "metadata/analysis/wwgg_sys/HHWW_preselection_sig_bbgg_zzgg_YH_UL16pre_slimed.json" --sample_list "GluGluToRadionToHHTo2B2G_M-250" --output_dir "/eos/user/s/shsong/HiggsDNA/HHbbgg16prelowmasstest/"  --short
+
+
+
+  python scripts/run_analysis.py --log-level "DEBUG" --config "metadata/analysis/wwgg_sys/HHWW_preselection_sig_FHSL_YH_UL17_slimed.json" --sample_list "GluGluToRadionToHHTo2G2WTo2G4Q_M-1000" --output_dir "/eos/user/s/shsong/HiggsDNA/HHFH17lowmassyest/"  --batch_system "local" --short

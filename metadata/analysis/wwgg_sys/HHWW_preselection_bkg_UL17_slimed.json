@@ -54,7 +54,7 @@
                 "input_collection" : "Photon",
                 "target_collections" : [["Diphoton", "Photon"]],
                 "kwargs" : {
-                    "working_point" : "wp90"
+                    "working_point" : "modified_photonID_cut"
                 }
             },
             "photon_presel_sf" : {
