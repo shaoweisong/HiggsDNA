@@ -282,14 +282,14 @@ class DiphotonTagger(Tagger):
         dipho_events[("LeadPhoton","Photon_r9")] = dipho_events.LeadPhoton.r9
         dipho_events[("SubleadPhoton","Photon_r9")] = dipho_events.SubleadPhoton.r9
         dipho_presel_cut = awkward.num(dipho_events.Diphoton) == 1
-        for hlt in self.options["trigger"][self.year]: # logical OR of all triggers
-            trigger_cut = dipho_events[hlt] == True
-        # if self.is_data and self.year is not None:
-        #     trigger_cut = awkward.num(dipho_events.Diphoton) < 0 # dummy cut, all False
-        #     for hlt in self.options["trigger"][self.year]: # logical OR of all triggers
-        #         trigger_cut = (trigger_cut) | (dipho_events[hlt] == True)
-        # else:
-        #     trigger_cut = awkward.num(dipho_events.Diphoton) >= 0 # dummy cut, all True
+        # for hlt in self.options["trigger"][self.year]: # logical OR of all triggers
+        #     trigger_cut = dipho_events[hlt] == True
+        if self.is_data and self.year is not None:
+            trigger_cut = awkward.num(dipho_events.Diphoton) < 0 # dummy cut, all False
+            for hlt in self.options["trigger"][self.year]: # logical OR of all triggers
+                trigger_cut = (trigger_cut) | (dipho_events[hlt] == True)
+        else:
+            trigger_cut = awkward.num(dipho_events.Diphoton) >= 0 # dummy cut, all True
 
         presel_cut = dipho_presel_cut & trigger_cut
 
@@ -437,7 +437,7 @@ class DiphotonTagger(Tagger):
         hlt_cut = hlt_cut | (photons_ee_low_r9 & ee_low_r9_track_pt_cut & ee_low_r9_sigma_ieie_cut & ee_low_r9_pho_iso_cut)
         # hlt_cut = hlt_cut | (photons.pt > 0) # attention: only for debug, all true
         all_cuts = pt_cut & eta_cut & e_veto_cut & r9_iso_cut & hoe_cut & hlt_cut
-
+        
         self.register_cuts(
                 names = ["pt", "eta", "e_veto", "r9", "hoe", "hlt", "all"],
                 results = [pt_cut, eta_cut, e_veto_cut, r9_iso_cut, hoe_cut, hlt_cut, all_cuts],

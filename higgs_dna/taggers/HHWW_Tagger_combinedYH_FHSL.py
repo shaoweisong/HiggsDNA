@@ -123,7 +123,8 @@ DEFAULT_OPTIONS = {
     "fatjets": {
         "pt": 100.0,
         "eta": 2.4,
-        "xbb_over_qcd":0.9,
+        # "xbb_over_qcd":0.9, 
+        "xbb_over_qcd":999,
         "dr_photons": 0.8,
         "dr_electrons": 0.8,
         "dr_muons": 0.8
@@ -673,14 +674,14 @@ class HHWW_Tagger_combinedYH_FHSL(Tagger):
         boosted_YH_FH_cat = (n_leptons_iso == 0) & (n_leptons_noiso == 0) & (n_fatjets >=1) & ( (selection_fatjet_WvsQCD)|(selection_fatjet_HvsQCD)) # boosted 1 jet for SL channel with isolated lep
         # resolved case
         FH_fully_resovled_cat = (n_leptons_iso==0) & (n_leptons_noiso == 0) & (n_jets>=2)
-        SL_fullyresovled_cat = (n_leptons_iso >= 1) & (n_jets >=1) # resolved 2 jets for SL channel with isolated lep
+        SL_fullyresovled_cat = (n_leptons_iso == 1) & (n_jets >=1) # resolved 2 jets for SL channel with isolated lep
         events['pass_H'] = selection_fatjet_HvsQCD
         events['pass_WvsQCD_failed_H'] = selection_fatjet_WvsQCD & ~selection_fatjet_HvsQCD
        
        
         # ----------------------------------------------------------------------------------------------------#
-      
-      
+        bveto_cut = ~(awkward.num(events.FatJet.xbb_over_qcd[events.FatJet.xbb_over_qcd > 0.9]) > 0)
+        
         flatten_n_jets = awkward.num(jets.pt)
         category = awkward.zeros_like(flatten_n_jets)
         category = awkward.fill_none(category, 0)
@@ -701,10 +702,11 @@ class HHWW_Tagger_combinedYH_FHSL(Tagger):
         if not self.is_data : 
             events=WvsQCD_loose_jes_syst(events,self.year)
 
-        presel_cut = (photon_id_cut) & (category_cut) & (Z_veto_cut)
+        presel_cut = (bveto_cut) & (photon_id_cut) & (category_cut) & (Z_veto_cut)
         
+        real_photon_id_cut= (events.LeadPhoton.mvaID_modified > -0.7) & (events.SubleadPhoton.mvaID_modified > -0.7)
         self.register_cuts(
-                names=["Photon id Selection","category_cut", "Z_veto_cut"],
-                results=[photon_id_cut, category_cut, Z_veto_cut])
+                names=["bbgg veto ", "Z_veto_cut","Photon id preselection","Photon id selection","category_cut"],
+                results=[bveto_cut,Z_veto_cut,photon_id_cut,real_photon_id_cut, category_cut ])
 
         return presel_cut, events

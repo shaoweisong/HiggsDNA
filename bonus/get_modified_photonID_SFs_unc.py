@@ -6,15 +6,22 @@ from matplotlib.colors import LogNorm
 import json
 # in jsonpog the contents is looped over the first edge of all the second edges, then the second edge of all the second edges, eg. if the first edge is eta(10bins), second edge is pt(5bins). The sf contents are [eta1,pt1],[eta1,pt2],...[eta1,pt5],[eta2,pt1],...[eta10,pt5]
 # 定义路径常量
-JQ_UL18_path = "/afs/cern.ch/user/s/shsong/HiggsDNA/higgs_dna/systematics/data/18_offical.root"
-JQ_UL17_path = "/afs/cern.ch/user/s/shsong/HiggsDNA/higgs_dna/systematics/data/17_offical.root"
-JQ_UL16_postVFP_path = "/afs/cern.ch/user/s/shsong/HiggsDNA/higgs_dna/systematics/data/16_postVFP_offical.root"
-JQ_UL16_preVFP_path = "/afs/cern.ch/user/s/shsong/HiggsDNA/higgs_dna/systematics/data/16_preVFP_offical.root"
+# JQ_UL18_path = "/afs/cern.ch/user/s/shsong/HiggsDNA/higgs_dna/systematics/data/18_offical.root"
+# JQ_UL17_path = "/afs/cern.ch/user/s/shsong/HiggsDNA/higgs_dna/systematics/data/17_offical.root"
+# JQ_UL16_postVFP_path = "/afs/cern.ch/user/s/shsong/HiggsDNA/higgs_dna/systematics/data/16_postVFP_offical.root"
+# JQ_UL16_preVFP_path = "/afs/cern.ch/user/s/shsong/HiggsDNA/higgs_dna/systematics/data/16_preVFP_offical.root"
 
-offical_UL18_path = "/afs/cern.ch/user/s/shsong/HiggsDNA/higgs_dna/systematics/data/egammaEffi.txt_EGM2D_Pho_wp90.root_UL18.root"
-offical_UL17_path = "/afs/cern.ch/user/s/shsong/HiggsDNA/higgs_dna/systematics/data/egammaEffi.txt_EGM2D_PHO_MVA90_UL17.root"
-offical_UL16_postVFP_path = "/afs/cern.ch/user/s/shsong/HiggsDNA/higgs_dna/systematics/data/egammaEffi.txt_EGM2D_Pho_MVA90_UL16_postVFP.root"
-offical_UL16_preVFP_path = "/afs/cern.ch/user/s/shsong/HiggsDNA/higgs_dna/systematics/data/egammaEffi.txt_EGM2D_Pho_wp90_UL16.root"
+JQ_UL18_path = "/afs/cern.ch/work/j/jtao/CMSSW_10_6_29/src/egm_tnp_analysis/results_UL18NLOMCTrue_New//passingIDMVACut/egammaEffi.txt_EGM2D.root"
+JQ_UL17_path = "/afs/cern.ch/work/j/jtao/CMSSW_10_6_29/src/egm_tnp_analysis/results_UL17NLOMCTrue_New//passingIDMVACut/egammaEffi.txt_EGM2D.root"
+JQ_UL16_postVFP_path = "/afs/cern.ch/work/j/jtao/CMSSW_10_6_29/src/egm_tnp_analysis/results_UL16postVFPNLOMCTrue_New//passingIDMVACut/egammaEffi.txt_EGM2D.root"
+JQ_UL16_preVFP_path = "/afs/cern.ch/work/j/jtao/CMSSW_10_6_29/src/egm_tnp_analysis/results_UL16preVFPNLOMCTrue_New//passingIDMVACut/egammaEffi.txt_EGM2D.root"
+
+
+offical_UL18_path = "/eos/user/z/zhenxuan/SWAN_projects/HH/photonID_SFs/egammaEffi.txt_EGM2D_Pho_wp90.root_UL18.root"
+offical_UL17_path = "/eos/user/z/zhenxuan/SWAN_projects/HH/photonID_SFs/egammaEffi.txt_EGM2D_PHO_MVA90_UL17.root"
+offical_UL16_postVFP_path = "/eos/user/z/zhenxuan/SWAN_projects/HH/photonID_SFs/egammaEffi.txt_EGM2D_Pho_MVA90_UL16_postVFP.root"
+offical_UL16_preVFP_path = "/eos/user/z/zhenxuan/SWAN_projects/HH/photonID_SFs/egammaEffi.txt_EGM2D_Pho_wp90_UL16.root"
+
 
 def get_custom_sfs_and_systematic_errors(official_path, jq_path):
     """
@@ -29,7 +36,9 @@ def get_custom_sfs_and_systematic_errors(official_path, jq_path):
     # 打开文件并获取数据
     events_jq = uproot.open(jq_path)['EGamma_SF2D']
     events_official = uproot.open(official_path)['EGamma_SF2D']
-    
+    offsfs = events_official.values()
+    off_contents=ak.flatten(offsfs)
+    off_sfslist = off_contents.tolist()
     # 提取标量因子值和统计误差
     sfs = events_jq.values()
     contents=ak.flatten(sfs)
@@ -45,7 +54,31 @@ def get_custom_sfs_and_systematic_errors(official_path, jq_path):
     
     # 计算总不确定性
     # total_uncer = np.sqrt(total_stat_uncer + height + total_official_uncer).T
+    print('total_official_uncer',total_official_uncer)
+    print('total_stat_uncer',total_stat_uncer)
+    print('height',height)
     total_uncer = np.sqrt(total_stat_uncer + height + total_official_uncer)
+    offical_up = offsfs + events_official.errors()
+    offical_down = offsfs - events_official.errors()
+    jq_up = sfs + total_uncer
+    jq_down = sfs - total_uncer
+    print('jq_up',jq_up)
+    print('jq_down',jq_down)
+    print('offical_up',offical_up)
+    print('offical_down',offical_down)
+    diff_up = ((jq_up - offical_up) / offical_up) * 100
+    diff_down = ((jq_down - offical_down) / offical_down) * 100
+    print('diff_up',diff_up)
+    print('diff_down',diff_down)
+    plt.hist(diff_up, bins=20)
+    plt.title("diff_up(%)")
+    plt.savefig("diff_up.png")
+    plt.close()
+    plt.hist(diff_down, bins=20)
+    plt.title("diff_down(%)")
+    plt.savefig("diff_down.png")
+    plt.close()
+
     total_uncer_list = ak.flatten(total_uncer).tolist()
     return sfslist, total_uncer_list
 
