@@ -137,7 +137,8 @@ DEFAULT_OPTIONS = {
         "dr_electrons": 0.8,
         "dr_muons": 0.8
     },
-    "photon_id": -0.9,
+    # "photon_id": -0.9,
+    "photon_id": -1, #changed to -1 for checking datadriven
     "btag_wp": {
         "2016": 0.3093,
         "2017": 0.3040,
@@ -170,9 +171,9 @@ class HHWW_Tagger_combinedYH_FHSL(Tagger):
         # data will not select gen level infos 
         # need to comment when run bkgs
         # logger.debug("Is Signal: %s" %self.options["gen_info"]["is_Signal"])
-        # if not self.is_data and self.options["gen_info"]["is_Signal"]:    
-        # fake_pho,prompt_pho = gen_selections.gen_Hww_4q(events)        
-            # gen_l1_p4, gen_q1_p4,gen_q2_p4 = gen_selections.gen_Hww_2q2l(events)     
+        if not self.is_data and self.options["gen_info"]["is_Signal"]:    
+            fake_pho,prompt_pho = gen_selections.gen_Hww_4q(events)        
+            gen_l1_p4, gen_q1_p4,gen_q2_p4 = gen_selections.gen_Hww_2q2l(events)     
         if not self.is_data and self.options["gen_info"]["is_Signal"]:    
             gen_obj_1, gen_obj_2, gen_obj_3, gen_obj_4, gen_lead_W_fromH, gen_sublead_W_fromH, gen_H_to_gg, gen_H_to_WW, gen_lead_g_fromH, gen_sublead_g_fromH = gen_selections.select_ww_to_qqlv_or_qqqq(events)
         # add object fields for gen objects

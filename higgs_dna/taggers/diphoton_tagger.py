@@ -221,14 +221,16 @@ class DiphotonTagger(Tagger):
         )
 
         lead_pt_cut = diphotons.LeadPhoton.pt >= options["lead_pt"]
+        sublead_pt_cut = diphotons.SubleadPhoton.pt >= options["sublead_pt"]
         lead_pt_mgg_cut = (diphotons.LeadPhoton.pt / diphotons.Diphoton.mass) >= options["lead_pt_mgg"]
         sublead_pt_mgg_cut = (diphotons.SubleadPhoton.pt / diphotons.Diphoton.mass) >= options["sublead_pt_mgg"]
         mass_cut = (diphotons.Diphoton.mass >= options["mass"][0]) & (diphotons.Diphoton.mass <= options["mass"][1])
-        all_cuts = lead_pt_cut & lead_pt_mgg_cut & sublead_pt_mgg_cut & mass_cut
+        all_cuts = lead_pt_cut & sublead_pt_cut & lead_pt_mgg_cut & sublead_pt_mgg_cut & mass_cut
+        realphotonID_cut = (diphotons.LeadPhoton.mvaID_modified > -0.7) & (diphotons.SubleadPhoton.mvaID_modified > -0.7) #skip this for datadriven in all cuts
 
         self.register_cuts(
-            names = ["lead pt cut", "lead pt mgg cut", "sublead pt mgg cut", "mass cut", "all cuts"],
-            results = [lead_pt_cut, lead_pt_mgg_cut, sublead_pt_mgg_cut, mass_cut, all_cuts],
+            names = ["lead pt cut","sublead pt cut","lead pt mgg cut", "sublead pt mgg cut", "mass cut", "modifiedID>-0.7","all cuts"],
+            results = [lead_pt_cut, sublead_pt_cut,lead_pt_mgg_cut, sublead_pt_mgg_cut, mass_cut, realphotonID_cut,all_cuts],
             cut_type = "diphoton"
         )
 
