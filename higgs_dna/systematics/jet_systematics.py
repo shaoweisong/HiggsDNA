@@ -141,164 +141,6 @@ def btag_deepjet_reshape_sf(events, year, central_only, input_collection):
     return variations
 
 
-def dummy_jes_syst(events, is_data):
-    """
-    Dummy function illustrating a jet energy scale uncertainty that results in new jet collections with Jet.pt varied.
-    Should be deleted once real examples are implemented.
-    """
-    jets = events.Jet 
-
-    variations = {}
-    variations["central"] = jets.pt + (2 * awkward.ones_like(jets.pt))
-    if not is_data:
-        variations["up"] = jets.pt + (12 * awkward.ones_like(jets.pt))
-        variations["down"] = jets.pt - (8 * awkward.ones_like(jets.pt))
-    return variations
-
-def WvsQCD_medium_jes_syst(event,year):
-    """
-    See:
-        - https://github.com/cms-jet/ParticleNetSF/blob/ParticleNet_TopW_SFs_NanoV9/Csv/W_MD_Run2_SF.csv
-
-    Note: Particle Net WvsQCD Nanov9 SFs are applied to the W jets in the event.
-    """
-    weight_PNet_WvsQCDW1_central = awkward.ones_like(event.category)
-    weight_PNet_WvsQCDW1_up = awkward.ones_like(event.category)
-    weight_PNet_WvsQCDW1_down = awkward.ones_like(event.category)
-    W1ptbin1=(event["fatjet_W_1_pt"]>200 )&( event["fatjet_W_1_pt"]<=300 )
-    W1ptbin2=(event["fatjet_W_1_pt"]>300 )&( event["fatjet_W_1_pt"]<=400 )
-    W1ptbin3=(event["fatjet_W_1_pt"]>400 )&( event["fatjet_W_1_pt"]<=800 )
-    SF_W1_ptbin1=((event.category==2) & W1ptbin1 )
-    SF_W1_ptbin2=((event.category==2) & W1ptbin2)
-    SF_W1_ptbin3=((event.category==2) & W1ptbin3)
-
-    if year=="2016UL_preVFP":
-        weight_PNet_WvsQCDW1_central = awkward.where(SF_W1_ptbin1, awkward.ones_like(weight_PNet_WvsQCDW1_central)*0.904261, weight_PNet_WvsQCDW1_central)
-        weight_PNet_WvsQCDW1_up = awkward.where(SF_W1_ptbin1, awkward.ones_like(weight_PNet_WvsQCDW1_up)*0.936451, weight_PNet_WvsQCDW1_up)
-        weight_PNet_WvsQCDW1_down = awkward.where(SF_W1_ptbin1, awkward.ones_like(weight_PNet_WvsQCDW1_down)*0.872640, weight_PNet_WvsQCDW1_down)
-        
-        weight_PNet_WvsQCDW1_central = awkward.where(SF_W1_ptbin2, awkward.ones_like(weight_PNet_WvsQCDW1_central)*0.875718, weight_PNet_WvsQCDW1_central)
-        weight_PNet_WvsQCDW1_up = awkward.where(SF_W1_ptbin2, awkward.ones_like(weight_PNet_WvsQCDW1_up)*0.910996, weight_PNet_WvsQCDW1_up)
-        weight_PNet_WvsQCDW1_down = awkward.where(SF_W1_ptbin2, awkward.ones_like(weight_PNet_WvsQCDW1_down)*0.841575, weight_PNet_WvsQCDW1_down)
-        
-        weight_PNet_WvsQCDW1_central = awkward.where(SF_W1_ptbin3, awkward.ones_like(weight_PNet_WvsQCDW1_central)*0.902272, weight_PNet_WvsQCDW1_central)
-        weight_PNet_WvsQCDW1_up = awkward.where(SF_W1_ptbin3, awkward.ones_like(weight_PNet_WvsQCDW1_up)*0.969975, weight_PNet_WvsQCDW1_up)
-        weight_PNet_WvsQCDW1_down = awkward.where(SF_W1_ptbin3, awkward.ones_like(weight_PNet_WvsQCDW1_down)*0.836782, weight_PNet_WvsQCDW1_down)
-
-    elif year=="2016UL_postVFP":
-        weight_PNet_WvsQCDW1_central = awkward.where(SF_W1_ptbin1, awkward.ones_like(weight_PNet_WvsQCDW1_central)*0.887065, weight_PNet_WvsQCDW1_central)
-        weight_PNet_WvsQCDW1_up = awkward.where(SF_W1_ptbin1, awkward.ones_like(weight_PNet_WvsQCDW1_up)*0.934490, weight_PNet_WvsQCDW1_up)
-        weight_PNet_WvsQCDW1_down = awkward.where(SF_W1_ptbin1, awkward.ones_like(weight_PNet_WvsQCDW1_down)*0.843186, weight_PNet_WvsQCDW1_down)
-        
-        weight_PNet_WvsQCDW1_central = awkward.where(SF_W1_ptbin2, awkward.ones_like(weight_PNet_WvsQCDW1_central)*0.866233, weight_PNet_WvsQCDW1_central)
-        weight_PNet_WvsQCDW1_up = awkward.where(SF_W1_ptbin2, awkward.ones_like(weight_PNet_WvsQCDW1_up)*0.904293, weight_PNet_WvsQCDW1_up)
-        weight_PNet_WvsQCDW1_down = awkward.where(SF_W1_ptbin2, awkward.ones_like(weight_PNet_WvsQCDW1_down)*0.829220, weight_PNet_WvsQCDW1_down)
-        
-        weight_PNet_WvsQCDW1_central = awkward.where(SF_W1_ptbin3, awkward.ones_like(weight_PNet_WvsQCDW1_central)*0.786696, weight_PNet_WvsQCDW1_central)
-        weight_PNet_WvsQCDW1_up = awkward.where(SF_W1_ptbin3, awkward.ones_like(weight_PNet_WvsQCDW1_up)*0.854186, weight_PNet_WvsQCDW1_up)
-        weight_PNet_WvsQCDW1_down = awkward.where(SF_W1_ptbin3, awkward.ones_like(weight_PNet_WvsQCDW1_down)*0.720922, weight_PNet_WvsQCDW1_down)   
-                   
-    elif year=="2017":
-        weight_PNet_WvsQCDW1_central = awkward.where(SF_W1_ptbin1, awkward.ones_like(weight_PNet_WvsQCDW1_central)*0.918743, weight_PNet_WvsQCDW1_central)
-        weight_PNet_WvsQCDW1_up = awkward.where(SF_W1_ptbin1, awkward.ones_like(weight_PNet_WvsQCDW1_up)*0.961281, weight_PNet_WvsQCDW1_up)
-        weight_PNet_WvsQCDW1_down = awkward.where(SF_W1_ptbin1, awkward.ones_like(weight_PNet_WvsQCDW1_down)*0.878062, weight_PNet_WvsQCDW1_down)
-        
-        weight_PNet_WvsQCDW1_central = awkward.where(SF_W1_ptbin2, awkward.ones_like(weight_PNet_WvsQCDW1_central)*0.898412, weight_PNet_WvsQCDW1_central)
-        weight_PNet_WvsQCDW1_up = awkward.where(SF_W1_ptbin2, awkward.ones_like(weight_PNet_WvsQCDW1_up)*0.923404, weight_PNet_WvsQCDW1_up)
-        weight_PNet_WvsQCDW1_down = awkward.where(SF_W1_ptbin2, awkward.ones_like(weight_PNet_WvsQCDW1_down)*0.873408, weight_PNet_WvsQCDW1_down)
-        
-        weight_PNet_WvsQCDW1_central = awkward.where(SF_W1_ptbin3, awkward.ones_like(weight_PNet_WvsQCDW1_central)*0.903940, weight_PNet_WvsQCDW1_central)
-        weight_PNet_WvsQCDW1_up = awkward.where(SF_W1_ptbin3, awkward.ones_like(weight_PNet_WvsQCDW1_up)*0.949428, weight_PNet_WvsQCDW1_up)
-        weight_PNet_WvsQCDW1_down = awkward.where(SF_W1_ptbin3, awkward.ones_like(weight_PNet_WvsQCDW1_down)*0.858823, weight_PNet_WvsQCDW1_down)  
-      
-    elif year=="2018":
-        weight_PNet_WvsQCDW1_central = awkward.where(SF_W1_ptbin1, awkward.ones_like(weight_PNet_WvsQCDW1_central)*0.863467, weight_PNet_WvsQCDW1_central)
-        weight_PNet_WvsQCDW1_up = awkward.where(SF_W1_ptbin1, awkward.ones_like(weight_PNet_WvsQCDW1_up)*0.883999, weight_PNet_WvsQCDW1_up)
-        weight_PNet_WvsQCDW1_down = awkward.where(SF_W1_ptbin1, awkward.ones_like(weight_PNet_WvsQCDW1_down)*0.843701, weight_PNet_WvsQCDW1_down)
-        
-        weight_PNet_WvsQCDW1_central = awkward.where(SF_W1_ptbin2, awkward.ones_like(weight_PNet_WvsQCDW1_central)*0.861461, weight_PNet_WvsQCDW1_central)
-        weight_PNet_WvsQCDW1_up = awkward.where(SF_W1_ptbin2, awkward.ones_like(weight_PNet_WvsQCDW1_up)*0.883182, weight_PNet_WvsQCDW1_up)
-        weight_PNet_WvsQCDW1_down = awkward.where(SF_W1_ptbin2, awkward.ones_like(weight_PNet_WvsQCDW1_down)*0.840135, weight_PNet_WvsQCDW1_down)
-        
-        weight_PNet_WvsQCDW1_central = awkward.where(SF_W1_ptbin3, awkward.ones_like(weight_PNet_WvsQCDW1_central)*0.815265, weight_PNet_WvsQCDW1_central)
-        weight_PNet_WvsQCDW1_up = awkward.where(SF_W1_ptbin3, awkward.ones_like(weight_PNet_WvsQCDW1_up)*0.949428, weight_PNet_WvsQCDW1_up)
-        weight_PNet_WvsQCDW1_down = awkward.where(SF_W1_ptbin3, awkward.ones_like(weight_PNet_WvsQCDW1_down)*0.853422, weight_PNet_WvsQCDW1_down)
-        
-    event["weight_PNet_WvsQCDW1_up"]=weight_PNet_WvsQCDW1_up
-    event["weight_PNet_WvsQCDW1_central"]=weight_PNet_WvsQCDW1_central
-    event["weight_PNet_WvsQCDW1_down"]=weight_PNet_WvsQCDW1_down
-    
-    return event
-def WvsQCD_loose_jes_syst(event,year):
-    """
-    See:
-        - https://github.com/cms-jet/ParticleNetSF/blob/ParticleNet_TopW_SFs_NanoV9/Csv/W_MD_Run2_SF.csv
-
-    Note: Particle Net WvsQCD Nanov9 SFs are applied to the W jets in the event.
-    """
-    weight_PNet_WvsQCDW1_central = awkward.ones_like(event.category)
-    weight_PNet_WvsQCDW1_up = awkward.ones_like(event.category)
-    weight_PNet_WvsQCDW1_down = awkward.ones_like(event.category)
-    W1ptbin1=(event["fatjet_W_1_pt"]>200 )&( event["fatjet_W_1_pt"]<=300 )
-    W1ptbin2=(event["fatjet_W_1_pt"]>300 )&( event["fatjet_W_1_pt"]<=400 )
-    W1ptbin3=(event["fatjet_W_1_pt"]>400 )&( event["fatjet_W_1_pt"]<=800 )
-    SF_W1_ptbin1=(event.category==2) & W1ptbin1 & event['pass_WvsQCD_failed_H']
-    SF_W1_ptbin2=(event.category==2) & W1ptbin2 & event['pass_WvsQCD_failed_H']
-    SF_W1_ptbin3=(event.category==2) & W1ptbin3 & event['pass_WvsQCD_failed_H']
-    if year=="2016UL_preVFP":
-        weight_PNet_WvsQCDW1_central = awkward.where(SF_W1_ptbin1, awkward.ones_like(weight_PNet_WvsQCDW1_central)*0.9195379553371, weight_PNet_WvsQCDW1_central)
-        weight_PNet_WvsQCDW1_up = awkward.where(SF_W1_ptbin1, awkward.ones_like(weight_PNet_WvsQCDW1_up)*0.955807058879442, weight_PNet_WvsQCDW1_up)
-        weight_PNet_WvsQCDW1_down = awkward.where(SF_W1_ptbin1, awkward.ones_like(weight_PNet_WvsQCDW1_down)*0.853997286203603, weight_PNet_WvsQCDW1_down)
-        
-        weight_PNet_WvsQCDW1_central = awkward.where(SF_W1_ptbin2, awkward.ones_like(weight_PNet_WvsQCDW1_central)*0.9463957277711702, weight_PNet_WvsQCDW1_central)
-        weight_PNet_WvsQCDW1_up = awkward.where(SF_W1_ptbin2, awkward.ones_like(weight_PNet_WvsQCDW1_up)*0.981673394066279, weight_PNet_WvsQCDW1_up)
-        weight_PNet_WvsQCDW1_down = awkward.where(SF_W1_ptbin2, awkward.ones_like(weight_PNet_WvsQCDW1_down)*0.911701826690222, weight_PNet_WvsQCDW1_down)
-        
-        weight_PNet_WvsQCDW1_central = awkward.where(SF_W1_ptbin3, awkward.ones_like(weight_PNet_WvsQCDW1_central)*0.9398161345034564, weight_PNet_WvsQCDW1_central)
-        weight_PNet_WvsQCDW1_up = awkward.where(SF_W1_ptbin3, awkward.ones_like(weight_PNet_WvsQCDW1_up)*1.003032920932323, weight_PNet_WvsQCDW1_up)
-        weight_PNet_WvsQCDW1_down = awkward.where(SF_W1_ptbin3, awkward.ones_like(weight_PNet_WvsQCDW1_down)*0.879995031378807, weight_PNet_WvsQCDW1_down)
-
-    elif year=="2016UL_postVFP":
-        weight_PNet_WvsQCDW1_central = awkward.where(SF_W1_ptbin1, awkward.ones_like(weight_PNet_WvsQCDW1_central)*0.9450578338842212, weight_PNet_WvsQCDW1_central)
-        weight_PNet_WvsQCDW1_up = awkward.where(SF_W1_ptbin1, awkward.ones_like(weight_PNet_WvsQCDW1_up)*0.995323626432011, weight_PNet_WvsQCDW1_up)
-        weight_PNet_WvsQCDW1_down = awkward.where(SF_W1_ptbin1, awkward.ones_like(weight_PNet_WvsQCDW1_down)*0.88139954116051, weight_PNet_WvsQCDW1_down)
-        
-        weight_PNet_WvsQCDW1_central = awkward.where(SF_W1_ptbin2, awkward.ones_like(weight_PNet_WvsQCDW1_central)*0.9092346655321338, weight_PNet_WvsQCDW1_central)
-        weight_PNet_WvsQCDW1_up = awkward.where(SF_W1_ptbin2, awkward.ones_like(weight_PNet_WvsQCDW1_up)*0.94696027685031, weight_PNet_WvsQCDW1_up)
-        weight_PNet_WvsQCDW1_down = awkward.where(SF_W1_ptbin2, awkward.ones_like(weight_PNet_WvsQCDW1_down)*0.872197862861603, weight_PNet_WvsQCDW1_down)
-        
-        weight_PNet_WvsQCDW1_central = awkward.where(SF_W1_ptbin3, awkward.ones_like(weight_PNet_WvsQCDW1_central)*0.8925475131701243, weight_PNet_WvsQCDW1_central)
-        weight_PNet_WvsQCDW1_up = awkward.where(SF_W1_ptbin3, awkward.ones_like(weight_PNet_WvsQCDW1_up)*0.965027816841837, weight_PNet_WvsQCDW1_up)
-        weight_PNet_WvsQCDW1_down = awkward.where(SF_W1_ptbin3, awkward.ones_like(weight_PNet_WvsQCDW1_down)*0.823833325878663, weight_PNet_WvsQCDW1_down)     
-    elif year=="2017":
-        weight_PNet_WvsQCDW1_central = awkward.where(SF_W1_ptbin1, awkward.ones_like(weight_PNet_WvsQCDW1_central)*0.982730281923659, weight_PNet_WvsQCDW1_central)
-        weight_PNet_WvsQCDW1_up = awkward.where(SF_W1_ptbin1, awkward.ones_like(weight_PNet_WvsQCDW1_up)*1.018665093373757, weight_PNet_WvsQCDW1_up)
-        weight_PNet_WvsQCDW1_down = awkward.where(SF_W1_ptbin1, awkward.ones_like(weight_PNet_WvsQCDW1_down)*0.946056549531482, weight_PNet_WvsQCDW1_down)
-        
-        weight_PNet_WvsQCDW1_central = awkward.where(SF_W1_ptbin2, awkward.ones_like(weight_PNet_WvsQCDW1_central)*0.9594886915963721, weight_PNet_WvsQCDW1_central)
-        weight_PNet_WvsQCDW1_up = awkward.where(SF_W1_ptbin2, awkward.ones_like(weight_PNet_WvsQCDW1_up)*0.98423246182761, weight_PNet_WvsQCDW1_up)
-        weight_PNet_WvsQCDW1_down = awkward.where(SF_W1_ptbin2, awkward.ones_like(weight_PNet_WvsQCDW1_down)*0.935112279809698, weight_PNet_WvsQCDW1_down)
-        
-        weight_PNet_WvsQCDW1_central = awkward.where(SF_W1_ptbin3, awkward.ones_like(weight_PNet_WvsQCDW1_central)*0.9892794381973279, weight_PNet_WvsQCDW1_central)
-        weight_PNet_WvsQCDW1_up = awkward.where(SF_W1_ptbin3, awkward.ones_like(weight_PNet_WvsQCDW1_up)*0.944301786656573, weight_PNet_WvsQCDW1_up)
-        weight_PNet_WvsQCDW1_down = awkward.where(SF_W1_ptbin3, awkward.ones_like(weight_PNet_WvsQCDW1_down)*1.036482653739614, weight_PNet_WvsQCDW1_down)   
-    elif year=="2018":
-        weight_PNet_WvsQCDW1_central = awkward.where(SF_W1_ptbin1, awkward.ones_like(weight_PNet_WvsQCDW1_central)*0.9190298705570141, weight_PNet_WvsQCDW1_central)
-        weight_PNet_WvsQCDW1_up = awkward.where(SF_W1_ptbin1, awkward.ones_like(weight_PNet_WvsQCDW1_up)*0.94124308044617, weight_PNet_WvsQCDW1_up)
-        weight_PNet_WvsQCDW1_down = awkward.where(SF_W1_ptbin1, awkward.ones_like(weight_PNet_WvsQCDW1_down)*0.899896452243954, weight_PNet_WvsQCDW1_down)
-        
-        weight_PNet_WvsQCDW1_central = awkward.where(SF_W1_ptbin2, awkward.ones_like(weight_PNet_WvsQCDW1_central)*0.91497012004329, weight_PNet_WvsQCDW1_central)
-        weight_PNet_WvsQCDW1_up = awkward.where(SF_W1_ptbin2, awkward.ones_like(weight_PNet_WvsQCDW1_up)*0.935173054970369, weight_PNet_WvsQCDW1_up)
-        weight_PNet_WvsQCDW1_down = awkward.where(SF_W1_ptbin2, awkward.ones_like(weight_PNet_WvsQCDW1_down)*0.893927977587993, weight_PNet_WvsQCDW1_down)
-        
-        weight_PNet_WvsQCDW1_central = awkward.where(SF_W1_ptbin3, awkward.ones_like(weight_PNet_WvsQCDW1_central)*0.8647360917703466, weight_PNet_WvsQCDW1_central)
-        weight_PNet_WvsQCDW1_up = awkward.where(SF_W1_ptbin3, awkward.ones_like(weight_PNet_WvsQCDW1_up)*0.905865333361337, weight_PNet_WvsQCDW1_up)
-        weight_PNet_WvsQCDW1_down = awkward.where(SF_W1_ptbin3, awkward.ones_like(weight_PNet_WvsQCDW1_down)*0.826121510983113, weight_PNet_WvsQCDW1_down)
-    event["weight_PNet_WvsQCDW1_up"]=weight_PNet_WvsQCDW1_up
-    event["weight_PNet_WvsQCDW1_central"]=weight_PNet_WvsQCDW1_central
-    event["weight_PNet_WvsQCDW1_down"]=weight_PNet_WvsQCDW1_down
-
-    return event
 def PUJetID_sf(events, year,central_only, input_collection, working_point = "none"):
     """
     See:
@@ -361,3 +203,158 @@ def PUJetID_sf(events, year,central_only, input_collection, working_point = "non
         )
 
     return variations
+########################
+### Photon ID MVA SF ###
+########################
+Jet_ID_SF_FILE = {
+    "2016" : "jsonpog-integration/POG/JME/2016postVFP_UL/jmar.json",
+    "2016UL_preVFP" : "jsonpog-integration/POG/JME/2016preVFP_UL/jmar.json",
+    "2016UL_postVFP" : "jsonpog-integration/POG/JME/2016postVFP_UL/jmar.json",
+    "2017" : "jsonpog-integration/POG/JME/2017_UL/jmar.json",
+    "2018" : "jsonpog-integration/POG/JME/2018_UL/jmar.json"
+}
+
+Jet_ID_SF = {
+    "2016" : "2016postVFP",
+    "2016UL_preVFP" : "2016preVFP",
+    "2016UL_postVFP" : "2016postVFP",
+    "2017" : "2017",
+    "2018" : "2018"
+}
+
+
+def WvsQCD_MD_sf(events, year, central_only, input_collection, working_point = "none"):
+    """
+    See: 
+        - https://twiki.cern.ch/twiki/bin/viewauth/CMS/ParticleNetSFs#W_Tagger_MD
+    """
+
+    required_fields = [
+        (input_collection, "eta"), (input_collection, "pt")
+    ]
+
+    missing_fields = awkward_utils.missing_fields(events, required_fields)
+
+    evaluator = _core.CorrectionSet.from_file(misc_utils.expand_path(Jet_ID_SF_FILE[year]))
+
+    fatjets = events[input_collection]
+
+    # Flatten fatjets then convert to numpy for compatibility with correctionlib
+    n_fatjets = awkward.num(fatjets)
+    fatjets_flattened = awkward.flatten(fatjets)
+
+    fatjet_pt = numpy.clip(
+        awkward.to_numpy(fatjets_flattened.pt),
+        200.0, 
+        799.9999
+    )
+    fatjet_eta = numpy.clip(
+        awkward.to_numpy(fatjets_flattened.eta),
+        -2.49999,
+        2.49999
+    )
+    # Calculate SF and syst
+    variations = {} 
+    sf = evaluator['ParticleNet_W_MD'].evalv(
+            fatjet_eta,
+            fatjet_pt,
+            "nom",
+            working_point
+    )
+    variations["central"] = awkward.unflatten(sf, n_fatjets)
+    if not central_only:
+        syst_vars = ["up", "down"]
+        for syst_var in syst_vars:
+            syst = evaluator['ParticleNet_W_MD'].evalv(
+                    fatjet_eta,
+                    fatjet_pt,
+                    syst_var,
+                    working_point
+            )
+            if "up" in syst_var:
+                syst_var_name = "up"
+            elif "down" in syst_var:
+                syst_var_name = "down"
+            variations[syst_var_name] = awkward.unflatten(syst, n_fatjets)
+
+    for var in variations.keys():
+        # Set SFs = 1 for fatjets which are not applicable
+        variations[var] = awkward.where(
+                ((fatjets.pt < 200.0)|(fatjets.pt >= 800.0)),
+                awkward.ones_like(variations[var]),
+                variations[var]
+        )
+        variations[var] = awkward.where(
+                ((fatjets.eta <= 2.5)|(fatjets.eta >= 2.5)),
+                awkward.ones_like(variations[var]),
+                variations[var]
+        )
+
+    return variations
+
+PNbb_SF_FILE = {
+    "2016" : "higgs_dna/systematics/data/PNetbb.json",
+    "2016UL_preVFP" : "higgs_dna/systematics/data/PNetbb.json",
+    "2016UL_postVFP" : "higgs_dna/systematics/data/PNetbb.json",
+    "2017" : "higgs_dna/systematics/data/PNetbb.json",
+    "2018" : "higgs_dna/systematics/data/PNetbb.json"
+}
+
+PNbb_WP = {
+    "2016UL_preVFP" : "PNbbSF16pre",
+    "2016UL_postVFP" : "PNbbSF16post",
+    "2017" : "PNbbSF17",
+    "2018" : "PNbbSF18"
+}
+def PNbb_veto_sf(events, year, central_only, input_collection):
+
+    required_fields = [
+        (input_collection, "pt")
+    ]
+
+    missing_fields = awkward_utils.missing_fields(events, required_fields)
+
+    evaluator = _core.CorrectionSet.from_file(misc_utils.expand_path(PNbb_SF_FILE[year]))
+
+    fatjets = events[input_collection]
+
+    # Flatten fatjets then convert to numpy for compatibility with correctionlib
+    n_fatjets = awkward.num(fatjets)
+    fatjets_flattened = awkward.flatten(fatjets)
+
+    fatjet_pt = numpy.clip(
+        awkward.to_numpy(fatjets_flattened.pt),
+        100.0, 
+        2999.9999
+    )
+    # Calculate SF and syst
+    variations = {} 
+    working_point = PNbb_WP[year]
+    sf = evaluator[working_point].evalv(
+            fatjet_pt,
+    )
+    variations["central"] = awkward.unflatten(sf, n_fatjets)
+    if not central_only:
+        syst_vars = ["up", "down"]
+        for syst_var in syst_vars:
+            working_point = PNbb_WP[year]+syst_var
+            syst = evaluator[working_point].evalv(
+                    fatjet_pt,
+            )
+            if "up" in syst_var:
+                syst_var_name = "up"
+            elif "down" in syst_var:
+                syst_var_name = "down"
+            variations[syst_var_name] = awkward.unflatten(syst, n_fatjets)
+
+    for var in variations.keys():
+        # Set SFs = 1 for fatjets which are not applicable
+        variations[var] = awkward.where(
+                (fatjets.pt < 100.0),
+                awkward.ones_like(variations[var]),
+                variations[var]
+        )
+
+    return variations
+ 
+    

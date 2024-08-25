@@ -7,7 +7,6 @@ from higgs_dna.selections import (fatjet_selections, jet_selections,
                                   lepton_selections,gen_selections)
 from higgs_dna.taggers.tagger import NOMINAL_TAG, Tagger
 from higgs_dna.utils import awkward_utils, misc_utils
-from higgs_dna.systematics.jet_systematics import WvsQCD_medium_jes_syst,WvsQCD_loose_jes_syst
 vector.register_awkward()
 
 def delta_R(objects1, objects2, max_dr):
@@ -123,8 +122,6 @@ DEFAULT_OPTIONS = {
     "fatjets": {
         "pt": 100.0,
         "eta": 2.4,
-        # "xbb_over_qcd":0.9, 
-        "xbb_over_qcd":999,
         "dr_photons": 0.8,
         "dr_electrons": 0.8,
         "dr_muons": 0.8
@@ -171,9 +168,9 @@ class HHWW_Tagger_combinedYH_FHSL(Tagger):
         # data will not select gen level infos 
         # need to comment when run bkgs
         # logger.debug("Is Signal: %s" %self.options["gen_info"]["is_Signal"])
-        if not self.is_data and self.options["gen_info"]["is_Signal"]:    
-            fake_pho,prompt_pho = gen_selections.gen_Hww_4q(events)        
-            gen_l1_p4, gen_q1_p4,gen_q2_p4 = gen_selections.gen_Hww_2q2l(events)     
+        # if not self.is_data and self.options["gen_info"]["is_Signal"]:    
+        #     fake_pho,prompt_pho = gen_selections.gen_Hww_4q(events)        
+        #     gen_l1_p4, gen_q1_p4,gen_q2_p4 = gen_selections.gen_Hww_2q2l(events)     
         if not self.is_data and self.options["gen_info"]["is_Signal"]:    
             gen_obj_1, gen_obj_2, gen_obj_3, gen_obj_4, gen_lead_W_fromH, gen_sublead_W_fromH, gen_H_to_gg, gen_H_to_WW, gen_lead_g_fromH, gen_sublead_g_fromH = gen_selections.select_ww_to_qqlv_or_qqqq(events)
         # add object fields for gen objects
@@ -548,12 +545,22 @@ class HHWW_Tagger_combinedYH_FHSL(Tagger):
             name = "SelectedFatJet",
             data = events.FatJet[fatjet_cut]
         )   
-        print("puppiMET", puppiMET)
-        print("delta phi puppiMET", delta_phi(fatjets,puppiMET))
+
         try:
             fatjets['dphi_MET']=delta_phi(fatjets,puppiMET)[delta_phi(fatjets,puppiMET)>-10]
         except:
             fatjets['dphi_MET']= awkward.ones_like(fatjets.pt)*-999 # no fatjet passing the selection
+        """
+        See:
+            - https://twiki.cern.ch/twiki/bin/viewauth/CMS/ParticleNetSFs#W_Tagger_MD
+
+        Note: Particle Net WvsQCD Nanov9 working points.
+        """
+
+        WvsQCD_medium_workingpoints = {"2016UL_preVFP": 0.85,"2016UL_postVFP":0.84, "2017": 0.81, "2018": 0.82} #Loose working point
+        WvsQCD_loose_workingpoints = {"2016UL_preVFP": 0.64,"2016UL_postVFP":0.64, "2017": 0.58, "2018": 0.59} #Loose working point
+
+        Wtag=WvsQCD_loose_workingpoints[self.year]
         lepton_noniso=awkward.concatenate([electrons_noiso,muons_noiso],axis=1)
 
         awkward_utils.add_object_fields(
@@ -567,7 +574,7 @@ class HHWW_Tagger_combinedYH_FHSL(Tagger):
         fatjets_W = awkward_utils.add_field(
             events = events,
             name = "SelectedFatJet_W",
-            data = events.FatJet
+            data = events.FatJet[(events.FatJet.WvsQCDMD > Wtag)&(events.FatJet.Hqqqq_vsQCDTop < 0.2)]
         )   
         awkward_utils.add_object_fields(
         events=events,
@@ -656,16 +663,7 @@ class HHWW_Tagger_combinedYH_FHSL(Tagger):
         # ----------------------------------------------------------------------------------------------------#
         # new YH category for PNN training
         # first category: 1 lepton(iso or noniso) + 1 Wfatjet
-        """
-        See:
-            - https://indico.cern.ch/event/1152827/contributions/4840404/attachments/2428856/4162159/ParticleNet_SFs_ULNanoV9_JMAR_25April2022_PK.pdf
 
-        Note: Particle Net WvsQCD Nanov9 working points.
-        """
-        
-        WvsQCD_medium_workingpoints = {"2016UL_preVFP": 0.85,"2016UL_postVFP":0.84, "2017": 0.81, "2018": 0.82} #Loose working point
-        WvsQCD_loose_workingpoints = {"2016UL_preVFP": 0.64,"2016UL_postVFP":0.64, "2017": 0.58, "2018": 0.59} #Loose working point
-        Wtag=WvsQCD_loose_workingpoints[self.year]
         selection_fatjet_WvsQCD = awkward.num(fatjets.WvsQCDMD[(fatjets.WvsQCDMD > Wtag)]) >= 1
  
         boosted_YH_SL_cat = (((n_leptons_iso >= 1) | (n_leptons_noiso >= 1)) & (n_fatjets >=1)) # boosted 1 jet for SL channel with isolated lep
@@ -700,8 +698,6 @@ class HHWW_Tagger_combinedYH_FHSL(Tagger):
         # ----------------------------------------------------------------------------------------------------#
         category_cut = (category > 0) # cut the events with category == 0
         awkward_utils.add_field(events, "category", category) 
-        if not self.is_data : 
-            events=WvsQCD_loose_jes_syst(events,self.year)
 
         presel_cut = (bveto_cut) & (photon_id_cut) & (category_cut) & (Z_veto_cut)
         
