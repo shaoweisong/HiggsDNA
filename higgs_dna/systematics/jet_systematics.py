@@ -248,11 +248,18 @@ def WvsQCD_MD_sf(events, year, central_only, input_collection, working_point = "
         200.0, 
         799.9999
     )
-    fatjet_eta = numpy.clip(
-        awkward.to_numpy(fatjets_flattened.eta),
-        -2.49999,
-        2.49999
-    )
+    if year == "2016UL_preVFP" or year == "2016UL_postVFP":
+        fatjet_eta = numpy.clip(
+            awkward.to_numpy(fatjets_flattened.eta),
+            -2.3999,
+            2.3999
+        )
+    if year == "2018" or year == "2017":
+        fatjet_eta = numpy.clip(
+            awkward.to_numpy(fatjets_flattened.eta),
+            -2.4999,
+            2.4999
+        )
     # Calculate SF and syst
     variations = {} 
     sf = evaluator['ParticleNet_W_MD'].evalv(
