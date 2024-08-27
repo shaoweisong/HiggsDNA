@@ -618,7 +618,7 @@ class HHWW_Tagger_combinedYH_FHSL(Tagger):
         awkward_utils.add_object_fields(
             events=events,
             name="jet",
-            objects=jets,
+            objects=jets[awkward.argsort(jets.pt, ascending=False, axis=-1)],
             n_objects=7,
             dummy_value=-999
         )
