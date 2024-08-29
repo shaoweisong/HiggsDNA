@@ -319,14 +319,17 @@ def PUJetID_sf(events, year,central_only, input_collection, working_point = "non
     # Flatten jets then convert to numpy for compatibility with correctionlib
     n_jets = awkward.num(jets)
     jets_flattened = awkward.flatten(jets)
-
     jet_pt = numpy.clip(
         awkward.to_numpy(jets_flattened.pt),
         12.5, # SFs only valid for pT >= 20.0
-        57.49999
+        57.4999
+    )
+    jet_eta = numpy.clip(
+        awkward.to_numpy(jets_flattened.eta),
+        -5.83333, # SFs only valid for pT >= 20.0
+        5.83333
     )
 
-    jet_eta = awkward.to_numpy(jets_flattened.eta)
     # Calculate SF and syst
     variations = {} 
     PUJETID_SFNAME = PUJETID_SF[year]

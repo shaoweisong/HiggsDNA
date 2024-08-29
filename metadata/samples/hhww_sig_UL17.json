@@ -2716,6 +2716,16 @@
 "fpo":3,
 "files":{
 "2017":
+["/eos/cms/store/group/phys_b2g/shsong/nanoAODnTuples/nanoAODsys_Mar2024/UL2017_HHsignal/Run2017_bbgg/GluGluToRadionToHHTo2B2G/GluGluToRadionToHHTo2B2G_M-1000/019B99C5-FF96-AE40-8819-D66621A80326skimmed.root",
+"/eos/cms/store/group/phys_b2g/shsong/nanoAODnTuples/nanoAODsys_Mar2024/UL2017_HHsignal/Run2017_bbgg/GluGluToRadionToHHTo2B2G/GluGluToRadionToHHTo2B2G_M-1000/0BF7A4D0-BD5E-C246-8CAE-BB55D47B25BAskimmed.root",
+"/eos/cms/store/group/phys_b2g/shsong/nanoAODnTuples/nanoAODsys_Mar2024/UL2017_HHsignal/Run2017_bbgg/GluGluToRadionToHHTo2B2G/GluGluToRadionToHHTo2B2G_M-1000/6B3AC800-F3F5-2543-8072-D13CE34A7D45skimmed.root",
+"/eos/cms/store/group/phys_b2g/shsong/nanoAODnTuples/nanoAODsys_Mar2024/UL2017_HHsignal/Run2017_bbgg/GluGluToRadionToHHTo2B2G/GluGluToRadionToHHTo2B2G_M-1000/90170DC3-1982-D34A-940B-BC59C1AFE802skimmed.root",
+"/eos/cms/store/group/phys_b2g/shsong/nanoAODnTuples/nanoAODsys_Mar2024/UL2017_HHsignal/Run2017_bbgg/GluGluToRadionToHHTo2B2G/GluGluToRadionToHHTo2B2G_M-1000/9C0442F7-3637-8B4C-8521-3E1223C08835skimmed.root",
+"/eos/cms/store/group/phys_b2g/shsong/nanoAODnTuples/nanoAODsys_Mar2024/UL2017_HHsignal/Run2017_bbgg/GluGluToRadionToHHTo2B2G/GluGluToRadionToHHTo2B2G_M-1000/BCA408C8-DFF1-C043-8BCE-CF78F5181F81skimmed.root",
+"/eos/cms/store/group/phys_b2g/shsong/nanoAODnTuples/nanoAODsys_Mar2024/UL2017_HHsignal/Run2017_bbgg/GluGluToRadionToHHTo2B2G/GluGluToRadionToHHTo2B2G_M-1000/CDB2B171-5FB4-2349-AA75-2EDA42C0121Askimmed.root",
+"/eos/cms/store/group/phys_b2g/shsong/nanoAODnTuples/nanoAODsys_Mar2024/UL2017_HHsignal/Run2017_bbgg/GluGluToRadionToHHTo2B2G/GluGluToRadionToHHTo2B2G_M-1000/EC6FC470-18D8-9547-B587-F9B9AC6814DEskimmed.root"
+],
+"2017tmp":
 ["/eos/cms/store/group/phys_b2g/shsong/nanoAODnTuples/nanoAODsys_Mar2024/UL2017_HHsignal/Run2017bbgg/GluGluToRadionToHHTo2B2G/GluGluToRadionToHHTo2B2G_M-1000/019B99C5-FF96-AE40-8819-D66621A80326_Skim.root",
 "/eos/cms/store/group/phys_b2g/shsong/nanoAODnTuples/nanoAODsys_Mar2024/UL2017_HHsignal/Run2017bbgg/GluGluToRadionToHHTo2B2G/GluGluToRadionToHHTo2B2G_M-1000/0BF7A4D0-BD5E-C246-8CAE-BB55D47B25BA_Skim.root",
 "/eos/cms/store/group/phys_b2g/shsong/nanoAODnTuples/nanoAODsys_Mar2024/UL2017_HHsignal/Run2017bbgg/GluGluToRadionToHHTo2B2G/GluGluToRadionToHHTo2B2G_M-1000/6B3AC800-F3F5-2543-8072-D13CE34A7D45_Skim.root",
