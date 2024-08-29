@@ -165,10 +165,14 @@ def PUJetID_sf(events, year,central_only, input_collection, working_point = "non
     jet_pt = numpy.clip(
         awkward.to_numpy(jets_flattened.pt),
         12.5, # SFs only valid for pT >= 20.0
-        57.49999
+        57.4999
+    )
+    jet_eta = numpy.clip(
+        awkward.to_numpy(jets_flattened.eta),
+        -5.83333, # SFs only valid for pT >= 20.0
+        5.83333
     )
 
-    jet_eta = awkward.to_numpy(jets_flattened.eta)
     # Calculate SF and syst
     variations = {} 
     PUJETID_SFNAME = PUJETID_SF[year]
@@ -197,7 +201,7 @@ def PUJetID_sf(events, year,central_only, input_collection, working_point = "non
     for var in variations.keys():
         # Set SFs = 1 for jets which are not applicable
         variations[var] = awkward.where(
-                jets.pt > 57.49999,
+                jets.pt > 57.5,
                 awkward.ones_like(variations[var]),
                 variations[var]
         )
