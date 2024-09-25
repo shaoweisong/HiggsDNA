@@ -39,15 +39,9 @@ def select_electrons(electrons, options, clean, name = "none", tagger = None):
     if options["id"] == "WP90":
         id_cut = (electrons.mvaFall17V2Iso_WP90 == True)
         logger.debug("[select_electrons] : id_cut =WP90iso True")
-    elif options["id"] == "WP90_noniso":
-        id_cut = (electrons.mvaFall17V2noIso_WP90 == True) & (electrons.mvaFall17V2Iso_WP90 == False) 
-    elif options["id"] == "WP90_noniso_WPLnoniso":
-        id_cut = (electrons.mvaFall17V2noIso_WPL == True) & (electrons.mvaFall17V2Iso_WP90 == False) 
-    elif options["id"] == "WP90_noniso_WP80noniso":
-        id_cut = (electrons.mvaFall17V2noIso_WP80 == True) & (electrons.mvaFall17V2Iso_WP90 == False) 
-    elif options["id"] == "WP80iso_WPLnoniso":
-        id_cut = (electrons.mvaFall17V2noIso_WPL == True) & (electrons.mvaFall17V2Iso_WP80 == False) 
-    elif options["id"] == "WP80iso_WP90noniso":
+    elif options["id"] == "WP90noniso":
+        id_cut = (electrons.mvaFall17V2noIso_WP90 == True)
+    elif options["id"] == "WP90nonisoWP80":
         id_cut = (electrons.mvaFall17V2noIso_WP90 == True) & (electrons.mvaFall17V2Iso_WP80 == False) 
     elif options["id"] == "WP80_noniso":
         id_cut = (electrons.mvaFall17V2noIso_WP80 == True) & (electrons.mvaFall17V2Iso_WP80 == False) 

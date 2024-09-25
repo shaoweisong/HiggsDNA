@@ -37,7 +37,60 @@ PUJETID_SF = {
     "2017" : "PUJetID_eff",
     "2018" : "PUJetID_eff"
 }
-
+JERC_FILE = {
+    "2016UL_preVFP" : "jsonpog-integration/POG/JME/2016preVFP_UL/jet_jerc.json",
+    "2016UL_postVFP" : "jsonpog-integration/POG/JME/2016postVFP_UL/jet_jerc.json",
+    "2017" : "jsonpog-integration/POG/JME/2017_UL/jet_jerc.json",
+    "2018" : "jsonpog-integration/POG/JME/2018_UL/jet_jerc.json"}
+AK4JEC_VARIATIONS = [
+    "Summer19UL17_V5_MC_AbsoluteMPFBias_AK4PFchs",
+    "Summer19UL17_V5_MC_AbsoluteScale_AK4PFchs",
+    "Summer19UL17_V5_MC_AbsoluteStat_AK4PFchs",
+    "Summer19UL17_V5_MC_FlavorQCD_AK4PFchs",
+    "Summer19UL17_V5_MC_Fragmentation_AK4PFchs",
+    "Summer19UL17_V5_MC_PileUpDataMC_AK4PFchs",
+    "Summer19UL17_V5_MC_PileUpPtBB_AK4PFchs",
+    "Summer19UL17_V5_MC_PileUpPtEC1_AK4PFchs",
+    "Summer19UL17_V5_MC_PileUpPtEC2_AK4PFchs",
+    "Summer19UL17_V5_MC_PileUpPtHF_AK4PFchs",
+    "Summer19UL17_V5_MC_PileUpPtRef_AK4PFchs",
+    "Summer19UL17_V5_MC_RelativeFSR_AK4PFchs",
+    "Summer19UL17_V5_MC_RelativeJEREC1_AK4PFchs",
+    "Summer19UL17_V5_MC_RelativeJEREC2_AK4PFchs",
+    "Summer19UL17_V5_MC_RelativeJERHF_AK4PFchs",
+    "Summer19UL17_V5_MC_RelativePtBB_AK4PFchs",
+    "Summer19UL17_V5_MC_RelativePtEC1_AK4PFchs",
+    "Summer19UL17_V5_MC_RelativePtEC2_AK4PFchs",
+    "Summer19UL17_V5_MC_RelativePtHF_AK4PFchs",
+    "Summer19UL17_V5_MC_RelativeBal_AK4PFchs",
+    "Summer19UL17_V5_MC_RelativeSample_AK4PFchs",
+    "Summer19UL17_V5_MC_RelativeStatEC_AK4PFchs",
+    "Summer19UL17_V5_MC_RelativeStatFSR_AK4PFchs",
+    "Summer19UL17_V5_MC_RelativeStatHF_AK4PFchs",
+    "Summer19UL17_V5_MC_SinglePionECAL_AK4PFchs",
+    "Summer19UL17_V5_MC_SinglePionHCAL_AK4PFchs",
+    "Summer19UL17_V5_MC_TimePtEta_AK4PFchs"]
+    
+DEEPJET_VARIATIONS = { 
+    "up_jes" : [5, 0], # applicable to b (5) and light (0) jets, but not charm (4)
+    "up_lf" : [5],
+    "up_hfstats1" : [5],
+    "up_hfstats2" : [5],
+    "up_cferr1" : [4],
+    "up_cferr2" : [4],
+    "up_hf" : [0],
+    "up_lfstats1" : [0],
+    "up_lfstats2" : [0],
+    "down_jes" : [5, 0], # applicable to b (5) and light (0) jets, but not charm(4)
+    "down_lf" : [5],
+    "down_hfstats1" : [5],
+    "down_hfstats2" : [5],
+    "down_cferr1" : [4],
+    "down_cferr2" : [4],
+    "down_hf" : [0],
+    "down_lfstats1" : [0],
+    "down_lfstats2" : [0],
+}
 DEEPJET_VARIATIONS = { 
     "up_jes" : [5, 0], # applicable to b (5) and light (0) jets, but not charm (4)
     "up_lf" : [5],
@@ -76,8 +129,6 @@ def btag_deepjet_reshape_sf(events, year, central_only, input_collection):
    
     jets = events[input_collection]
     jets["flavor"] = jets.hadronFlavour
-
-    # Flatten jets then convert to numpy for compatibility with correctionlib
     n_jets = awkward.num(jets) # save n_jets to convert back to jagged format at the end 
     jets_flattened = awkward.flatten(jets)
 
@@ -140,7 +191,50 @@ def btag_deepjet_reshape_sf(events, year, central_only, input_collection):
 
     return variations
 
+def jec_sf(events, year, central_only, input_collection):
+    """
+    See:
+        - https://cms-nanoaod-integration.web.cern.ch/commonJSONSFs/BTV_bjets_Run2_UL/
+        - https://gitlab.cern.ch/cms-nanoAOD/jsonpog-integration/-/blob/master/examples/btvExample.py
 
+    Note: application of SFs should not change the overall normalization of a sample (before any b-tagging selection) and each sample should be adjusted by an overall weight derived in a phase space with no requirements on b-jets such that the normalization is unchanged. TODO: link BTV TWiki that describes this.
+    """
+    required_fields = [
+        (input_collection, "eta"), (input_collection, "pt")
+    ]
+    missing_fields = awkward_utils.missing_fields(events, required_fields)
+
+    evaluator = _core.CorrectionSet.from_file(misc_utils.expand_path(JERC_FILE[year]))
+   
+    jets = events[input_collection]
+    n_jets = awkward.num(jets) # save n_jets to convert back to jagged format at the end 
+    jets_flattened = awkward.flatten(jets)
+    jet_abs_eta = numpy.clip(
+        awkward.to_numpy(abs(jets_flattened.eta)),
+        0.0,
+        5.19 # SFs only valid up to eta 2.5
+    )
+    jet_pt = numpy.clip(
+        awkward.to_numpy(jets_flattened.pt),
+        15.00001, # SFs only valid for pT > 20.
+        3000.
+    )
+    for key in AK4JEC_VARIATIONS:
+        variations = {}
+        unc = evaluator[key].evalv(
+            jet_abs_eta,
+            jet_pt)
+        variations["up"] = awkward.unflatten(unc+ awkward.ones_like(unc), n_jets) 
+        variations["down"] = awkward.unflatten(unc- awkward.ones_like(unc), n_jets)
+        for var in variations.keys():
+            # Set SFs = 1 for jets which are not applicable (pt <= 20 or |eta| >= 2.5)
+            variations[var] = awkward.where(
+                    (jets.pt <= 15.0) | (abs(jets.eta) >= 5.19),
+                    awkward.ones_like(variations[var]),
+                    variations[var]
+            )
+        return variations
+    
 def PUJetID_sf(events, year,central_only, input_collection, working_point = "none"):
     """
     See:

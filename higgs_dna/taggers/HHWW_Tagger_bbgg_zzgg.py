@@ -78,7 +78,7 @@ DEFAULT_OPTIONS = {
     "electrons_noiso": {
         "pt": 10,
         "dr_photons": 0.4,
-        "id": "WP80iso_WP90noniso"
+        "id": "WP90noniso"
     },
     "electron_iso": {
         "pt": 10,
@@ -577,8 +577,21 @@ class HHWW_Tagger_combinedYH_FHSL(Tagger):
         presel_cut = (bveto_cut) & (photon_id_cut) & (Z_veto_cut) & (category_cut) 
         
         real_photon_id_cut= (events.LeadPhoton.mvaID_modified > -0.7) & (events.SubleadPhoton.mvaID_modified > -0.7)
+        if self.year=="2018" and self.is_data:
+            hem_run=events.run > 319077        
+            hem_jet=awkward.num(events.Jet[(events.Jet.phi>-1.57) & (events.Jet.phi<-0.87) & (events.Jet.eta>-3) & (events.Jet.eta<-1.3)])>0
+            hem_cut=~(hem_run & hem_jet)        
+        elif self.year=="2018" and not self.is_data:
+            #random number generator from 0 to 1
+            fraction=0.35 #
+            events['random'] = numpy.random.rand(len(events))
+            hem_run=events.random < fraction
+            hem_jet=awkward.num(events.Jet[(events.Jet.phi>-1.57) & (events.Jet.phi<-0.87) & (events.Jet.eta>-3) & (events.Jet.eta<-1.3)])>0
+            hem_cut=~(hem_run & hem_jet) 
+        else:
+            hem_cut=events.Photon.pt > 0
         self.register_cuts(
-                names=["bbgg veto ", "Z_veto_cut","Photon id preselection","Photon id selection","category_cut"],
-                results=[bveto_cut,Z_veto_cut,photon_id_cut,real_photon_id_cut, category_cut ])
+                names=["bbgg veto ", "Z_veto_cut","Photon id preselection","Photon id selection","category_cut","hem_cut"],
+                results=[bveto_cut,Z_veto_cut,photon_id_cut,real_photon_id_cut, category_cut ,hem_cut])
 
         return presel_cut, events

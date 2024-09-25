@@ -42,7 +42,7 @@ def photon_electron_veto_sf(events, central_only, year):
         },
         central_only = central_only
     )
-
+    print(variations)
     return variations
 
 ##################

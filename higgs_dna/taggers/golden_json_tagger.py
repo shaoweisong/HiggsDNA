@@ -34,6 +34,7 @@ class GoldenJsonTagger(Tagger):
 
     
     def calculate_selection(self, events):        
+
         # If no valid golden json file, return all True
         if self.output_dir is None:
             self.output_dir = output_dir
