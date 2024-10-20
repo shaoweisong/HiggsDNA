@@ -710,20 +710,21 @@ class HHWW_Tagger_combinedYH_FHSL(Tagger):
         if self.year=="2018" and self.is_data:
             hem_run=events.run > 319077        
             hem_jet=awkward.num(events.Jet[(events.Jet.phi>-1.57) & (events.Jet.phi<-0.87) & (events.Jet.eta>-3) & (events.Jet.eta<-1.3)])>0
-            hem_cut=~(hem_run & hem_jet)        
+            hem_fatjet=awkward.num(events.FatJet[(events.FatJet.phi>-1.57) & (events.FatJet.phi<-0.87) & (events.FatJet.eta>-3) & (events.FatJet.eta<-1.3)])>0
+            hem_cut=~((hem_run & hem_jet) | (hem_run & hem_fatjet))        
         elif self.year=="2018" and not self.is_data:
             #random number generator from 0 to 1
             fraction=0.07228293695247046 #
             events['random'] = numpy.random.rand(len(events))
             hem_run=events.random < fraction
             hem_jet=awkward.num(events.Jet[(events.Jet.phi>-1.57) & (events.Jet.phi<-0.87) & (events.Jet.eta>-3) & (events.Jet.eta<-1.3)])>0
-            hem_cut=~(hem_run & hem_jet) 
+            hem_fatjet=awkward.num(events.FatJet[(events.FatJet.phi>-1.57) & (events.FatJet.phi<-0.87) & (events.FatJet.eta>-3) & (events.FatJet.eta<-1.3)])>0
+            hem_cut=~((hem_run & hem_jet) | (hem_run & hem_fatjet))
         else:
             hem_cut=events.category >= 0
         self.register_cuts(
                 names=["bbgg veto ", "Z_veto_cut","Photon id preselection","Photon id selection","category_cut","hem"],
                 results=[bveto_cut,Z_veto_cut,photon_id_cut,real_photon_id_cut, category_cut, hem_cut])
         presel_cut = (bveto_cut) & (photon_id_cut) & (category_cut) & (Z_veto_cut) & (hem_cut)
-        # events = events[presel_cut]
-        # events['weight_central'] = ak.sum(nobtag  )/ak.sum(withbtag)*event.weight_central
+
         return presel_cut, events

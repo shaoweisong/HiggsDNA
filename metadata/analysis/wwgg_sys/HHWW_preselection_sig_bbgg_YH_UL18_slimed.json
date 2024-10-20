@@ -82,31 +82,6 @@
                     "working_point" : "wp90noiso"
                 }
             },
-            "jet_puid_sf" : {
-                "type" : "object",
-                "method" : "from_function",
-                "function" : {
-                    "module_name" : "higgs_dna.systematics.jet_systematics",
-                    "name" : "PUJetID_sf"
-                },
-                "modify_central_weight" : true,
-                "input_collection" : "Jet",
-                "target_collections" : ["SelectedJet"],
-                "kwargs" : {
-                    "working_point" : "T"
-                }
-            },                
-            "PNbb_veto_sf" : {
-                "type" : "object",
-                "method" : "from_function",
-                "function" : {
-                    "module_name" : "higgs_dna.systematics.jet_systematics",
-                    "name" : "PNbb_veto_sf"
-                },
-                "modify_central_weight" : true,
-                "input_collection" : "FatJet",
-                "target_collections" : ["SelectedFatJet"]
-            },                
             "isoelectron_id_sf" : {
                 "type" : "object",
                 "method" : "from_function",
@@ -122,12 +97,35 @@
                 }
                 
             },
+            "electron_reco_sf" : {
+                "type" : "object",
+                "method" : "from_function",
+                "function" : {
+                    "module_name" : "higgs_dna.systematics.lepton_systematics",
+                    "name" : "electron_reco_sf"
+                },
+                "modify_central_weight" : true,
+                "input_collection" : "Electron",
+                "target_collections" : ["SelectedElectron_iso","SelectedElectron_noiso"]
+            },
+            "isomuon_iso_sf" : {
+                "type" : "object",
+                "method" : "from_function",
+                "function" : {
+                    "module_name" : "higgs_dna.systematics.lepton_systematics",
+                    "name" : "muon_tightiso_sf"
+                },
+                "modify_central_weight" : true,
+                "input_collection" : "Muon",
+                "target_collections" : ["SelectedMuon_iso"]
+                
+            },
             "isomuon_id_sf" : {
                 "type" : "object",
                 "method" : "from_function",
                 "function" : {
                     "module_name" : "higgs_dna.systematics.lepton_systematics",
-                    "name" : "muon_tightid_tightiso_sf"
+                    "name" : "muon_tightid_sf"
                 },
                 "modify_central_weight" : true,
                 "input_collection" : "Muon",
@@ -157,18 +155,32 @@
                 "input_collection" : "Muon",
                 "target_collections" : ["SelectedMuon_noiso"]
                 
-            },
-            "pu_reweight_sf" : {
-                "type" : "event",
+            },          
+            "jet_puid_sf" : {
+                "type" : "object",
                 "method" : "from_function",
                 "function" : {
-                    "module_name" : "higgs_dna.systematics.pileup_systematics",
-                    "name" : "pu_reweight_sf"
+                    "module_name" : "higgs_dna.systematics.jet_systematics",
+                    "name" : "PUJetID_sf"
                 },
                 "modify_central_weight" : true,
-                "requires_branches" : ["Pileup_nTrueInt"]
-                
-            },
+                "input_collection" : "Jet",
+                "target_collections" : ["SelectedJet"],
+                "kwargs" : {
+                    "working_point" : "T"
+                }
+            },            
+            "btag_reshape_sf" : {
+                "type" : "object",
+                "method" : "from_function",
+                "function" : {
+                    "module_name" : "higgs_dna.systematics.jet_systematics",
+                    "name" : "btag_deepjet_reshape_sf"
+                },
+                "modify_central_weight" : true,
+                "input_collection" : "Jet",
+                "target_collections" : ["SelectedJet"]
+            },            
             "PNet_WvsQCD_MD_sf" : {
                 "type" : "object",
                 "method" : "from_function",
@@ -182,7 +194,18 @@
                 "kwargs" : {
                     "working_point" : "2p5"
                 }
-            }, 
+            },            
+            "pu_reweight_sf" : {
+                "type" : "event",
+                "method" : "from_function",
+                "function" : {
+                    "module_name" : "higgs_dna.systematics.pileup_systematics",
+                    "name" : "pu_reweight_sf"
+                },
+                "modify_central_weight" : true,
+                "requires_branches" : ["Pileup_nTrueInt"]
+                
+            },
             "L1_prefiring_sf" : {
                 "type" : "event",
                 "method" : "from_branch",
@@ -201,6 +224,17 @@
                 },
                 "modify_central_weight" : true,
                 "requires_branches" : ["Diphoton", "LeadPhoton", "SubleadPhoton"]
+            },
+            "PNbb_veto_sf" : {
+                "type" : "object",
+                "method" : "from_function",
+                "function" : {
+                    "module_name" : "higgs_dna.systematics.jet_systematics",
+                    "name" : "PNbb_veto_sf"
+                },
+                "modify_central_weight" : true,
+                "input_collection" : "FatJet",
+                "target_collections" : ["SelectedFatJet"]
             }},
     "independent_collections" : {
         "fnuf" : {
@@ -364,7 +398,7 @@
         "FatJet_particleNetMD_QCD","FatJet_particleNetMD_Xbb","FatJet_particleNetMD_Xcc","FatJet_particleNetMD_Xqq",
         "Muon_pt", "Muon_eta", "Muon_phi", "Muon_mass", "Muon_charge", "Muon_pfRelIso03_all","Muon_highPtId","Muon_pfRelIso04_all", "Muon_dxy", "Muon_dz", "Muon_tightId", "Muon_isGlobal", "Muon_mediumId","Muon_highPtId","Muon_tunepRelPt",
         "Electron_pt", "Electron_eta", "Electron_phi", "Electron_mass", "Electron_charge",  "Electron_hoe", "Electron_mvaFall17V2Iso_WP90", "Electron_mvaFall17V2noIso_WP90", "Electron_pfRelIso03_chg","Electron_pfRelIso03_all", "Electron_dxy", "Electron_dz", "Electron_mvaFall17V2Iso_WP80","Electron_mvaFall17V2Iso_WPL","Electron_mvaFall17V2noIso_WPL","Electron_mvaFall17V2noIso_WP80","Electron_miniPFRelIso_all","Muon_miniPFRelIso_all","Muon_looseId",
-        "PrefireWeight","PrefireWeight_Down","PrefireWeight_Up","L1PreFiringWeight_Nom", "L1PreFiringWeight_Up", "L1PreFiringWeight_Dn",
+        "PrefireWeight","PrefireWeight_Down","PrefireWeight_Up","L1PreFiringWeight_Nom", "L1PreFiringWeight_Up", "L1PreFiringWeight_Dn","Jet_hadronFlavour",
         "genWeight", "run", "event", "fixedGridRhoAll","luminosityBlock","Jet_pt_jesHEMIssueUp","Jet_pt_jesHEMIssueDown","FatJet_pt_jesHEMIssueUp","FatJet_pt_jesHEMIssueDown","FatJet_jetId",
         "FatJet_pt_jesTotalDown","FatJet_pt_jesTotalUp","FatJet_pt_jerUp","FatJet_pt_jerDown","Muon_corrected_pt","Muon_correctedUp_pt","Muon_correctedDown_pt","LHEScaleWeight_Zero","Photon_dEsigmaDown","Photon_dEsigmaUp","Photon_pt_ScaleUp","Photon_pt_ScaleDown","Jet_pt_nom", "Jet_pt_jerUp", "Jet_pt_jerDown", "Jet_pt_jesTotalUp", "Jet_pt_jesTotalDown","MET_T1_pt","MET_T1_pt_jerUp","MET_T1_pt_jerDown","MET_T1_pt_jesTotalUp","MET_T1_pt_jesTotalDown","MET_T1_pt_unclustEnUp","MET_T1_pt_unclustEnDown","Muon_corrected_pt","Muon_correctedUp_pt","Muon_correctedDown_pt"
     ],

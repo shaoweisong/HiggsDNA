@@ -155,18 +155,7 @@
                 "input_collection" : "Muon",
                 "target_collections" : ["SelectedMuon_noiso"]
                 
-            },
-            "jec_corr" : {
-                "type" : "object",
-                "method" : "from_function",
-                "function" : {
-                    "module_name" : "higgs_dna.systematics.jet_systematics",
-                    "name" : "jec_sf"
-                },
-                "modify_central_weight" : false,
-                "input_collection" : "Jet",
-                "target_collections" : ["SelectedJet"]
-            },            
+            },          
             "jet_puid_sf" : {
                 "type" : "object",
                 "method" : "from_function",
@@ -278,7 +267,7 @@
                 "down" : ["Jet", "pt_jerDown"]
             }
         },
-        "JES" : {
+        "JES" :{
             "method" : "from_branch",
             "branch_modified" : ["Jet", "pt"],
             "branches" : {

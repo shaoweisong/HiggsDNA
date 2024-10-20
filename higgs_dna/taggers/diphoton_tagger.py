@@ -230,7 +230,7 @@ class DiphotonTagger(Tagger):
 
         self.register_cuts(
             names = ["lead pt cut","sublead pt cut","lead pt mgg cut", "sublead pt mgg cut", "mass cut", "modifiedID>-0.7","all cuts"],
-            results = [lead_pt_cut, sublead_pt_cut,lead_pt_mgg_cut, sublead_pt_mgg_cut, mass_cut, realphotonID_cut,all_cuts],
+            results = [lead_pt_cut, sublead_pt_cut,lead_pt_mgg_cut, sublead_pt_mgg_cut, mass_cut, realphotonID_cut,all_cuts&realphotonID_cut],
             cut_type = "diphoton"
         )
 
@@ -283,6 +283,7 @@ class DiphotonTagger(Tagger):
         dipho_events[("SubleadPhoton", "mvaID_WP90")] = dipho_events.SubleadPhoton.mvaID_WP90
         dipho_events[("LeadPhoton","Photon_r9")] = dipho_events.LeadPhoton.r9
         dipho_events[("SubleadPhoton","Photon_r9")] = dipho_events.SubleadPhoton.r9
+        dipho_IDcut= (dipho_events.LeadPhoton.mvaID_modified > -0.7) & (dipho_events.SubleadPhoton.mvaID_modified > -0.7)
         dipho_presel_cut = awkward.num(dipho_events.Diphoton) == 1
         # for hlt in self.options["trigger"][self.year]: # logical OR of all triggers
         #     trigger_cut = dipho_events[hlt] == True
@@ -297,7 +298,7 @@ class DiphotonTagger(Tagger):
 
         self.register_cuts(
             names = ["At least 1 diphoton pair", "HLT Trigger", "all"],
-            results = [dipho_presel_cut, trigger_cut, presel_cut]
+            results = [dipho_presel_cut, trigger_cut,presel_cut]
         )
 
         dipho_events = dipho_events[presel_cut]

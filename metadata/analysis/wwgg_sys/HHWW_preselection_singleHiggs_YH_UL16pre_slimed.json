@@ -224,17 +224,6 @@
                 },
                 "modify_central_weight" : true,
                 "requires_branches" : ["Diphoton", "LeadPhoton", "SubleadPhoton"]
-            },
-            "PNbb_veto_sf" : {
-                "type" : "object",
-                "method" : "from_function",
-                "function" : {
-                    "module_name" : "higgs_dna.systematics.jet_systematics",
-                    "name" : "PNbb_veto_sf"
-                },
-                "modify_central_weight" : true,
-                "input_collection" : "FatJet",
-                "target_collections" : ["SelectedFatJet"]
             }},
     "independent_collections" : {
         "fnuf" : {
@@ -328,7 +317,7 @@
 
 
     "samples": {
-        "catalog": "metadata/samples/hhww_sig_UL16.json",
+        "catalog": "metadata/samples/hhww_data_bkg_UL16.json",
         "sample_list": [
             "NMSSM_XToYHTo2G2WTo2G2Q1L1Nu_MX-1000_MY-100_TuneCP5_13TeV-madgraph-pythia8",
             "NMSSM_XToYHTo2G2WTo2G2Q1L1Nu_MX-1000_MY-125_TuneCP5_13TeV-madgraph-pythia8",
@@ -658,7 +647,7 @@
             "GluGluToRadionToHHTo2G2ZTo2G4Q_M-3000_TuneCP5_PSWeights_narrow_13TeV"
         ],
         "years": [
-            "2016UL_postVFP"
+            "2016UL_preVFP"
         ]
     },
     "variables_of_interest" : [
@@ -683,6 +672,7 @@
         "fatjet_1_pt","fatjet_1_eta","fatjet_1_phi","fatjet_1_particleNetMD_Xbb","fatjet_1_particleNetMD_QCD","fatjet_1_Hqqqq_vsQCDTop","fatjet_1_WvsQCDMD","fatjet_1_particleNet_ZvsQCD","fatjet_1_msoftdrop","fatjet_1_subJetIdx1","fatjet_1_subJetIdx2",
         "fatjet_2_pt","fatjet_2_eta","fatjet_2_phi","fatjet_2_particleNetMD_Xbb","fatjet_2_particleNetMD_QCD","fatjet_2_Hqqqq_vsQCDTop","fatjet_2_WvsQCDMD","fatjet_2_particleNet_ZvsQCD","fatjet_2_msoftdrop","fatjet_2_subJetIdx1","fatjet_2_subJetIdx2",
         "fatjet_3_pt","fatjet_3_eta","fatjet_3_phi","fatjet_3_particleNetMD_Xbb","fatjet_3_particleNetMD_QCD","fatjet_3_Hqqqq_vsQCDTop","fatjet_3_WvsQCDMD","fatjet_3_particleNet_ZvsQCD","fatjet_3_msoftdrop","fatjet_3_subJetIdx1","fatjet_3_subJetIdx2",
+        "weight_PNet_WvsQCDW1_up","weight_PNet_WvsQCDW1_central","weight_PNet_WvsQCDW1_down",
         "weight_central","pass_H","pass_WvsQCD_failed_H",
         "category",
         "event"

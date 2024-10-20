@@ -392,8 +392,8 @@ class Task():
         """
         Add a yield table to the csv file.
         """
-        # logger.debug("[Task : yield_table] Task '%s' : adding yield table to csv file." % (self.name))
-        # self.yield_table = {}
+        logger.debug("[Task : yield_table] Task '%s' : adding yield table to csv file." % (self.name))
+        self.yield_table = {}
         # for syst_tag, outputs in self.outputs.items():
         #     if not outputs:
         #         continue

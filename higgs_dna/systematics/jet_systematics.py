@@ -42,7 +42,7 @@ JERC_FILE = {
     "2016UL_postVFP" : "jsonpog-integration/POG/JME/2016postVFP_UL/jet_jerc.json",
     "2017" : "jsonpog-integration/POG/JME/2017_UL/jet_jerc.json",
     "2018" : "jsonpog-integration/POG/JME/2018_UL/jet_jerc.json"}
-AK4JEC_VARIATIONS = [
+AK4JEC_VARIATIONS = {"2017":[
     "Summer19UL17_V5_MC_AbsoluteMPFBias_AK4PFchs",
     "Summer19UL17_V5_MC_AbsoluteScale_AK4PFchs",
     "Summer19UL17_V5_MC_AbsoluteStat_AK4PFchs",
@@ -69,7 +69,36 @@ AK4JEC_VARIATIONS = [
     "Summer19UL17_V5_MC_RelativeStatHF_AK4PFchs",
     "Summer19UL17_V5_MC_SinglePionECAL_AK4PFchs",
     "Summer19UL17_V5_MC_SinglePionHCAL_AK4PFchs",
-    "Summer19UL17_V5_MC_TimePtEta_AK4PFchs"]
+    "Summer19UL17_V5_MC_TimePtEta_AK4PFchs"],
+    "2018":["Summer19UL18_V5_MC_AbsoluteMPFBias_AK4PFchs",
+            "Summer19UL18_V5_MC_AbsoluteScale_AK4PFchs",
+            "Summer19UL18_V5_MC_AbsoluteStat_AK4PFchs",
+            "Summer19UL18_V5_MC_FlavorQCD_AK4PFchs",
+            "Summer19UL18_V5_MC_Fragmentation_AK4PFchs",
+            "Summer19UL18_V5_MC_PileUpDataMC_AK4PFchs",
+            "Summer19UL18_V5_MC_PileUpPtBB_AK4PFchs",
+            "Summer19UL18_V5_MC_PileUpPtEC1_AK4PFchs",
+            "Summer19UL18_V5_MC_PileUpPtEC2_AK4PFchs",
+            "Summer19UL18_V5_MC_PileUpPtHF_AK4PFchs",
+            "Summer19UL18_V5_MC_PileUpPtRef_AK4PFchs",
+            "Summer19UL18_V5_MC_RelativeFSR_AK4PFchs",
+            "Summer19UL18_V5_MC_RelativeJEREC1_AK4PFchs",
+            "Summer19UL18_V5_MC_RelativeJEREC2_AK4PFchs",
+            "Summer19UL18_V5_MC_RelativeJERHF_AK4PFchs",
+            "Summer19UL18_V5_MC_RelativePtBB_AK4PFchs",
+            "Summer19UL18_V5_MC_RelativePtEC1_AK4PFchs",
+            "Summer19UL18_V5_MC_RelativePtEC2_AK4PFchs",
+            "Summer19UL18_V5_MC_RelativePtHF_AK4PFchs",
+            "Summer19UL18_V5_MC_RelativeBal_AK4PFchs",
+            "Summer19UL18_V5_MC_RelativeSample_AK4PFchs",
+            "Summer19UL18_V5_MC_RelativeStatEC_AK4PFchs",
+            "Summer19UL18_V5_MC_RelativeStatFSR_AK4PFchs",
+            "Summer19UL18_V5_MC_RelativeStatHF_AK4PFchs",
+            "Summer19UL18_V5_MC_SinglePionECAL_AK4PFchs",
+            "Summer19UL18_V5_MC_SinglePionHCAL_AK4PFchs",
+            "Summer19UL18_V5_MC_TimePtEta_AK4PFchs"]}
+                                 
+                 
     
 DEEPJET_VARIATIONS = { 
     "up_jes" : [5, 0], # applicable to b (5) and light (0) jets, but not charm (4)
@@ -459,7 +488,24 @@ def PNbb_veto_sf(events, year, central_only, input_collection):
                 awkward.ones_like(variations[var]),
                 variations[var]
         )
-
+    unflattened_up = variations["up"]
+    unflattened_down = variations["down"]
+    print(unflattened_up)
+    print("test")
+    maxvalue=awkward.max(unflattened_up, axis=1,mask_identity=True)
+    minvalue=awkward.min(unflattened_down, axis=1,mask_identity=True)
+    variations["up"] = awkward.broadcast_arrays(maxvalue[:,None],unflattened_up)[0]
+    variations["down"] = awkward.broadcast_arrays(minvalue[:,None],unflattened_down)[0]
+    roots = awkward.where(n_fatjets == 6, 1/6,
+            awkward.where(n_fatjets == 5, 1/5,
+            awkward.where(n_fatjets == 4, 1/4,
+            awkward.where(n_fatjets == 3, 1/3,
+            awkward.where(n_fatjets == 2, 1/2,
+            awkward.where(n_fatjets == 1, 1, 1))))))
+    # 广播根的值并进行幂运算
+    variations["up"] = numpy.power(variations["up"], roots[:, None])
+    variations["down"] = numpy.power(variations["down"], roots[:, None])
+    print(variations["up"])
     return variations
  
     

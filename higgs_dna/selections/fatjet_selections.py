@@ -34,8 +34,8 @@ def select_fatjets(fatjets, subjets, options, clean, name = "none", tagger = Non
 
     if tagger is not None:
         tagger.register_cuts(
-            names = ["standard_cuts","H_jet_cut","SubJet_cut", "all_cuts"],
-            results = [standard_cuts, H_jet_cut,subjets_cut, all_cuts],
+            names = ["pteta cut","H_jet_cut","SubJet_cut", "fatjetIDcut"],
+            results = [standard_cuts, H_jet_cut,subjets_cut, fatjetIDcut],
             cut_type = name
         )
 

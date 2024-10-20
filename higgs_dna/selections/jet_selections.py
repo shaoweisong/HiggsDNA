@@ -28,12 +28,12 @@ def select_jets(jets, options, clean, name = "none", tagger = None):
     pujetIDcut = ((jets.puId>=7)&(jets.pt<50))|(jets.pt>=50)
     #  & (jets.btagDeepFlavB>=0.3040)
 
-    all_cuts = (standard_cuts) & (jetIDcut) &(pujetIDcut)& (bveto)
+    all_cuts = (standard_cuts) & (jetIDcut) &(pujetIDcut)
 
     if tagger is not None:
         tagger.register_cuts(
-            names = ["standard_cuts","jet ID cut","pujet ID cut","bveto","all cuts"],
-            results = [standard_cuts,jetIDcut,pujetIDcut,bveto,all_cuts],
+            names = ["pteta cut","jet ID cut","pujet ID cut","all cuts"],
+            results = [standard_cuts,jetIDcut,pujetIDcut,all_cuts],
             cut_type = name
         )
 
