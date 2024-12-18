@@ -2,7 +2,7 @@
     "GluGluHToGG_M125_TuneCP5_13TeV-amcatnloFXFX-pythia8": {
         "process_id": 0,
         "xs": 48.58,
-        "br": 1,
+        "bf": 1,
         "fpo": 5,
         "files": {
             "2017": [
@@ -74,7 +74,7 @@
     "ttHJetToGG_M125_TuneCP5_13TeV-amcatnloFXFX-madspin-pythia8": {
         "process_id": 0,
         "xs": 0.5071,
-        "br": 1,
+        "bf": 1,
         "fpo": 5,
         "files": {
             "2017": [
@@ -104,7 +104,7 @@
     "VBFHToGG_M125_TuneCP5_13TeV-amcatnlo-pythia8": {
         "process_id": 0,
         "xs": 3.782,
-        "br": 1,
+        "bf": 1,
         "fpo": 5,
         "files": {
             "2017": [
@@ -182,7 +182,7 @@
     "VHToGG_M125_TuneCP5_13TeV-amcatnloFXFX-madspin-pythia8": {
         "process_id": 0,
         "xs": 2.257,
-        "br": 1,
+        "bf": 1,
         "fpo": 5,
         "files": {
             "2017": [

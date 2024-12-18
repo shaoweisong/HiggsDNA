@@ -8,7 +8,7 @@ from higgs_dna.utils import misc_utils
 
 DEFAULT_ELECTRONS = {
         "pt" : 10.0,
-        "eta" : 2.4,
+        "eta" : 2.5,
         "dxy" : 0.045,
         "dz" : 0.2,
         "id" : "WPL",
@@ -86,7 +86,7 @@ def select_electrons(electrons, options, clean, name = "none", tagger = None):
 
 DEFAULT_MUONS = {
         "pt" : 10.0,
-        "eta" : 2.5,
+        "eta" : 2.4,
         "id" : "tight",  
         "non_pfRelIso04_all":None,  
         "pfRelIso04_all" : None,
@@ -131,7 +131,7 @@ def select_muons(muons, options, clean, name = "none", tagger = None):
 DEFAULT_NONISMUONS = {
         "pt" : 0,
         "Tunept" : 10.0,
-        "eta" : 2.5,
+        "eta" : 2.4,
         "id" : "highptId",  
         "non_pfRelIso04_all":None,  
         "pfRelIso04_all" : None,

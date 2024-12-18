@@ -120,26 +120,28 @@ DEEPJET_VARIATIONS = {
     "down_lfstats1" : [0],
     "down_lfstats2" : [0],
 }
-DEEPJET_VARIATIONS = { 
-    "up_jes" : [5, 0], # applicable to b (5) and light (0) jets, but not charm (4)
-    "up_lf" : [5],
-    "up_hfstats1" : [5],
-    "up_hfstats2" : [5],
-    "up_cferr1" : [4],
-    "up_cferr2" : [4],
-    "up_hf" : [0],
-    "up_lfstats1" : [0],
-    "up_lfstats2" : [0],
-    "down_jes" : [5, 0], # applicable to b (5) and light (0) jets, but not charm(4)
-    "down_lf" : [5],
-    "down_hfstats1" : [5],
-    "down_hfstats2" : [5],
-    "down_cferr1" : [4],
-    "down_cferr2" : [4],
-    "down_hf" : [0],
-    "down_lfstats1" : [0],
-    "down_lfstats2" : [0],
-}
+
+#from highmass bbgg
+# DEEPJET_VARIATIONS = { 
+#     "up_jes" : [5, 0], # applicable to b (5) and light (0) jets, but not charm (4)
+#     "up_lf" : [5,0],
+#     "up_hfstats1" : [5,0],
+#     "up_hfstats2" : [5,0],
+#     "up_cferr1" : [4],
+#     "up_cferr2" : [4],
+#     "up_hf" : [5,0],
+#     "up_lfstats1" : [5,0],
+#     "up_lfstats2" : [5,0],
+#     "down_jes" : [5, 0], # applicable to b (5) and light (0) jets, but not charm(4)
+#     "down_lf" : [5,0],
+#     "down_hfstats1" : [5,0],
+#     "down_hfstats2" : [5,0],
+#     "down_cferr1" : [4],
+#     "down_cferr2" : [4],
+#     "down_hf" : [5,0],
+#     "down_lfstats1" : [5,0],
+#     "down_lfstats2" : [5,0],
+# }
 
 def btag_deepjet_reshape_sf(events, year, central_only, input_collection):
     """
@@ -410,6 +412,66 @@ def WvsQCD_MD_sf(events, year, central_only, input_collection, working_point = "
             elif "down" in syst_var:
                 syst_var_name = "down"
             variations[syst_var_name] = awkward.unflatten(syst, n_fatjets)
+
+    for var in variations.keys():
+        # Set SFs = 1 for fatjets which are not applicable
+        variations[var] = awkward.where(
+                ((fatjets.pt < 200.0)|(fatjets.pt >= 800.0)),
+                awkward.ones_like(variations[var]),
+                variations[var]
+        )
+        variations[var] = awkward.where(
+                ((fatjets.eta <= 2.5)|(fatjets.eta >= 2.5)),
+                awkward.ones_like(variations[var]),
+                variations[var]
+        )
+
+    return variations
+
+def WvsQCD_MD_mistagging_sf(events, year, central_only, input_collection, working_point = "none"):
+    """
+    See: 
+        - https://twiki.cern.ch/twiki/bin/viewauth/CMS/ParticleNetSFs#W_Tagger_MD
+    """
+
+    required_fields = [
+        (input_collection, "eta"), (input_collection, "pt")
+    ]
+
+    missing_fields = awkward_utils.missing_fields(events, required_fields)
+
+
+    fatjets = events[input_collection]
+
+    # Flatten fatjets then convert to numpy for compatibility with correctionlib
+    n_fatjets = awkward.num(fatjets)
+    fatjets_flattened = awkward.flatten(fatjets)
+
+    fatjet_pt = numpy.clip(
+        awkward.to_numpy(fatjets_flattened.pt),
+        200.0, 
+        799.9999
+    )
+    if year == "2016UL_preVFP" or year == "2016UL_postVFP":
+        fatjet_eta = numpy.clip(
+            awkward.to_numpy(fatjets_flattened.eta),
+            -2.3999,
+            2.3999
+        )
+    if year == "2018" or year == "2017":
+        fatjet_eta = numpy.clip(
+            awkward.to_numpy(fatjets_flattened.eta),
+            -2.4999,
+            2.4999
+        )
+    # Calculate SF and syst
+    variations = {} 
+    dummysf = awkward.ones_like(fatjet_pt)
+    variations["central"] = awkward.unflatten(dummysf, n_fatjets)
+    dummyup = awkward.ones_like(fatjet_pt) * 2
+    dummydown = awkward.ones_like(fatjet_pt) * 0
+    variations["up"] = awkward.unflatten(dummyup, n_fatjets)
+    variations["down"] = awkward.unflatten(dummydown, n_fatjets)
 
     for var in variations.keys():
         # Set SFs = 1 for fatjets which are not applicable

@@ -195,6 +195,17 @@
                     "working_point" : "2p5"
                 }
             },            
+            "PNet_WvsQCD_mistagging_sf" : {
+                "type" : "object",
+                "method" : "from_function",
+                "function" : {
+                    "module_name" : "higgs_dna.systematics.jet_systematics",
+                    "name" : "WvsQCD_MD_mistagging_sf"
+                },
+                "modify_central_weight" : true,
+                "input_collection" : "FatJet",
+                "target_collections" : ["UnmatchendFatJet_1W"]
+            },            
             "pu_reweight_sf" : {
                 "type" : "event",
                 "method" : "from_function",

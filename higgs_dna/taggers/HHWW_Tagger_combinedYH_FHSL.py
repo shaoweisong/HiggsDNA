@@ -222,7 +222,8 @@ class HHWW_Tagger_combinedYH_FHSL(Tagger):
                 objects = gen_obj_4,                    
                 n_objects = 1,                          
                 dummy_value = -999
-            )                  
+            )         
+            # gen_obj_1,2 from one W, gen_obj_3,4 from another W         
             gen_lead_W_fromH = awkward_utils.add_field(
                 events = events,
                 name="gen_lead_W_fromH",
@@ -578,6 +579,41 @@ class HHWW_Tagger_combinedYH_FHSL(Tagger):
         dummy_value=-999
         )
         fatjets=fatjets[awkward.argsort(fatjets.pt, ascending=False, axis=-1)]
+        fatjets_1W = awkward_utils.add_field(
+            events = events,
+            name = "SelectedFatJet_1W",
+            data = events.FatJet[((events.FatJet.WvsQCDMD > Wtag)&(events.FatJet.Hqqqq_vsQCDTop < 0.2))&(awkward.num(events.FatJet[(events.FatJet.WvsQCDMD > Wtag)&(events.FatJet.Hqqqq_vsQCDTop < 0.2)])==1)]
+        )   
+        awkward_utils.add_object_fields(
+        events=events,
+        name="fatjet_1W",
+        objects=fatjets_1W[awkward.argsort(fatjets_1W.WvsQCDMD, ascending=False, axis=-1)],
+        n_objects=1,
+        dummy_value=-999
+        ) 
+        # calculate dR between Wfatjet and the 4 gen quarks
+        dR_fatjetW_gen1 = numpy.sqrt((fatjets_1W.eta - gen_obj_1.eta)**2 + (fatjets_1W.phi - gen_obj_1.phi)**2)
+        dR_fatjetW_gen2 = numpy.sqrt((fatjets_1W.eta - gen_obj_2.eta)**2 + (fatjets_1W.phi - gen_obj_2.phi)**2)
+        dR_fatjetW_gen3 = numpy.sqrt((fatjets_1W.eta - gen_obj_3.eta)**2 + (fatjets_1W.phi - gen_obj_3.phi)**2)
+        dR_fatjetW_gen4 = numpy.sqrt((fatjets_1W.eta - gen_obj_4.eta)**2 + (fatjets_1W.phi - gen_obj_4.phi)**2)
+
+        condition1 = numpy.logical_and(numpy.logical_and(dR_fatjetW_gen1 < 0.8, dR_fatjetW_gen3 < 0.8), numpy.logical_and(dR_fatjetW_gen2 > 0.8, dR_fatjetW_gen4 > 0.8))
+        condition2 = numpy.logical_and(numpy.logical_and(dR_fatjetW_gen2 < 0.8, dR_fatjetW_gen4 < 0.8), numpy.logical_and(dR_fatjetW_gen1 > 0.8, dR_fatjetW_gen3 > 0.8))
+        print("condition",condition1)
+        print(condition2)
+        unmatched_fatjets_1W = awkward_utils.add_field(
+            events = events,
+            name = "UnmatchendFatJet_1W",
+            data = events.FatJet[condition1|condition2]
+        )   
+        awkward_utils.add_object_fields(
+        events=events,
+        name="unmatched_fatjet_1W",
+        objects=unmatched_fatjets_1W[awkward.argsort(unmatched_fatjets_1W.WvsQCDMD, ascending=False, axis=-1)],
+        n_objects=1,
+        dummy_value=-999
+        )         
+        
         fatjets_W = awkward_utils.add_field(
             events = events,
             name = "SelectedFatJet_W",
