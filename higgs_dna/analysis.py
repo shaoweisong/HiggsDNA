@@ -162,7 +162,9 @@ def run_analysis(config):
         events, tag_idx_map = tag_sequence.run(events, NOMINAL_TAG)
         events = systematics_producer.apply_remaining_weight_systs(events, NOMINAL_TAG, tag_idx_map)
         job_summary["outputs"][NOMINAL_TAG] = AnalysisManager.write_events(events, config["variables_of_interest"], output_name, NOMINAL_TAG)
-        job_summary["n_events_selected"][NOMINAL_TAG] = len(events)
+        # job_summary["n_events_selected"][NOMINAL_TAG] = len(events)
+        
+        job_summary["n_events_selected"][NOMINAL_TAG] = len(events[events.Diphoton.minID_modified>-0.7])
 
     t_elapsed = time.time() - t_start
 

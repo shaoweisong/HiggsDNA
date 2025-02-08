@@ -592,28 +592,42 @@ class HHWW_Tagger_combinedYH_FHSL(Tagger):
         dummy_value=-999
         ) 
         # calculate dR between Wfatjet and the 4 gen quarks
-        dR_fatjetW_gen1 = numpy.sqrt((fatjets_1W.eta - gen_obj_1.eta)**2 + (fatjets_1W.phi - gen_obj_1.phi)**2)
-        dR_fatjetW_gen2 = numpy.sqrt((fatjets_1W.eta - gen_obj_2.eta)**2 + (fatjets_1W.phi - gen_obj_2.phi)**2)
-        dR_fatjetW_gen3 = numpy.sqrt((fatjets_1W.eta - gen_obj_3.eta)**2 + (fatjets_1W.phi - gen_obj_3.phi)**2)
-        dR_fatjetW_gen4 = numpy.sqrt((fatjets_1W.eta - gen_obj_4.eta)**2 + (fatjets_1W.phi - gen_obj_4.phi)**2)
+        if not self.is_data and self.options["gen_info"]["is_Signal"]:
+            dR_fatjetW_gen1 = numpy.sqrt((fatjets_1W.eta - gen_obj_1.eta)**2 + (fatjets_1W.phi - gen_obj_1.phi)**2)
+            dR_fatjetW_gen2 = numpy.sqrt((fatjets_1W.eta - gen_obj_2.eta)**2 + (fatjets_1W.phi - gen_obj_2.phi)**2)
+            dR_fatjetW_gen3 = numpy.sqrt((fatjets_1W.eta - gen_obj_3.eta)**2 + (fatjets_1W.phi - gen_obj_3.phi)**2)
+            dR_fatjetW_gen4 = numpy.sqrt((fatjets_1W.eta - gen_obj_4.eta)**2 + (fatjets_1W.phi - gen_obj_4.phi)**2)
 
-        condition1 = numpy.logical_and(numpy.logical_and(dR_fatjetW_gen1 < 0.8, dR_fatjetW_gen3 < 0.8), numpy.logical_and(dR_fatjetW_gen2 > 0.8, dR_fatjetW_gen4 > 0.8))
-        condition2 = numpy.logical_and(numpy.logical_and(dR_fatjetW_gen2 < 0.8, dR_fatjetW_gen4 < 0.8), numpy.logical_and(dR_fatjetW_gen1 > 0.8, dR_fatjetW_gen3 > 0.8))
-        print("condition",condition1)
-        print(condition2)
-        unmatched_fatjets_1W = awkward_utils.add_field(
-            events = events,
-            name = "UnmatchendFatJet_1W",
-            data = events.FatJet[condition1|condition2]
-        )   
-        awkward_utils.add_object_fields(
-        events=events,
-        name="unmatched_fatjet_1W",
-        objects=unmatched_fatjets_1W[awkward.argsort(unmatched_fatjets_1W.WvsQCDMD, ascending=False, axis=-1)],
-        n_objects=1,
-        dummy_value=-999
-        )         
-        
+            condition1 = numpy.logical_and(numpy.logical_and(dR_fatjetW_gen1 < 0.8, dR_fatjetW_gen3 < 0.8), numpy.logical_and(dR_fatjetW_gen2 > 0.8, dR_fatjetW_gen4 > 0.8))
+            condition2 = numpy.logical_and(numpy.logical_and(dR_fatjetW_gen2 < 0.8, dR_fatjetW_gen4 < 0.8), numpy.logical_and(dR_fatjetW_gen1 > 0.8, dR_fatjetW_gen3 > 0.8))
+
+            unmatched_fatjets_1W = awkward_utils.add_field(
+                events = events,
+                name = "UnmatchendFatJet_1W",
+                data = events.FatJet[condition1|condition2]
+            )   
+            awkward_utils.add_object_fields(
+            events=events,
+            name="unmatched_fatjet_1W",
+            objects=unmatched_fatjets_1W[awkward.argsort(unmatched_fatjets_1W.WvsQCDMD, ascending=False, axis=-1)],
+            n_objects=1,
+            dummy_value=-999
+            )         
+            genmatched_fatjets_1W = awkward_utils.add_field(
+                events = events,
+                name = "GenmatchendFatJet_1W",
+                data = events.FatJet[~(condition1|condition2)]
+            )   
+            awkward_utils.add_object_fields(
+            events=events,
+            name="genmatched_fatjet_1W",
+            objects=genmatched_fatjets_1W[awkward.argsort(genmatched_fatjets_1W.WvsQCDMD, ascending=False, axis=-1)],
+            n_objects=2,
+            dummy_value=-999
+            )                
+                
+            
+            
         fatjets_W = awkward_utils.add_field(
             events = events,
             name = "SelectedFatJet_W",
@@ -745,12 +759,13 @@ class HHWW_Tagger_combinedYH_FHSL(Tagger):
         real_photon_id_cut= (events.LeadPhoton.mvaID_modified > -0.7) & (events.SubleadPhoton.mvaID_modified > -0.7)
         if self.year=="2018" and self.is_data:
             hem_run=events.run > 319077        
+            # we checked 65.15623538907509% events in data could pass this run cut
             hem_jet=awkward.num(events.Jet[(events.Jet.phi>-1.57) & (events.Jet.phi<-0.87) & (events.Jet.eta>-3) & (events.Jet.eta<-1.3)])>0
             hem_fatjet=awkward.num(events.FatJet[(events.FatJet.phi>-1.57) & (events.FatJet.phi<-0.87) & (events.FatJet.eta>-3) & (events.FatJet.eta<-1.3)])>0
             hem_cut=~((hem_run & hem_jet) | (hem_run & hem_fatjet))        
         elif self.year=="2018" and not self.is_data:
             #random number generator from 0 to 1
-            fraction=0.07228293695247046 #
+            fraction=0.6515623538907509
             events['random'] = numpy.random.rand(len(events))
             hem_run=events.random < fraction
             hem_jet=awkward.num(events.Jet[(events.Jet.phi>-1.57) & (events.Jet.phi<-0.87) & (events.Jet.eta>-3) & (events.Jet.eta<-1.3)])>0
@@ -758,9 +773,12 @@ class HHWW_Tagger_combinedYH_FHSL(Tagger):
             hem_cut=~((hem_run & hem_jet) | (hem_run & hem_fatjet))
         else:
             hem_cut=events.category >= 0
+
+
         self.register_cuts(
                 names=["bbgg veto ", "Z_veto_cut","Photon id preselection","Photon id selection","category_cut","hem"],
-                results=[bveto_cut,Z_veto_cut,photon_id_cut,real_photon_id_cut, category_cut, hem_cut])
+                results=[bveto_cut,Z_veto_cut,photon_id_cut,real_photon_id_cut, category_cut,hem_cut])
         presel_cut = (bveto_cut) & (photon_id_cut) & (category_cut) & (Z_veto_cut) & (hem_cut)
+
 
         return presel_cut, events

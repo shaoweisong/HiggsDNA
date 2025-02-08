@@ -421,11 +421,10 @@ def WvsQCD_MD_sf(events, year, central_only, input_collection, working_point = "
                 variations[var]
         )
         variations[var] = awkward.where(
-                ((fatjets.eta <= 2.5)|(fatjets.eta >= 2.5)),
+                ((fatjets.eta <= -2.5)|(fatjets.eta >= 2.5)),
                 awkward.ones_like(variations[var]),
                 variations[var]
         )
-
     return variations
 
 def WvsQCD_MD_mistagging_sf(events, year, central_only, input_collection, working_point = "none"):
@@ -481,7 +480,7 @@ def WvsQCD_MD_mistagging_sf(events, year, central_only, input_collection, workin
                 variations[var]
         )
         variations[var] = awkward.where(
-                ((fatjets.eta <= 2.5)|(fatjets.eta >= 2.5)),
+                ((fatjets.eta <= -2.5)|(fatjets.eta >= 2.5)),
                 awkward.ones_like(variations[var]),
                 variations[var]
         )

@@ -437,11 +437,27 @@ class HHWW_Tagger_combinedYH_FHSL(Tagger):
         )
 
         fatjets=fatjets[awkward.argsort(fatjets.pt, ascending=False, axis=-1)]
+
+  
+      
+            
         fatjets_W = awkward_utils.add_field(
             events = events,
             name = "SelectedFatJet_W",
             data = events.FatJet[(events.FatJet.WvsQCDMD > Wtag)&(events.FatJet.Hqqqq_vsQCDTop < 0.2)]
         )   
+        unmatched_fatjets_1W = awkward_utils.add_field(
+            events = events,
+            name = "UnmatchendFatJet_1W",
+            data = events.FatJet[(events.FatJet.WvsQCDMD > Wtag)&(events.FatJet.Hqqqq_vsQCDTop < 0.2)]
+        )   
+        awkward_utils.add_object_fields(
+        events=events,
+        name="unmatched_fatjet_1W",
+        objects=unmatched_fatjets_1W[awkward.argsort(unmatched_fatjets_1W.WvsQCDMD, ascending=False, axis=-1)],
+        n_objects=2,
+        dummy_value=-999
+        )     
         awkward_utils.add_object_fields(
         events=events,
         name="fatjet_W",
@@ -583,7 +599,7 @@ class HHWW_Tagger_combinedYH_FHSL(Tagger):
             hem_cut=~((hem_run & hem_jet) | (hem_run & hem_fatjet))        
         elif self.year=="2018" and not self.is_data:
             #random number generator from 0 to 1
-            fraction=0.07228293695247046 #
+            fraction=0.6515623538907509
             events['random'] = numpy.random.rand(len(events))
             hem_run=events.random < fraction
             hem_jet=awkward.num(events.Jet[(events.Jet.phi>-1.57) & (events.Jet.phi<-0.87) & (events.Jet.eta>-3) & (events.Jet.eta<-1.3)])>0
