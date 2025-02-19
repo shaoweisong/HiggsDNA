@@ -1,5 +1,33 @@
 {
-
+    "GluGluToRadionToHHTo2G2Tau_M-1000":
+    {"process_id": 0,
+    "xs":0.001,
+    "bf":0.000284658,
+    "fpo":3,
+    "files":{
+    "2018":
+    ["/eos/cms/store/group/phys_b2g/zhenxuan/custom_nanoAOD/YH_afterSKIM/UL2018_ttgg/GluGluToRadionToHHTo2G2Tau/GluGluToRadionToHHTo2G2Tau_M-1000/GluGluToRadionToHHTo2G2Tau_M-1000_6266116_0_1F22794AA41Bskimmed.root",
+    "/eos/cms/store/group/phys_b2g/zhenxuan/custom_nanoAOD/YH_afterSKIM/UL2018_ttgg/GluGluToRadionToHHTo2G2Tau/GluGluToRadionToHHTo2G2Tau_M-1000/GluGluToRadionToHHTo2G2Tau_M-1000_6266116_10_ABF41176A58Bskimmed.root",
+    "/eos/cms/store/group/phys_b2g/zhenxuan/custom_nanoAOD/YH_afterSKIM/UL2018_ttgg/GluGluToRadionToHHTo2G2Tau/GluGluToRadionToHHTo2G2Tau_M-1000/GluGluToRadionToHHTo2G2Tau_M-1000_6266116_11_E362EE8D1C3Dskimmed.root",
+    "/eos/cms/store/group/phys_b2g/zhenxuan/custom_nanoAOD/YH_afterSKIM/UL2018_ttgg/GluGluToRadionToHHTo2G2Tau/GluGluToRadionToHHTo2G2Tau_M-1000/GluGluToRadionToHHTo2G2Tau_M-1000_6266116_12_ED27EC2DDD94skimmed.root",
+    "/eos/cms/store/group/phys_b2g/zhenxuan/custom_nanoAOD/YH_afterSKIM/UL2018_ttgg/GluGluToRadionToHHTo2G2Tau/GluGluToRadionToHHTo2G2Tau_M-1000/GluGluToRadionToHHTo2G2Tau_M-1000_6266116_13_DB60C8B0BAFCskimmed.root",
+    "/eos/cms/store/group/phys_b2g/zhenxuan/custom_nanoAOD/YH_afterSKIM/UL2018_ttgg/GluGluToRadionToHHTo2G2Tau/GluGluToRadionToHHTo2G2Tau_M-1000/GluGluToRadionToHHTo2G2Tau_M-1000_6266116_15_CAD7E318CE0Bskimmed.root",
+    "/eos/cms/store/group/phys_b2g/zhenxuan/custom_nanoAOD/YH_afterSKIM/UL2018_ttgg/GluGluToRadionToHHTo2G2Tau/GluGluToRadionToHHTo2G2Tau_M-1000/GluGluToRadionToHHTo2G2Tau_M-1000_6266116_17_5EF8DD4959BAskimmed.root",
+    "/eos/cms/store/group/phys_b2g/zhenxuan/custom_nanoAOD/YH_afterSKIM/UL2018_ttgg/GluGluToRadionToHHTo2G2Tau/GluGluToRadionToHHTo2G2Tau_M-1000/GluGluToRadionToHHTo2G2Tau_M-1000_6266116_18_0C7CB75EB3E3skimmed.root",
+    "/eos/cms/store/group/phys_b2g/zhenxuan/custom_nanoAOD/YH_afterSKIM/UL2018_ttgg/GluGluToRadionToHHTo2G2Tau/GluGluToRadionToHHTo2G2Tau_M-1000/GluGluToRadionToHHTo2G2Tau_M-1000_6266116_19_2A4866965CECskimmed.root",
+    "/eos/cms/store/group/phys_b2g/zhenxuan/custom_nanoAOD/YH_afterSKIM/UL2018_ttgg/GluGluToRadionToHHTo2G2Tau/GluGluToRadionToHHTo2G2Tau_M-1000/GluGluToRadionToHHTo2G2Tau_M-1000_6266116_1_AA5180FD4AD1skimmed.root",
+    "/eos/cms/store/group/phys_b2g/zhenxuan/custom_nanoAOD/YH_afterSKIM/UL2018_ttgg/GluGluToRadionToHHTo2G2Tau/GluGluToRadionToHHTo2G2Tau_M-1000/GluGluToRadionToHHTo2G2Tau_M-1000_6266116_21_CAD8DD2C88B9skimmed.root",
+    "/eos/cms/store/group/phys_b2g/zhenxuan/custom_nanoAOD/YH_afterSKIM/UL2018_ttgg/GluGluToRadionToHHTo2G2Tau/GluGluToRadionToHHTo2G2Tau_M-1000/GluGluToRadionToHHTo2G2Tau_M-1000_6266116_2_5279A5A4C38Askimmed.root",
+    "/eos/cms/store/group/phys_b2g/zhenxuan/custom_nanoAOD/YH_afterSKIM/UL2018_ttgg/GluGluToRadionToHHTo2G2Tau/GluGluToRadionToHHTo2G2Tau_M-1000/GluGluToRadionToHHTo2G2Tau_M-1000_6266116_3_FE8B5E58A523skimmed.root",
+    "/eos/cms/store/group/phys_b2g/zhenxuan/custom_nanoAOD/YH_afterSKIM/UL2018_ttgg/GluGluToRadionToHHTo2G2Tau/GluGluToRadionToHHTo2G2Tau_M-1000/GluGluToRadionToHHTo2G2Tau_M-1000_6266116_4_24D259F13E77skimmed.root",
+    "/eos/cms/store/group/phys_b2g/zhenxuan/custom_nanoAOD/YH_afterSKIM/UL2018_ttgg/GluGluToRadionToHHTo2G2Tau/GluGluToRadionToHHTo2G2Tau_M-1000/GluGluToRadionToHHTo2G2Tau_M-1000_6266116_5_8714541D6A69skimmed.root",
+    "/eos/cms/store/group/phys_b2g/zhenxuan/custom_nanoAOD/YH_afterSKIM/UL2018_ttgg/GluGluToRadionToHHTo2G2Tau/GluGluToRadionToHHTo2G2Tau_M-1000/GluGluToRadionToHHTo2G2Tau_M-1000_6266116_6_2B951056FED5skimmed.root",
+    "/eos/cms/store/group/phys_b2g/zhenxuan/custom_nanoAOD/YH_afterSKIM/UL2018_ttgg/GluGluToRadionToHHTo2G2Tau/GluGluToRadionToHHTo2G2Tau_M-1000/GluGluToRadionToHHTo2G2Tau_M-1000_6266116_7_32B26B65F8E3skimmed.root",
+    "/eos/cms/store/group/phys_b2g/zhenxuan/custom_nanoAOD/YH_afterSKIM/UL2018_ttgg/GluGluToRadionToHHTo2G2Tau/GluGluToRadionToHHTo2G2Tau_M-1000/GluGluToRadionToHHTo2G2Tau_M-1000_6266116_8_852F2051482Dskimmed.root",
+    "/eos/cms/store/group/phys_b2g/zhenxuan/custom_nanoAOD/YH_afterSKIM/UL2018_ttgg/GluGluToRadionToHHTo2G2Tau/GluGluToRadionToHHTo2G2Tau_M-1000/GluGluToRadionToHHTo2G2Tau_M-1000_6266116_9_014702EA3A2Dskimmed.root"
+    ]
+    }
+    },
     "GluGluToRadionToHHTo2G2Tau_M-1100":
     {"process_id": 0,
     "xs":0.001,
@@ -401,7 +429,7 @@
     ]
     }
     },
-    "GluGluToRadionToHHTo2G2Tau_M-250_narrow_TuneCP5_13TeV-madgraph-pythia8":
+    "GluGluToRadionToHHTo2G2Tau_M-250":
     {"process_id": 0,
     "xs":0.001,
     "bf":0.000284658,
@@ -451,7 +479,7 @@
     ]
     }
     },
-    "GluGluToRadionToHHTo2G2Tau_M-260_narrow_TuneCP5_13TeV-madgraph-pythia8":
+    "GluGluToRadionToHHTo2G2Tau_M-260":
     {"process_id": 0,
     "xs":0.001,
     "bf":0.000284658,
@@ -464,7 +492,7 @@
     ]
     }
     },
-    "GluGluToRadionToHHTo2G2Tau_M-270_narrow_TuneCP5_13TeV-madgraph-pythia8":
+    "GluGluToRadionToHHTo2G2Tau_M-270":
     {"process_id": 0,
     "xs":0.001,
     "bf":0.000284658,
@@ -518,7 +546,7 @@
     ]
     }
     },
-    "GluGluToRadionToHHTo2G2Tau_M-280_narrow_TuneCP5_13TeV-madgraph-pythia8":
+    "GluGluToRadionToHHTo2G2Tau_M-280":
     {"process_id": 0,
     "xs":0.001,
     "bf":0.000284658,
@@ -539,7 +567,7 @@
     ]
     }
     },
-    "GluGluToRadionToHHTo2G2Tau_M-290_narrow_TuneCP5_13TeV-madgraph-pythia8":
+    "GluGluToRadionToHHTo2G2Tau_M-290":
     {"process_id": 0,
     "xs":0.001,
     "bf":0.000284658,
@@ -576,7 +604,7 @@
     ]
     }
     },
-    "GluGluToRadionToHHTo2G2Tau_M-300_narrow_TuneCP5_13TeV-madgraph-pythia8":
+    "GluGluToRadionToHHTo2G2Tau_M-300":
     {"process_id": 0,
     "xs":0.001,
     "bf":0.000284658,
@@ -590,7 +618,7 @@
     ]
     }
     },
-    "GluGluToRadionToHHTo2G2Tau_M-320_narrow_TuneCP5_13TeV-madgraph-pythia8":
+    "GluGluToRadionToHHTo2G2Tau_M-320":
     {"process_id": 0,
     "xs":0.001,
     "bf":0.000284658,
@@ -605,7 +633,7 @@
     ]
     }
     },
-    "GluGluToRadionToHHTo2G2Tau_M-350_narrow_TuneCP5_13TeV-madgraph-pythia8":
+    "GluGluToRadionToHHTo2G2Tau_M-350":
     {"process_id": 0,
     "xs":0.001,
     "bf":0.000284658,
@@ -623,7 +651,7 @@
     ]
     }
     },
-    "GluGluToRadionToHHTo2G2Tau_M-400_narrow_TuneCP5_13TeV-madgraph-pythia8":
+    "GluGluToRadionToHHTo2G2Tau_M-400":
     {"process_id": 0,
     "xs":0.001,
     "bf":0.000284658,
@@ -642,7 +670,7 @@
     ]
     }
     },
-    "GluGluToRadionToHHTo2G2Tau_M-450_narrow_TuneCP5_13TeV-madgraph-pythia8":
+    "GluGluToRadionToHHTo2G2Tau_M-450":
     {"process_id": 0,
     "xs":0.001,
     "bf":0.000284658,
@@ -656,7 +684,7 @@
     ]
     }
     },
-    "GluGluToRadionToHHTo2G2Tau_M-500_narrow_TuneCP5_13TeV-madgraph-pythia8":
+    "GluGluToRadionToHHTo2G2Tau_M-500":
     {"process_id": 0,
     "xs":0.001,
     "bf":0.000284658,
@@ -671,7 +699,7 @@
     ]
     }
     },
-    "GluGluToRadionToHHTo2G2Tau_M-550_narrow_TuneCP5_13TeV-madgraph-pythia8":
+    "GluGluToRadionToHHTo2G2Tau_M-550":
     {"process_id": 0,
     "xs":0.001,
     "bf":0.000284658,
@@ -687,7 +715,7 @@
     ]
     }
     },
-    "GluGluToRadionToHHTo2G2Tau_M-600_narrow_TuneCP5_13TeV-madgraph-pythia8":
+    "GluGluToRadionToHHTo2G2Tau_M-600":
     {"process_id": 0,
     "xs":0.001,
     "bf":0.000284658,
@@ -709,7 +737,7 @@
     ]
     }
     },
-    "GluGluToRadionToHHTo2G2Tau_M-650_narrow_TuneCP5_13TeV-madgraph-pythia8":
+    "GluGluToRadionToHHTo2G2Tau_M-650":
     {"process_id": 0,
     "xs":0.001,
     "bf":0.000284658,
@@ -723,7 +751,7 @@
     ]
     }
     },
-    "GluGluToRadionToHHTo2G2Tau_M-700_narrow_TuneCP5_13TeV-madgraph-pythia8":
+    "GluGluToRadionToHHTo2G2Tau_M-700":
     {"process_id": 0,
     "xs":0.001,
     "bf":0.000284658,
@@ -737,7 +765,7 @@
     ]
     }
     },
-    "GluGluToRadionToHHTo2G2Tau_M-750_narrow_TuneCP5_13TeV-madgraph-pythia8":
+    "GluGluToRadionToHHTo2G2Tau_M-750":
     {"process_id": 0,
     "xs":0.001,
     "bf":0.000284658,
@@ -756,7 +784,7 @@
     ]
     }
     },
-    "GluGluToRadionToHHTo2G2Tau_M-800_narrow_TuneCP5_13TeV-madgraph-pythia8":
+    "GluGluToRadionToHHTo2G2Tau_M-800":
     {"process_id": 0,
     "xs":0.001,
     "bf":0.000284658,
@@ -773,7 +801,7 @@
     ]
     }
     },
-    "GluGluToRadionToHHTo2G2Tau_M-900_narrow_TuneCP5_13TeV-madgraph-pythia8":
+    "GluGluToRadionToHHTo2G2Tau_M-900":
     {"process_id": 0,
     "xs":0.001,
     "bf":0.000284658,
@@ -791,7 +819,8 @@
     "/eos/cms/store/group/phys_b2g/zhenxuan/custom_nanoAOD/YH_afterSKIM/UL2018_ttgg/GluGluToRadionToHHTo2G2Tau/GluGluToRadionToHHTo2G2Tau_M-900_narrow_TuneCP5_13TeV-madgraph-pythia8/GluGluToRadionToHHTo2G2Tau_M-900_narrow_TuneCP5_13TeV-madgraph-pythia8_6266116_8_8F7800808A52skimmed.root"
     ]
     }
-    },    
+    },
+    
 "GluGluToRadionToHHTo2G2WTo2G2Q1L1Nu_M-1000":
 {"process_id": 0,
 "xs":0.001,
@@ -3334,7 +3363,7 @@
 "GluGluToRadionToHHTo2G2ZTo2G4Q_M-1000":
 {"process_id": 0,
 "xs":0.001,
-"bf":0.0001189026,
+"bf":0.000058114215543,
 "fpo":3,
 "files":{
 "2018":
@@ -3376,7 +3405,7 @@
 "GluGluToRadionToHHTo2G2ZTo2G4Q_M-1100":
 {"process_id": 0,
 "xs":0.001,
-"bf":0.0001189026,
+"bf":0.000058114215543,
 "fpo":3,
 "files":{
 "2018":
@@ -3424,7 +3453,7 @@
 "GluGluToRadionToHHTo2G2ZTo2G4Q_M-1200":
 {"process_id": 0,
 "xs":0.001,
-"bf":0.0001189026,
+"bf":0.000058114215543,
 "fpo":3,
 "files":{
 "2018":
@@ -3451,7 +3480,7 @@
 "GluGluToRadionToHHTo2G2ZTo2G4Q_M-1300":
 {"process_id": 0,
 "xs":0.001,
-"bf":0.0001189026,
+"bf":0.000058114215543,
 "fpo":3,
 "files":{
 "2018":
@@ -3488,7 +3517,7 @@
 "GluGluToRadionToHHTo2G2ZTo2G4Q_M-1400":
 {"process_id": 0,
 "xs":0.001,
-"bf":0.0001189026,
+"bf":0.000058114215543,
 "fpo":3,
 "files":{
 "2018":
@@ -3520,7 +3549,7 @@
 "GluGluToRadionToHHTo2G2ZTo2G4Q_M-1500":
 {"process_id": 0,
 "xs":0.001,
-"bf":0.0001189026,
+"bf":0.000058114215543,
 "fpo":3,
 "files":{
 "2018":
@@ -3572,7 +3601,7 @@
 "GluGluToRadionToHHTo2G2ZTo2G4Q_M-1600":
 {"process_id": 0,
 "xs":0.001,
-"bf":0.0001189026,
+"bf":0.000058114215543,
 "fpo":3,
 "files":{
 "2018":
@@ -3602,7 +3631,7 @@
 "GluGluToRadionToHHTo2G2ZTo2G4Q_M-1700":
 {"process_id": 0,
 "xs":0.001,
-"bf":0.0001189026,
+"bf":0.000058114215543,
 "fpo":3,
 "files":{
 "2018":
@@ -3660,7 +3689,7 @@
 "GluGluToRadionToHHTo2G2ZTo2G4Q_M-1800":
 {"process_id": 0,
 "xs":0.001,
-"bf":0.0001189026,
+"bf":0.000058114215543,
 "fpo":3,
 "files":{
 "2018":
@@ -3718,7 +3747,7 @@
 "GluGluToRadionToHHTo2G2ZTo2G4Q_M-1900":
 {"process_id": 0,
 "xs":0.001,
-"bf":0.0001189026,
+"bf":0.000058114215543,
 "fpo":3,
 "files":{
 "2018":
@@ -3771,7 +3800,7 @@
 "GluGluToRadionToHHTo2G2ZTo2G4Q_M-2000":
 {"process_id": 0,
 "xs":0.001,
-"bf":0.0001189026,
+"bf":0.000058114215543,
 "fpo":3,
 "files":{
 "2018":
@@ -3806,7 +3835,7 @@
 "GluGluToRadionToHHTo2G2ZTo2G4Q_M-2200":
 {"process_id": 0,
 "xs":0.001,
-"bf":0.0001189026,
+"bf":0.000058114215543,
 "fpo":3,
 "files":{
 "2018":
@@ -3839,7 +3868,7 @@
 "GluGluToRadionToHHTo2G2ZTo2G4Q_M-2400":
 {"process_id": 0,
 "xs":0.001,
-"bf":0.0001189026,
+"bf":0.000058114215543,
 "fpo":3,
 "files":{
 "2018":
@@ -3879,7 +3908,7 @@
 "GluGluToRadionToHHTo2G2ZTo2G4Q_M-250":
 {"process_id": 0,
 "xs":0.001,
-"bf":0.0001189026,
+"bf":0.000058114215543,
 "fpo":3,
 "files":{
 "2018":
@@ -3919,7 +3948,7 @@
 "GluGluToRadionToHHTo2G2ZTo2G4Q_M-260":
 {"process_id": 0,
 "xs":0.001,
-"bf":0.0001189026,
+"bf":0.000058114215543,
 "fpo":3,
 "files":{
 "2018":
@@ -3943,7 +3972,7 @@
 "GluGluToRadionToHHTo2G2ZTo2G4Q_M-2600":
 {"process_id": 0,
 "xs":0.001,
-"bf":0.0001189026,
+"bf":0.000058114215543,
 "fpo":3,
 "files":{
 "2018":
@@ -3995,7 +4024,7 @@
 "GluGluToRadionToHHTo2G2ZTo2G4Q_M-270":
 {"process_id": 0,
 "xs":0.001,
-"bf":0.0001189026,
+"bf":0.000058114215543,
 "fpo":3,
 "files":{
 "2018":
@@ -4019,7 +4048,7 @@
 "GluGluToRadionToHHTo2G2ZTo2G4Q_M-280":
 {"process_id": 0,
 "xs":0.001,
-"bf":0.0001189026,
+"bf":0.000058114215543,
 "fpo":3,
 "files":{
 "2018":
@@ -4067,7 +4096,7 @@
 "GluGluToRadionToHHTo2G2ZTo2G4Q_M-2800":
 {"process_id": 0,
 "xs":0.001,
-"bf":0.0001189026,
+"bf":0.000058114215543,
 "fpo":3,
 "files":{
 "2018":
@@ -4124,7 +4153,7 @@
 "GluGluToRadionToHHTo2G2ZTo2G4Q_M-300":
 {"process_id": 0,
 "xs":0.001,
-"bf":0.0001189026,
+"bf":0.000058114215543,
 "fpo":3,
 "files":{
 "2018":
@@ -4151,7 +4180,7 @@
 "GluGluToRadionToHHTo2G2ZTo2G4Q_M-3000":
 {"process_id": 0,
 "xs":0.001,
-"bf":0.0001189026,
+"bf":0.000058114215543,
 "fpo":3,
 "files":{
 "2018":
@@ -4186,7 +4215,7 @@
 "GluGluToRadionToHHTo2G2ZTo2G4Q_M-320":
 {"process_id": 0,
 "xs":0.001,
-"bf":0.0001189026,
+"bf":0.000058114215543,
 "fpo":3,
 "files":{
 "2018":
@@ -4237,7 +4266,7 @@
 "GluGluToRadionToHHTo2G2ZTo2G4Q_M-350":
 {"process_id": 0,
 "xs":0.001,
-"bf":0.0001189026,
+"bf":0.000058114215543,
 "fpo":3,
 "files":{
 "2018":
@@ -4291,7 +4320,7 @@
 "GluGluToRadionToHHTo2G2ZTo2G4Q_M-400":
 {"process_id": 0,
 "xs":0.001,
-"bf":0.0001189026,
+"bf":0.000058114215543,
 "fpo":3,
 "files":{
 "2018":
@@ -4317,7 +4346,7 @@
 "GluGluToRadionToHHTo2G2ZTo2G4Q_M-450":
 {"process_id": 0,
 "xs":0.001,
-"bf":0.0001189026,
+"bf":0.000058114215543,
 "fpo":3,
 "files":{
 "2018":
@@ -4355,7 +4384,7 @@
 "GluGluToRadionToHHTo2G2ZTo2G4Q_M-500":
 {"process_id": 0,
 "xs":0.001,
-"bf":0.0001189026,
+"bf":0.000058114215543,
 "fpo":3,
 "files":{
 "2018":
@@ -4383,7 +4412,7 @@
 "GluGluToRadionToHHTo2G2ZTo2G4Q_M-550":
 {"process_id": 0,
 "xs":0.001,
-"bf":0.0001189026,
+"bf":0.000058114215543,
 "fpo":3,
 "files":{
 "2018":
@@ -4418,7 +4447,7 @@
 "GluGluToRadionToHHTo2G2ZTo2G4Q_M-600":
 {"process_id": 0,
 "xs":0.001,
-"bf":0.0001189026,
+"bf":0.000058114215543,
 "fpo":3,
 "files":{
 "2018":
@@ -4450,7 +4479,7 @@
 "GluGluToRadionToHHTo2G2ZTo2G4Q_M-650":
 {"process_id": 0,
 "xs":0.001,
-"bf":0.0001189026,
+"bf":0.000058114215543,
 "fpo":3,
 "files":{
 "2018":
@@ -4494,7 +4523,7 @@
 "GluGluToRadionToHHTo2G2ZTo2G4Q_M-700":
 {"process_id": 0,
 "xs":0.001,
-"bf":0.0001189026,
+"bf":0.000058114215543,
 "fpo":3,
 "files":{
 "2018":
@@ -4541,7 +4570,7 @@
 "GluGluToRadionToHHTo2G2ZTo2G4Q_M-750":
 {"process_id": 0,
 "xs":0.001,
-"bf":0.0001189026,
+"bf":0.000058114215543,
 "fpo":3,
 "files":{
 "2018":
@@ -4590,7 +4619,7 @@
 "GluGluToRadionToHHTo2G2ZTo2G4Q_M-800":
 {"process_id": 0,
 "xs":0.001,
-"bf":0.0001189026,
+"bf":0.000058114215543,
 "fpo":3,
 "files":{
 "2018":
@@ -4635,7 +4664,7 @@
 "GluGluToRadionToHHTo2G2ZTo2G4Q_M-850":
 {"process_id": 0,
 "xs":0.001,
-"bf":0.0001189026,
+"bf":0.000058114215543,
 "fpo":3,
 "files":{
 "2018":
@@ -4684,7 +4713,7 @@
 "GluGluToRadionToHHTo2G2ZTo2G4Q_M-900":
 {"process_id": 0,
 "xs":0.001,
-"bf":0.0001189026,
+"bf":0.000058114215543,
 "fpo":3,
 "files":{
 "2018":

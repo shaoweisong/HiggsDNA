@@ -416,7 +416,7 @@
             ]
         }
     },
-    "GluGluToRadionToHHTo2G2Tau_M-250_narrow_TuneCP5_13TeV-madgraph-pythia8": {
+    "GluGluToRadionToHHTo2G2Tau_M-250": {
         "process_id": 0,
         "xs": 0.001,
         "bf": 0.000284658,
@@ -458,7 +458,7 @@
             ]
         }
     },
-    "GluGluToRadionToHHTo2G2Tau_M-260_narrow_TuneCP5_13TeV-madgraph-pythia8": {
+    "GluGluToRadionToHHTo2G2Tau_M-260": {
         "process_id": 0,
         "xs": 0.001,
         "bf": 0.000284658,
@@ -472,7 +472,7 @@
             ]
         }
     },
-    "GluGluToRadionToHHTo2G2Tau_M-270_narrow_TuneCP5_13TeV-madgraph-pythia8": {
+    "GluGluToRadionToHHTo2G2Tau_M-270": {
         "process_id": 0,
         "xs": 0.001,
         "bf": 0.000284658,
@@ -523,7 +523,7 @@
             ]
         }
     },
-    "GluGluToRadionToHHTo2G2Tau_M-280_narrow_TuneCP5_13TeV-madgraph-pythia8": {
+    "GluGluToRadionToHHTo2G2Tau_M-280": {
         "process_id": 0,
         "xs": 0.001,
         "bf": 0.000284658,
@@ -540,7 +540,7 @@
             ]
         }
     },
-    "GluGluToRadionToHHTo2G2Tau_M-290_narrow_TuneCP5_13TeV-madgraph-pythia8": {
+    "GluGluToRadionToHHTo2G2Tau_M-290": {
         "process_id": 0,
         "xs": 0.001,
         "bf": 0.000284658,
@@ -587,7 +587,7 @@
             ]
         }
     },
-    "GluGluToRadionToHHTo2G2Tau_M-300_narrow_TuneCP5_13TeV-madgraph-pythia8": {
+    "GluGluToRadionToHHTo2G2Tau_M-300": {
         "process_id": 0,
         "xs": 0.001,
         "bf": 0.000284658,
@@ -602,7 +602,7 @@
             ]
         }
     },
-    "GluGluToRadionToHHTo2G2Tau_M-320_narrow_TuneCP5_13TeV-madgraph-pythia8": {
+    "GluGluToRadionToHHTo2G2Tau_M-320": {
         "process_id": 0,
         "xs": 0.001,
         "bf": 0.000284658,
@@ -616,7 +616,7 @@
             ]
         }
     },
-    "GluGluToRadionToHHTo2G2Tau_M-350_narrow_TuneCP5_13TeV-madgraph-pythia8": {
+    "GluGluToRadionToHHTo2G2Tau_M-350": {
         "process_id": 0,
         "xs": 0.001,
         "bf": 0.000284658,
@@ -633,7 +633,7 @@
             ]
         }
     },
-    "GluGluToRadionToHHTo2G2Tau_M-400_narrow_TuneCP5_13TeV-madgraph-pythia8": {
+    "GluGluToRadionToHHTo2G2Tau_M-400": {
         "process_id": 0,
         "xs": 0.001,
         "bf": 0.000284658,
@@ -669,7 +669,7 @@
             ]
         }
     },
-    "GluGluToRadionToHHTo2G2Tau_M-450_narrow_TuneCP5_13TeV-madgraph-pythia8": {
+    "GluGluToRadionToHHTo2G2Tau_M-450": {
         "process_id": 0,
         "xs": 0.001,
         "bf": 0.000284658,
@@ -691,7 +691,7 @@
             ]
         }
     },
-    "GluGluToRadionToHHTo2G2Tau_M-500_narrow_TuneCP5_13TeV-madgraph-pythia8": {
+    "GluGluToRadionToHHTo2G2Tau_M-500": {
         "process_id": 0,
         "xs": 0.001,
         "bf": 0.000284658,
@@ -704,7 +704,7 @@
             ]
         }
     },
-    "GluGluToRadionToHHTo2G2Tau_M-550_narrow_TuneCP5_13TeV-madgraph-pythia8": {
+    "GluGluToRadionToHHTo2G2Tau_M-550": {
         "process_id": 0,
         "xs": 0.001,
         "bf": 0.000284658,
@@ -719,7 +719,7 @@
             ]
         }
     },
-    "GluGluToRadionToHHTo2G2Tau_M-600_narrow_TuneCP5_13TeV-madgraph-pythia8": {
+    "GluGluToRadionToHHTo2G2Tau_M-600": {
         "process_id": 0,
         "xs": 0.001,
         "bf": 0.000284658,
@@ -738,7 +738,7 @@
             ]
         }
     },
-    "GluGluToRadionToHHTo2G2Tau_M-650_narrow_TuneCP5_13TeV-madgraph-pythia8": {
+    "GluGluToRadionToHHTo2G2Tau_M-650": {
         "process_id": 0,
         "xs": 0.001,
         "bf": 0.000284658,
@@ -752,7 +752,7 @@
             ]
         }
     },
-    "GluGluToRadionToHHTo2G2Tau_M-700_narrow_TuneCP5_13TeV-madgraph-pythia8": {
+    "GluGluToRadionToHHTo2G2Tau_M-700": {
         "process_id": 0,
         "xs": 0.001,
         "bf": 0.000284658,
@@ -766,7 +766,7 @@
             ]
         }
     },
-    "GluGluToRadionToHHTo2G2Tau_M-750_narrow_TuneCP5_13TeV-madgraph-pythia8": {
+    "GluGluToRadionToHHTo2G2Tau_M-750": {
         "process_id": 0,
         "xs": 0.001,
         "bf": 0.000284658,
@@ -782,7 +782,7 @@
             ]
         }
     },
-    "GluGluToRadionToHHTo2G2Tau_M-800_narrow_TuneCP5_13TeV-madgraph-pythia8": {
+    "GluGluToRadionToHHTo2G2Tau_M-800": {
         "process_id": 0,
         "xs": 0.001,
         "bf": 0.000284658,
@@ -801,7 +801,7 @@
             ]
         }
     },
-    "GluGluToRadionToHHTo2G2Tau_M-900_narrow_TuneCP5_13TeV-madgraph-pythia8": {
+    "GluGluToRadionToHHTo2G2Tau_M-900": {
         "process_id": 0,
         "xs": 0.001,
         "bf": 0.000284658,
