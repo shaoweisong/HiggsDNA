@@ -501,78 +501,9 @@ PNbb_WP = {
     "2017" : "PNbbSF17",
     "2018" : "PNbbSF18"
 }
-def PNbb_veto_sf_old(events, year, central_only, input_collection):
 
-    required_fields = [
-        (input_collection, "pt")
-    ]
-
-    missing_fields = awkward_utils.missing_fields(events, required_fields)
-
-    evaluator = _core.CorrectionSet.from_file(misc_utils.expand_path(PNbb_SF_FILE[year]))
-
-    fatjets = events[input_collection]
-
-    # Flatten fatjets then convert to numpy for compatibility with correctionlib
-    n_fatjets = awkward.num(fatjets)
-    fatjets_flattened = awkward.flatten(fatjets)
-
-    fatjet_pt = numpy.clip(
-        awkward.to_numpy(fatjets_flattened.pt),
-        100.0, 
-        2999.9999
-    )
-    # Calculate SF and syst
-    variations = {} 
-    working_point = PNbb_WP[year]
-    sf = evaluator[working_point].evalv(
-            fatjet_pt,
-    )
-    variations["central"] = awkward.unflatten(sf, n_fatjets)
-    if not central_only:
-        syst_vars = ["up", "down"]
-        for syst_var in syst_vars:
-            working_point = PNbb_WP[year]+syst_var
-            syst = evaluator[working_point].evalv(
-                    fatjet_pt,
-            )
-            if "up" in syst_var:
-                syst_var_name = "up"
-            elif "down" in syst_var:
-                syst_var_name = "down"
-            variations[syst_var_name] = awkward.unflatten(syst, n_fatjets)
-
-    for var in variations.keys():
-        # Set SFs = 1 for fatjets which are not applicable
-        variations[var] = awkward.where(
-                (fatjets.pt < 100.0),
-                awkward.ones_like(variations[var]),
-                variations[var]
-        )
-    unflattened_up = variations["up"]
-    unflattened_down = variations["down"]
-    maxvalue=awkward.max(unflattened_up, axis=1,mask_identity=True)
-    minvalue=awkward.min(unflattened_down, axis=1,mask_identity=True)
-    variations["up"] = awkward.broadcast_arrays(maxvalue[:,None],unflattened_up)[0]
-    variations["down"] = awkward.broadcast_arrays(minvalue[:,None],unflattened_down)[0]
-    roots = awkward.where(n_fatjets == 6, 1/6,
-            awkward.where(n_fatjets == 5, 1/5,
-            awkward.where(n_fatjets == 4, 1/4,
-            awkward.where(n_fatjets == 3, 1/3,
-            awkward.where(n_fatjets == 2, 1/2,
-            awkward.where(n_fatjets == 1, 1, 1))))))
-    # 广播根的值并进行幂运算
-    variations["up"] = numpy.power(variations["up"], roots[:, None])
-    variations["down"] = numpy.power(variations["down"], roots[:, None])
-    print(variations["up"])
-    return variations
- 
 def PNbb_veto_sf(events, year,central_only, input_collection, working_point = "none"):
-    """
-    See:
-        -https://twiki.cern.ch/twiki/bin/view/CMS/PileupJetIDUL
-    Note: PUJetID SFs are applied to the jets in the event.
-    """
+
     required_fields = [
         (input_collection, "pt")
     ]
