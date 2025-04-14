@@ -3362,7 +3362,7 @@
     "GluGluToRadionToHHTo2G2ZTo2G4Q_M-1000": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2018": [
@@ -3404,7 +3404,7 @@
     "GluGluToRadionToHHTo2G2ZTo2G4Q_M-1100": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2018": [
@@ -3452,7 +3452,7 @@
     "GluGluToRadionToHHTo2G2ZTo2G4Q_M-1200": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2018": [
@@ -3479,7 +3479,7 @@
     "GluGluToRadionToHHTo2G2ZTo2G4Q_M-1300": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2018": [
@@ -3516,7 +3516,7 @@
     "GluGluToRadionToHHTo2G2ZTo2G4Q_M-1400": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2018": [
@@ -3548,7 +3548,7 @@
     "GluGluToRadionToHHTo2G2ZTo2G4Q_M-1500": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2018": [
@@ -3600,7 +3600,7 @@
     "GluGluToRadionToHHTo2G2ZTo2G4Q_M-1600": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2018": [
@@ -3630,7 +3630,7 @@
     "GluGluToRadionToHHTo2G2ZTo2G4Q_M-1700": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2018": [
@@ -3688,7 +3688,7 @@
     "GluGluToRadionToHHTo2G2ZTo2G4Q_M-1800": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2018": [
@@ -3746,7 +3746,7 @@
     "GluGluToRadionToHHTo2G2ZTo2G4Q_M-1900": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2018": [
@@ -3799,7 +3799,7 @@
     "GluGluToRadionToHHTo2G2ZTo2G4Q_M-2000": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2018": [
@@ -3834,7 +3834,7 @@
     "GluGluToRadionToHHTo2G2ZTo2G4Q_M-2200": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2018": [
@@ -3867,7 +3867,7 @@
     "GluGluToRadionToHHTo2G2ZTo2G4Q_M-2400": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2018": [
@@ -3907,7 +3907,7 @@
     "GluGluToRadionToHHTo2G2ZTo2G4Q_M-250": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2018": [
@@ -3947,7 +3947,7 @@
     "GluGluToRadionToHHTo2G2ZTo2G4Q_M-260": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2018": [
@@ -3971,7 +3971,7 @@
     "GluGluToRadionToHHTo2G2ZTo2G4Q_M-2600": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2018": [
@@ -4023,7 +4023,7 @@
     "GluGluToRadionToHHTo2G2ZTo2G4Q_M-270": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2018": [
@@ -4047,7 +4047,7 @@
     "GluGluToRadionToHHTo2G2ZTo2G4Q_M-280": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2018": [
@@ -4095,7 +4095,7 @@
     "GluGluToRadionToHHTo2G2ZTo2G4Q_M-2800": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2018": [
@@ -4152,7 +4152,7 @@
     "GluGluToRadionToHHTo2G2ZTo2G4Q_M-300": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2018": [
@@ -4179,7 +4179,7 @@
     "GluGluToRadionToHHTo2G2ZTo2G4Q_M-3000": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2018": [
@@ -4214,7 +4214,7 @@
     "GluGluToRadionToHHTo2G2ZTo2G4Q_M-320": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2018": [
@@ -4265,7 +4265,7 @@
     "GluGluToRadionToHHTo2G2ZTo2G4Q_M-350": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2018": [
@@ -4319,7 +4319,7 @@
     "GluGluToRadionToHHTo2G2ZTo2G4Q_M-400": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2018": [
@@ -4345,7 +4345,7 @@
     "GluGluToRadionToHHTo2G2ZTo2G4Q_M-450": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2018": [
@@ -4383,7 +4383,7 @@
     "GluGluToRadionToHHTo2G2ZTo2G4Q_M-500": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2018": [
@@ -4411,7 +4411,7 @@
     "GluGluToRadionToHHTo2G2ZTo2G4Q_M-550": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2018": [
@@ -4446,7 +4446,7 @@
     "GluGluToRadionToHHTo2G2ZTo2G4Q_M-600": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2018": [
@@ -4478,7 +4478,7 @@
     "GluGluToRadionToHHTo2G2ZTo2G4Q_M-650": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2018": [
@@ -4522,7 +4522,7 @@
     "GluGluToRadionToHHTo2G2ZTo2G4Q_M-700": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2018": [
@@ -4569,7 +4569,7 @@
     "GluGluToRadionToHHTo2G2ZTo2G4Q_M-750": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2018": [
@@ -4618,7 +4618,7 @@
     "GluGluToRadionToHHTo2G2ZTo2G4Q_M-800": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2018": [
@@ -4663,7 +4663,7 @@
     "GluGluToRadionToHHTo2G2ZTo2G4Q_M-850": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2018": [
@@ -4712,7 +4712,7 @@
     "GluGluToRadionToHHTo2G2ZTo2G4Q_M-900": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2018": [

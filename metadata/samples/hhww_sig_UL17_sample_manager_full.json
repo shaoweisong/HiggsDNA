@@ -5901,7 +5901,7 @@
     "GluGluToRadionToHHTo2G2ZTo2G4Q_M-1000": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -5947,7 +5947,7 @@
     "GluGluToRadionToHHTo2G2ZTo2G4Q_M-1100": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -5999,7 +5999,7 @@
     "GluGluToRadionToHHTo2G2ZTo2G4Q_M-1200": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -6026,7 +6026,7 @@
     "GluGluToRadionToHHTo2G2ZTo2G4Q_M-1300": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -6087,7 +6087,7 @@
     "GluGluToRadionToHHTo2G2ZTo2G4Q_M-1400": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -6125,7 +6125,7 @@
     "GluGluToRadionToHHTo2G2ZTo2G4Q_M-1500": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -6173,7 +6173,7 @@
     "GluGluToRadionToHHTo2G2ZTo2G4Q_M-1600": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -6206,7 +6206,7 @@
     "GluGluToRadionToHHTo2G2ZTo2G4Q_M-1700": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -6239,7 +6239,7 @@
     "GluGluToRadionToHHTo2G2ZTo2G4Q_M-1800": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -6294,7 +6294,7 @@
     "GluGluToRadionToHHTo2G2ZTo2G4Q_M-1900": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -6348,7 +6348,7 @@
     "GluGluToRadionToHHTo2G2ZTo2G4Q_M-2000": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -6401,7 +6401,7 @@
     "GluGluToRadionToHHTo2G2ZTo2G4Q_M-2200": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -6437,7 +6437,7 @@
     "GluGluToRadionToHHTo2G2ZTo2G4Q_M-2400": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -6471,7 +6471,7 @@
     "GluGluToRadionToHHTo2G2ZTo2G4Q_M-250": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -6505,7 +6505,7 @@
     "GluGluToRadionToHHTo2G2ZTo2G4Q_M-260": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -6544,7 +6544,7 @@
     "GluGluToRadionToHHTo2G2ZTo2G4Q_M-2600": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -6613,7 +6613,7 @@
     "GluGluToRadionToHHTo2G2ZTo2G4Q_M-270": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -6644,7 +6644,7 @@
     "GluGluToRadionToHHTo2G2ZTo2G4Q_M-280": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -6678,7 +6678,7 @@
     "GluGluToRadionToHHTo2G2ZTo2G4Q_M-2800": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -6712,7 +6712,7 @@
     "GluGluToRadionToHHTo2G2ZTo2G4Q_M-300": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -6736,7 +6736,7 @@
     "GluGluToRadionToHHTo2G2ZTo2G4Q_M-3000": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -6799,7 +6799,7 @@
     "GluGluToRadionToHHTo2G2ZTo2G4Q_M-320": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -6836,7 +6836,7 @@
     "GluGluToRadionToHHTo2G2ZTo2G4Q_M-350": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -6878,7 +6878,7 @@
     "GluGluToRadionToHHTo2G2ZTo2G4Q_M-400": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -6974,7 +6974,7 @@
     "GluGluToRadionToHHTo2G2ZTo2G4Q_M-450": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -7048,7 +7048,7 @@
     "GluGluToRadionToHHTo2G2ZTo2G4Q_M-500": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -7144,7 +7144,7 @@
     "GluGluToRadionToHHTo2G2ZTo2G4Q_M-550": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -7250,7 +7250,7 @@
     "GluGluToRadionToHHTo2G2ZTo2G4Q_M-600": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -7373,7 +7373,7 @@
     "GluGluToRadionToHHTo2G2ZTo2G4Q_M-650": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -7403,7 +7403,7 @@
     "GluGluToRadionToHHTo2G2ZTo2G4Q_M-700": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -7445,7 +7445,7 @@
     "GluGluToRadionToHHTo2G2ZTo2G4Q_M-750": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -7473,7 +7473,7 @@
     "GluGluToRadionToHHTo2G2ZTo2G4Q_M-800": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -7510,7 +7510,7 @@
     "GluGluToRadionToHHTo2G2ZTo2G4Q_M-850": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -7569,7 +7569,7 @@
     "GluGluToRadionToHHTo2G2ZTo2G4Q_M-900": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -24116,7 +24116,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1000_MY-100_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -24136,7 +24136,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1000_MY-125_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -24156,7 +24156,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1000_MY-150_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -24176,7 +24176,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1000_MY-250_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -24196,7 +24196,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1000_MY-300_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -24216,7 +24216,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1000_MY-400_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -24236,7 +24236,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1000_MY-500_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -24256,7 +24256,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1000_MY-600_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -24276,7 +24276,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1000_MY-60_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -24296,7 +24296,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1000_MY-700_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -24316,7 +24316,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1000_MY-70_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -24336,7 +24336,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1000_MY-800_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -24356,7 +24356,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1000_MY-80_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -24376,7 +24376,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1000_MY-90_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -24396,7 +24396,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1200_MY-1000_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -24416,7 +24416,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1200_MY-100_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -24436,7 +24436,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1200_MY-125_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -24456,7 +24456,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1200_MY-150_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -24476,7 +24476,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1200_MY-250_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -24496,7 +24496,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1200_MY-300_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -24516,7 +24516,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1200_MY-400_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -24536,7 +24536,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1200_MY-500_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -24556,7 +24556,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1200_MY-600_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -24576,7 +24576,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1200_MY-60_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -24596,7 +24596,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1200_MY-700_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -24616,7 +24616,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1200_MY-70_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -24636,7 +24636,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1200_MY-800_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -24656,7 +24656,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1200_MY-80_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -24676,7 +24676,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1200_MY-900_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -24696,7 +24696,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1200_MY-90_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -24716,7 +24716,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1400_MY-1000_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -24736,7 +24736,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1400_MY-100_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -24756,7 +24756,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1400_MY-1100_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -24776,7 +24776,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1400_MY-1200_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -24796,7 +24796,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1400_MY-125_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -24816,7 +24816,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1400_MY-150_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -24836,7 +24836,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1400_MY-250_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -24856,7 +24856,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1400_MY-300_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -24876,7 +24876,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1400_MY-400_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -24896,7 +24896,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1400_MY-500_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -24916,7 +24916,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1400_MY-600_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -24936,7 +24936,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1400_MY-60_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -24956,7 +24956,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1400_MY-700_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -24976,7 +24976,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1400_MY-70_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -24996,7 +24996,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1400_MY-800_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -25016,7 +25016,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1400_MY-80_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -25036,7 +25036,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1400_MY-900_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -25056,7 +25056,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1400_MY-90_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -25076,7 +25076,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1600_MY-1000_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -25096,7 +25096,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1600_MY-100_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -25116,7 +25116,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1600_MY-1100_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -25136,7 +25136,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1600_MY-1200_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -25156,7 +25156,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1600_MY-125_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -25176,7 +25176,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1600_MY-1300_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -25196,7 +25196,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1600_MY-1400_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -25216,7 +25216,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1600_MY-150_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -25236,7 +25236,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1600_MY-250_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -25256,7 +25256,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1600_MY-300_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -25276,7 +25276,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1600_MY-400_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -25296,7 +25296,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1600_MY-500_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -25316,7 +25316,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1600_MY-600_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -25336,7 +25336,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1600_MY-60_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -25356,7 +25356,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1600_MY-700_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -25376,7 +25376,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1600_MY-70_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -25396,7 +25396,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1600_MY-800_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -25416,7 +25416,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1600_MY-80_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -25436,7 +25436,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1600_MY-900_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -25456,7 +25456,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1600_MY-90_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -25476,7 +25476,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1800_MY-1000_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -25496,7 +25496,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1800_MY-100_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -25516,7 +25516,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1800_MY-1100_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -25536,7 +25536,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1800_MY-1200_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -25556,7 +25556,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1800_MY-125_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -25576,7 +25576,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1800_MY-1300_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -25596,7 +25596,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1800_MY-1400_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -25616,7 +25616,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1800_MY-150_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -25636,7 +25636,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1800_MY-1600_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -25656,7 +25656,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1800_MY-250_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -25676,7 +25676,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1800_MY-300_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -25696,7 +25696,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1800_MY-400_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -25716,7 +25716,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1800_MY-500_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -25736,7 +25736,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1800_MY-600_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -25756,7 +25756,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1800_MY-60_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -25776,7 +25776,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1800_MY-700_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -25796,7 +25796,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1800_MY-70_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -25816,7 +25816,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1800_MY-800_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -25836,7 +25836,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1800_MY-80_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -25856,7 +25856,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1800_MY-900_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -25876,7 +25876,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-1800_MY-90_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -25896,7 +25896,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2000_MY-1000_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -25916,7 +25916,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2000_MY-100_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -25936,7 +25936,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2000_MY-1100_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -25956,7 +25956,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2000_MY-1200_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -25976,7 +25976,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2000_MY-125_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -25996,7 +25996,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2000_MY-1300_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -26016,7 +26016,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2000_MY-1400_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -26036,7 +26036,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2000_MY-150_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -26056,7 +26056,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2000_MY-1600_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -26076,7 +26076,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2000_MY-1800_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -26096,7 +26096,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2000_MY-250_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -26116,7 +26116,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2000_MY-300_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -26136,7 +26136,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2000_MY-400_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -26156,7 +26156,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2000_MY-500_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -26176,7 +26176,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2000_MY-600_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -26196,7 +26196,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2000_MY-60_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -26216,7 +26216,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2000_MY-700_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -26236,7 +26236,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2000_MY-70_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -26256,7 +26256,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2000_MY-800_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -26276,7 +26276,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2000_MY-80_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -26296,7 +26296,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2000_MY-900_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -26316,7 +26316,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2000_MY-90_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -26336,7 +26336,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2200_MY-1000_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -26356,7 +26356,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2200_MY-100_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -26376,7 +26376,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2200_MY-1100_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -26396,7 +26396,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2200_MY-1200_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -26416,7 +26416,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2200_MY-125_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -26436,7 +26436,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2200_MY-1300_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -26456,7 +26456,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2200_MY-1400_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -26476,7 +26476,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2200_MY-150_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -26496,7 +26496,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2200_MY-1600_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -26516,7 +26516,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2200_MY-1800_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -26536,7 +26536,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2200_MY-2000_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -26556,7 +26556,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2200_MY-250_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -26576,7 +26576,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2200_MY-300_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -26596,7 +26596,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2200_MY-400_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -26615,7 +26615,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2200_MY-500_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -26635,7 +26635,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2200_MY-600_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -26655,7 +26655,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2200_MY-60_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -26675,7 +26675,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2200_MY-700_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -26695,7 +26695,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2200_MY-70_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -26715,7 +26715,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2200_MY-800_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -26735,7 +26735,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2200_MY-80_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -26755,7 +26755,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2200_MY-900_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -26775,7 +26775,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2200_MY-90_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -26795,7 +26795,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2400_MY-1000_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -26815,7 +26815,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2400_MY-100_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -26835,7 +26835,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2400_MY-1100_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -26855,7 +26855,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2400_MY-1200_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -26875,7 +26875,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2400_MY-125_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -26895,7 +26895,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2400_MY-1300_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -26915,7 +26915,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2400_MY-1400_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -26934,7 +26934,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2400_MY-150_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -26954,7 +26954,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2400_MY-1600_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -26974,7 +26974,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2400_MY-1800_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -26994,7 +26994,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2400_MY-2000_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -27014,7 +27014,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2400_MY-2200_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -27034,7 +27034,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2400_MY-250_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -27054,7 +27054,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2400_MY-300_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -27074,7 +27074,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2400_MY-400_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -27094,7 +27094,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2400_MY-500_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -27114,7 +27114,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2400_MY-600_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -27134,7 +27134,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2400_MY-60_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -27154,7 +27154,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2400_MY-700_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -27174,7 +27174,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2400_MY-70_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -27194,7 +27194,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2400_MY-800_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -27214,7 +27214,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2400_MY-80_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -27233,7 +27233,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2400_MY-900_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -27253,7 +27253,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2400_MY-90_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -27273,7 +27273,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-240_MY-100_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -27293,7 +27293,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-240_MY-60_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -27313,7 +27313,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-240_MY-70_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -27332,7 +27332,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-240_MY-80_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -27352,7 +27352,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-240_MY-90_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -27372,7 +27372,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2500_MY-1000_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -27392,7 +27392,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2500_MY-100_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -27412,7 +27412,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2500_MY-1100_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -27432,7 +27432,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2500_MY-1200_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -27452,7 +27452,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2500_MY-125_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -27472,7 +27472,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2500_MY-1300_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -27492,7 +27492,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2500_MY-1400_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -27512,7 +27512,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2500_MY-150_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -27532,7 +27532,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2500_MY-1600_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -27552,7 +27552,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2500_MY-1800_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -27572,7 +27572,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2500_MY-2000_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -27592,7 +27592,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2500_MY-2200_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -27611,7 +27611,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2500_MY-250_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -27631,7 +27631,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2500_MY-300_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -27651,7 +27651,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2500_MY-400_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -27671,7 +27671,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2500_MY-500_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -27691,7 +27691,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2500_MY-600_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -27711,7 +27711,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2500_MY-60_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -27731,7 +27731,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2500_MY-700_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -27751,7 +27751,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2500_MY-70_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -27771,7 +27771,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2500_MY-800_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -27791,7 +27791,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2500_MY-80_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -27811,7 +27811,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2500_MY-900_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -27831,7 +27831,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2500_MY-90_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -27851,7 +27851,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2600_MY-1000_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -27871,7 +27871,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2600_MY-100_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -27891,7 +27891,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2600_MY-1100_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -27911,7 +27911,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2600_MY-1200_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -27931,7 +27931,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2600_MY-125_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -27951,7 +27951,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2600_MY-1300_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -27971,7 +27971,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2600_MY-1400_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -27991,7 +27991,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2600_MY-150_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -28011,7 +28011,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2600_MY-1600_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -28031,7 +28031,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2600_MY-1800_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -28051,7 +28051,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2600_MY-2000_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -28071,7 +28071,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2600_MY-2200_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -28091,7 +28091,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2600_MY-2400_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -28111,7 +28111,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2600_MY-250_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -28131,7 +28131,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2600_MY-300_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -28151,7 +28151,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2600_MY-400_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -28170,7 +28170,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2600_MY-500_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -28190,7 +28190,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2600_MY-600_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -28210,7 +28210,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2600_MY-60_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -28230,7 +28230,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2600_MY-700_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -28250,7 +28250,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2600_MY-70_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -28270,7 +28270,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2600_MY-800_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -28290,7 +28290,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2600_MY-80_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -28310,7 +28310,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2600_MY-900_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -28330,7 +28330,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2600_MY-90_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -28350,7 +28350,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2800_MY-1000_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -28370,7 +28370,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2800_MY-100_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -28390,7 +28390,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2800_MY-1100_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -28410,7 +28410,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2800_MY-1200_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -28430,7 +28430,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2800_MY-125_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -28450,7 +28450,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2800_MY-1300_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -28470,7 +28470,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2800_MY-1400_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -28490,7 +28490,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2800_MY-150_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -28510,7 +28510,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2800_MY-1600_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -28530,7 +28530,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2800_MY-1800_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -28550,7 +28550,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2800_MY-2000_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -28570,7 +28570,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2800_MY-2200_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -28590,7 +28590,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2800_MY-2400_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -28610,7 +28610,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2800_MY-2500_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -28630,7 +28630,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2800_MY-250_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -28650,7 +28650,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2800_MY-2600_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -28670,7 +28670,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2800_MY-300_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -28690,7 +28690,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2800_MY-400_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -28710,7 +28710,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2800_MY-500_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -28730,7 +28730,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2800_MY-600_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -28750,7 +28750,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2800_MY-60_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -28770,7 +28770,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2800_MY-700_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -28790,7 +28790,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2800_MY-70_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -28810,7 +28810,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2800_MY-800_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -28830,7 +28830,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2800_MY-80_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -28850,7 +28850,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2800_MY-900_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -28870,7 +28870,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-2800_MY-90_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -28890,7 +28890,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-280_MY-100_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -28910,7 +28910,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-280_MY-125_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -28930,7 +28930,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-280_MY-150_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -28950,7 +28950,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-280_MY-60_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -28970,7 +28970,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-280_MY-70_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -28990,7 +28990,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-280_MY-80_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -29010,7 +29010,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-280_MY-90_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -29030,7 +29030,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-3000_MY-1000_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -29050,7 +29050,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-3000_MY-100_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -29070,7 +29070,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-3000_MY-1100_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -29090,7 +29090,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-3000_MY-1200_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -29110,7 +29110,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-3000_MY-125_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -29130,7 +29130,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-3000_MY-1300_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -29150,7 +29150,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-3000_MY-1400_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -29170,7 +29170,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-3000_MY-150_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -29190,7 +29190,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-3000_MY-1600_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -29210,7 +29210,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-3000_MY-1800_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -29230,7 +29230,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-3000_MY-2000_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -29250,7 +29250,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-3000_MY-2200_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -29270,7 +29270,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-3000_MY-2400_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -29290,7 +29290,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-3000_MY-2500_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -29310,7 +29310,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-3000_MY-250_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -29330,7 +29330,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-3000_MY-2600_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -29350,7 +29350,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-3000_MY-2800_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -29370,7 +29370,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-3000_MY-300_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -29390,7 +29390,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-3000_MY-400_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -29410,7 +29410,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-3000_MY-500_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -29430,7 +29430,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-3000_MY-600_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -29450,7 +29450,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-3000_MY-60_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -29470,7 +29470,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-3000_MY-700_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -29490,7 +29490,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-3000_MY-70_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -29510,7 +29510,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-3000_MY-800_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -29530,7 +29530,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-3000_MY-80_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -29550,7 +29550,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-3000_MY-900_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -29570,7 +29570,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-3000_MY-90_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -29590,7 +29590,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-300_MY-100_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -29610,7 +29610,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-300_MY-125_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -29630,7 +29630,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-300_MY-150_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -29650,7 +29650,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-300_MY-60_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -29670,7 +29670,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-300_MY-70_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -29690,7 +29690,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-300_MY-80_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -29710,7 +29710,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-300_MY-90_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -29730,7 +29730,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-320_MY-100_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -29750,7 +29750,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-320_MY-125_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -29770,7 +29770,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-320_MY-150_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -29790,7 +29790,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-320_MY-60_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -29810,7 +29810,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-320_MY-70_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -29830,7 +29830,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-320_MY-80_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -29850,7 +29850,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-320_MY-90_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -29870,7 +29870,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-3500_MY-1000_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -29889,7 +29889,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-3500_MY-100_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -29909,7 +29909,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-3500_MY-1100_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -29929,7 +29929,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-3500_MY-1200_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -29949,7 +29949,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-3500_MY-125_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -29969,7 +29969,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-3500_MY-1300_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -29988,7 +29988,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-3500_MY-1400_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -30008,7 +30008,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-3500_MY-150_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -30028,7 +30028,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-3500_MY-1600_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -30048,7 +30048,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-3500_MY-1800_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -30068,7 +30068,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-3500_MY-2000_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -30088,7 +30088,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-3500_MY-2200_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -30108,7 +30108,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-3500_MY-2400_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -30128,7 +30128,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-3500_MY-2500_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -30148,7 +30148,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-3500_MY-250_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -30168,7 +30168,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-3500_MY-2600_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -30188,7 +30188,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-3500_MY-2800_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -30208,7 +30208,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-3500_MY-300_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -30228,7 +30228,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-3500_MY-400_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -30248,7 +30248,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-3500_MY-500_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -30268,7 +30268,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-3500_MY-600_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -30288,7 +30288,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-3500_MY-60_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -30308,7 +30308,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-3500_MY-700_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -30328,7 +30328,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-3500_MY-70_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -30348,7 +30348,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-3500_MY-800_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -30368,7 +30368,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-3500_MY-80_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -30388,7 +30388,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-3500_MY-900_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -30408,7 +30408,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-3500_MY-90_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -30428,7 +30428,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-360_MY-100_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -30448,7 +30448,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-360_MY-125_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -30468,7 +30468,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-360_MY-150_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -30488,7 +30488,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-360_MY-60_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -30508,7 +30508,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-360_MY-70_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -30528,7 +30528,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-360_MY-80_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -30548,7 +30548,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-360_MY-90_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -30568,7 +30568,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-4000_MY-1000_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -30588,7 +30588,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-4000_MY-100_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -30608,7 +30608,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-4000_MY-1100_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -30628,7 +30628,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-4000_MY-1200_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -30648,7 +30648,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-4000_MY-125_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -30668,7 +30668,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-4000_MY-1300_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -30688,7 +30688,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-4000_MY-1400_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -30708,7 +30708,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-4000_MY-150_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -30728,7 +30728,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-4000_MY-1600_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -30748,7 +30748,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-4000_MY-1800_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -30768,7 +30768,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-4000_MY-2000_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -30788,7 +30788,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-4000_MY-2200_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -30808,7 +30808,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-4000_MY-2400_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -30828,7 +30828,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-4000_MY-2500_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -30848,7 +30848,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-4000_MY-250_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -30868,7 +30868,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-4000_MY-2600_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -30888,7 +30888,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-4000_MY-2800_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -30908,7 +30908,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-4000_MY-300_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -30928,7 +30928,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-4000_MY-400_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -30948,7 +30948,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-4000_MY-500_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -30968,7 +30968,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-4000_MY-600_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -30988,7 +30988,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-4000_MY-60_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -31008,7 +31008,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-4000_MY-700_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -31028,7 +31028,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-4000_MY-70_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -31048,7 +31048,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-4000_MY-800_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -31068,7 +31068,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-4000_MY-80_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -31088,7 +31088,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-4000_MY-900_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -31108,7 +31108,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-4000_MY-90_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -31128,7 +31128,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-400_MY-100_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -31148,7 +31148,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-400_MY-125_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -31168,7 +31168,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-400_MY-150_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -31188,7 +31188,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-400_MY-250_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -31208,7 +31208,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-400_MY-60_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -31228,7 +31228,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-400_MY-70_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -31248,7 +31248,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-400_MY-80_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -31268,7 +31268,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-400_MY-90_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -31288,7 +31288,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-500_MY-100_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -31308,7 +31308,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-500_MY-125_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -31328,7 +31328,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-500_MY-150_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -31348,7 +31348,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-500_MY-250_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -31368,7 +31368,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-500_MY-300_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -31388,7 +31388,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-500_MY-60_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -31408,7 +31408,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-500_MY-70_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -31428,7 +31428,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-500_MY-80_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -31448,7 +31448,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-500_MY-90_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -31468,7 +31468,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-600_MY-100_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -31488,7 +31488,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-600_MY-125_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -31508,7 +31508,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-600_MY-150_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -31528,7 +31528,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-600_MY-250_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -31548,7 +31548,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-600_MY-300_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -31568,7 +31568,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-600_MY-400_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -31588,7 +31588,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-600_MY-60_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -31608,7 +31608,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-600_MY-70_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -31628,7 +31628,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-600_MY-80_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -31648,7 +31648,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-600_MY-90_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -31668,7 +31668,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-700_MY-100_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -31688,7 +31688,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-700_MY-125_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -31708,7 +31708,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-700_MY-150_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -31728,7 +31728,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-700_MY-250_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -31748,7 +31748,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-700_MY-300_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -31768,7 +31768,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-700_MY-400_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -31788,7 +31788,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-700_MY-500_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -31808,7 +31808,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-700_MY-60_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -31828,7 +31828,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-700_MY-70_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -31848,7 +31848,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-700_MY-80_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -31868,7 +31868,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-700_MY-90_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -31888,7 +31888,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-800_MY-100_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -31908,7 +31908,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-800_MY-125_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -31928,7 +31928,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-800_MY-150_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -31948,7 +31948,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-800_MY-250_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -31968,7 +31968,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-800_MY-300_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -31988,7 +31988,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-800_MY-400_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -32008,7 +32008,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-800_MY-500_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -32028,7 +32028,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-800_MY-600_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -32048,7 +32048,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-800_MY-60_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -32068,7 +32068,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-800_MY-70_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -32088,7 +32088,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-800_MY-80_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -32108,7 +32108,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-800_MY-90_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -32128,7 +32128,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-900_MY-100_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -32148,7 +32148,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-900_MY-125_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -32168,7 +32168,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-900_MY-150_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -32188,7 +32188,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-900_MY-250_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -32208,7 +32208,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-900_MY-300_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -32228,7 +32228,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-900_MY-400_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -32248,7 +32248,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-900_MY-500_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -32268,7 +32268,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-900_MY-600_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -32288,7 +32288,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-900_MY-60_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -32308,7 +32308,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-900_MY-700_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -32328,7 +32328,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-900_MY-70_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -32348,7 +32348,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-900_MY-80_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [
@@ -32368,7 +32368,7 @@
     "NMSSM_XToYHTo2G2ZTo2G4Q_MX-900_MY-90_TuneCP5_13TeV-madgraph-pythia8": {
         "process_id": 0,
         "xs": 0.001,
-        "bf": 0.0001189026,
+        "bf": 5.8114215543e-05,
         "fpo": 3,
         "files": {
             "2017": [

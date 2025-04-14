@@ -1,14 +1,4 @@
 {
-"test1":
-    {"process_id": 0,
-        "xs":0.001,
-        "bf":0.000284658,
-        "fpo":3,
-        "files":{
-        "2017":
-        ["/eos/cms/store/group/phys_b2g/shsong/nanoAODnTuples/nanoAODsys_Mar2024/UL2016pre_HHsignal/UL2016APV_wwggFHSL_bbgg_zzgg/GluGluToRadionToHHTo2G2WTo2G4Q/GluGluToRadionToHHTo2G2WTo2G4Q_M-1100/1F4C4151-5A81-C14E-A5E2-4A4ABC8AF1F1skimmed.root"]
-        }
-        },    
 "GluGluToRadionToHHTo2G2Tau_M-1000": {
     "process_id": 0,
     "xs": 0.001,

@@ -501,7 +501,7 @@ PNbb_WP = {
     "2017" : "PNbbSF17",
     "2018" : "PNbbSF18"
 }
-def PNbb_veto_sf(events, year, central_only, input_collection):
+def PNbb_veto_sf_old(events, year, central_only, input_collection):
 
     required_fields = [
         (input_collection, "pt")
@@ -551,8 +551,6 @@ def PNbb_veto_sf(events, year, central_only, input_collection):
         )
     unflattened_up = variations["up"]
     unflattened_down = variations["down"]
-    print(unflattened_up)
-    print("test")
     maxvalue=awkward.max(unflattened_up, axis=1,mask_identity=True)
     minvalue=awkward.min(unflattened_down, axis=1,mask_identity=True)
     variations["up"] = awkward.broadcast_arrays(maxvalue[:,None],unflattened_up)[0]
@@ -569,4 +567,52 @@ def PNbb_veto_sf(events, year, central_only, input_collection):
     print(variations["up"])
     return variations
  
-    
+def PNbb_veto_sf(events, year,central_only, input_collection, working_point = "none"):
+    """
+    See:
+        -https://twiki.cern.ch/twiki/bin/view/CMS/PileupJetIDUL
+    Note: PUJetID SFs are applied to the jets in the event.
+    """
+    required_fields = [
+        (input_collection, "pt")
+    ]
+    missing_fields = awkward_utils.missing_fields(events, required_fields)
+    evaluator = _core.CorrectionSet.from_file(misc_utils.expand_path(PNbb_SF_FILE[year]))
+    fatjets = events[input_collection]
+    # Flatten fatjets then convert to numpy for compatibility with correctionlib
+    n_fatjets = awkward.num(fatjets)
+    fatjets_flattened = awkward.flatten(fatjets)
+    fatjet_pt = numpy.clip(
+        awkward.to_numpy(fatjets_flattened.pt),
+        100.0, # SFs only valid for pT >= 20.0
+        3000.0
+    )
+    # Calculate SF and syst
+    variations = {} 
+    working_point = PNbb_WP[year]
+    sf = evaluator[working_point].evalv(
+            fatjet_pt,
+    )
+    variations["central"] = awkward.unflatten(sf, n_fatjets)
+    print(variations["central"])
+    if not central_only:
+        syst_vars = ["up", "down"]
+        for syst_var in syst_vars:
+            working_point = PNbb_WP[year]+syst_var
+            syst = evaluator[working_point].evalv(
+                    fatjet_pt,
+            )
+            if "up" in syst_var:
+                syst_var_name = "up"
+            elif "down" in syst_var:
+                syst_var_name = "down"
+            variations[syst_var_name] = awkward.unflatten(syst, n_fatjets)
+
+    for var in variations.keys():
+        variations[var] = awkward.where(
+                fatjets.pt < 100.0,
+                awkward.ones_like(variations[var]),
+                variations[var]
+        )
+
+    return variations
