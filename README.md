@@ -84,7 +84,7 @@ python -m unittest -v
 ``` 
 
 Please note that this is good practice even if CI is available. It is indeed a waste of time and resources to trigger a build if there is something clearly wrong that can be spotted by simply running the above mentioned command.
-### Tests to preselect wwgg events
+### Tests to preselect HHwwgg events
 Preselecting data
 
 ```
@@ -96,3 +96,15 @@ preselecting signal with systematic uncertainties correction
 python scripts/run_analysis.py --log-level "DEBUG" --config "metadata/analysis/wwgg_sys/HHWW_preselection_sig_FHSL_YH_UL17_slimed.json" --sample_list "GluGluToRadionToHHTo2G2WTo2G4Q_M-250" --output_dir "/eos/user/{your_path}/"  --batch_system "local" --short
 ```
 Please note that this step can only be successfully executed if you have stored systematic branches using the official NanoAOD tool.
+### Tests to preselect YHwwgg events
+
+preselecting signal with systematic uncertainties correction
+```
+python scripts/run_analysis.py --log-level "DEBUG" --config "metadata/analysis/wwgg_sys/HHWW_preselection_sig_FHSL_YH_UL17_slimed.json" --sample_list "NMSSM_XToYHTo2G2WTo2G4Q_MX-1000_MY-250_TuneCP5_13TeV-madgraph-pythia8" --output_dir "/eos/user/s/shsong/HiggsDNA/testYH/"  --short
+```
+Please note that this step can only be successfully executed if you have stored systematic branches using the official NanoAOD tool.
+### submit YH jobs
+
+```
+  python scripts/run_analysis.py --log-level "DEBUG" --config "metadata/analysis/wwgg_sys/HHWW_preselection_sig_FHSL_YH_UL17_slimed.json" --sample_list "NMSSM_XToYHTo2G2WTo2G4Q_MX-400_MY-250_TuneCP5_13TeV-madgraph-pythia8", "NMSSM_XToYHTo2G2WTo2G4Q_MX-500_MY-250_TuneCP5_13TeV-madgraph-pythia8", "NMSSM_XToYHTo2G2WTo2G4Q_MX-500_MY-300_TuneCP5_13TeV-madgraph-pythia8", "NMSSM_XToYHTo2G2WTo2G4Q_MX-600_MY-300_TuneCP5_13TeV-madgraph-pythia8", "NMSSM_XToYHTo2G2WTo2G4Q_MX-900_MY-400_TuneCP5_13TeV-madgraph-pythia8", "NMSSM_XToYHTo2G2WTo2G4Q_MX-600_MY-250_TuneCP5_13TeV-madgraph-pythia8", "NMSSM_XToYHTo2G2WTo2G4Q_MX-600_MY-400_TuneCP5_13TeV-madgraph-pythia8", "NMSSM_XToYHTo2G2WTo2G4Q_MX-700_MY-250_TuneCP5_13TeV-madgraph-pythia8", "NMSSM_XToYHTo2G2WTo2G4Q_MX-700_MY-300_TuneCP5_13TeV-madgraph-pythia8", "NMSSM_XToYHTo2G2WTo2G4Q_MX-700_MY-400_TuneCP5_13TeV-madgraph-pythia8", "NMSSM_XToYHTo2G2WTo2G4Q_MX-700_MY-500_TuneCP5_13TeV-madgraph-pythia8", "NMSSM_XToYHTo2G2WTo2G4Q_MX-800_MY-250_TuneCP5_13TeV-madgraph-pythia8", "NMSSM_XToYHTo2G2WTo2G4Q_MX-800_MY-300_TuneCP5_13TeV-madgraph-pythia8", "NMSSM_XToYHTo2G2WTo2G4Q_MX-800_MY-400_TuneCP5_13TeV-madgraph-pythia8", "NMSSM_XToYHTo2G2WTo2G4Q_MX-800_MY-500_TuneCP5_13TeV-madgraph-pythia8", "NMSSM_XToYHTo2G2WTo2G4Q_MX-800_MY-600_TuneCP5_13TeV-madgraph-pythia8", "NMSSM_XToYHTo2G2WTo2G4Q_MX-900_MY-250_TuneCP5_13TeV-madgraph-pythia8", "NMSSM_XToYHTo2G2WTo2G4Q_MX-900_MY-300_TuneCP5_13TeV-madgraph-pythia8", "NMSSM_XToYHTo2G2WTo2G4Q_MX-900_MY-500_TuneCP5_13TeV-madgraph-pythia8", "NMSSM_XToYHTo2G2WTo2G4Q_MX-900_MY-600_TuneCP5_13TeV-madgraph-pythia8", "NMSSM_XToYHTo2G2WTo2G4Q_MX-900_MY-700_TuneCP5_13TeV-madgraph-pythia8","NMSSM_XToYHTo2G2WTo2G4Q_MX-1000_MY-600_TuneCP5_13TeV-madgraph-pythia8","NMSSM_XToYHTo2G2WTo2G4Q_MX-1000_MY-250_TuneCP5_13TeV-madgraph-pythia8", "NMSSM_XToYHTo2G2WTo2G4Q_MX-1000_MY-300_TuneCP5_13TeV-madgraph-pythia8", "NMSSM_XToYHTo2G2WTo2G4Q_MX-1000_MY-400_TuneCP5_13TeV-madgraph-pythia8", "NMSSM_XToYHTo2G2WTo2G4Q_MX-1000_MY-500_TuneCP5_13TeV-madgraph-pythia8", "NMSSM_XToYHTo2G2WTo2G4Q_MX-1000_MY-700_TuneCP5_13TeV-madgraph-pythia8", "NMSSM_XToYHTo2G2WTo2G4Q_MX-1000_MY-800_TuneCP5_13TeV-madgraph-pythia8" --output_dir "/eos/cms/store/group/phys_b2g/shsong/HiggsDNA/YHFH17_Xto1TeV" --batch_system "condor"
+```

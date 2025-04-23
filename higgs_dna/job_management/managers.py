@@ -499,6 +499,8 @@ class CondorManager(JobsManager):
 
             # If an xrootd redirector is specified for this host, we can copy the tarfiles to /hadoop and xrdcp them into jobs
             if "xrd_redirector" in self.host_params.keys():
+                if self.analysis_tarfile.split("/higgs_dna.tar.gz")[0] != self.batch_output_dir:
+                    self.batch_output_dir = self.analysis_tarfile.split("/higgs_dna.tar.gz")[0]
                 self.batch_conda_tarfile = self.batch_output_dir + "/" + "higgs-dna.tar.gz"
                 self.batch_analysis_tarfile = self.batch_output_dir + "/" + "higgs_dna.tar.gz"
 

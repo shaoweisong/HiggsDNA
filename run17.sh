@@ -1,4 +1,5 @@
 # data
+  python scripts/run_analysis.py --log-level "DEBUG" --config "metadata/analysis/wwgg_nosys/HHWW_preselection_data_FHSL_YH_UL17_slimed.json" --sample_list "DoubleEG_Run2017B","DoubleEG_Run2017C","DoubleEG_Run2017D","DoubleEG_Run2017E","DoubleEG_Run2017F" --output_dir "/eos/user/s/shsong/HiggsDNA/UL17data/" --merge_outputs  
 
   # bkg
 # python scripts/run_analysis.py --log-level "DEBUG" --config "metadata/analysis/wwgg_nosys/HHWW_preselection_bkg_FHSL_YH_UL17_slimed.json" --sample_list "DiPhotonJetsBox_M40_80-sherpa","DiPhotonJetsBox_MGG-80toInf_13TeV-sherpa" --output_dir "/eos/user/s/shsong/HiggsDNA/FakePhotonbkg17/" 
