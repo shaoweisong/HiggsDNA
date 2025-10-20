@@ -24,15 +24,7 @@ offical_UL16_preVFP_path = "/eos/user/z/zhenxuan/SWAN_projects/HH/photonID_SFs/e
 
 
 def get_custom_sfs_and_systematic_errors(official_path, jq_path):
-    """
-    从给定路径加载自定义的标量因子数据，并计算其系统误差。
 
-    参数:
-        jq_path (str): 自定义标量因子文件路径。
-
-    返回:
-        tuple: 包含标量因子数组和系统误差数组的元组。
-    """
     # 打开文件并获取数据
     events_jq = uproot.open(jq_path)['EGamma_SF2D']
     events_official = uproot.open(official_path)['EGamma_SF2D']

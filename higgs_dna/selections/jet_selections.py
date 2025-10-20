@@ -21,14 +21,14 @@ def select_jets(jets, options, clean, name = "none", tagger = None):
         new = options
     )
 
-    tagger_name = "none" if tagger is None else tagger.name 
+    
     bveto=jets.btagDeepFlavB<options["btagDeepFlavB"]
     standard_cuts = object_selections.select_objects(jets, options, clean, name, tagger)
     jetIDcut = (jets.jetId >= 6) 
     pujetIDcut = ((jets.puId>=7)&(jets.pt<50))|(jets.pt>=50)
     #  & (jets.btagDeepFlavB>=0.3040)
 
-    all_cuts = (standard_cuts) & (jetIDcut) &(pujetIDcut)
+    all_cuts = (pujetIDcut)&(jetIDcut) &(standard_cuts) 
 
     if tagger is not None:
         tagger.register_cuts(

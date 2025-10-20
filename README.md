@@ -7,7 +7,7 @@ The installation procedure consists in the following steps:
   
 **1. Clone this repository**  
 ```  
-git clone --recursive https://gitlab.cern.ch/HiggsDNA-project/HiggsDNA  
+git clone --recursive https://github.com/shaoweisong/HiggsDNA.git
 cd HiggsDNA  
 ```  
 **2. Install dependencies**  

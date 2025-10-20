@@ -87,15 +87,6 @@
     python scripts/run_analysis.py --log-level "DEBUG" --config "metadata/analysis/wwgg_nosys/HHWW_preselection_bkg_FHSL_YH_UL18_slimed.json" --sample_list "GJet_Pt-40toInf_DoubleEMEnriched_MGG-80toInf_TuneCP5_13TeV_Pythia8" --output_dir "/eos/user/s/shsong/HiggsDNA/GJet18/" --batch_system "condor"
 
 
-
-####################################
-#            yield table          #
-####################################
-
-# calculate
-
-python scripts/run_analysis.py --log-level "DEBUG" --config "metadata/analysis/wwgg_nosys/HHWW_preselection_sig_FHSL_YH_UL17_slimed.json" --sample_list "GluGluToRadionToHHTo2G2WTo2G4Q_M-250","GluGluToRadionToHHTo2G2WTo2G4Q_M-500","GluGluToRadionToHHTo2G2WTo2G4Q_M-1000","GluGluToRadionToHHTo2G2WTo2G4Q_M-2000","GluGluToRadionToHHTo2G2WTo2G4Q_M-3000","GluGluToRadionToHHTo2G2WTo2G2Q1L1Nu_M-250","GluGluToRadionToHHTo2G2WTo2G2Q1L1Nu_M-500","GluGluToRadionToHHTo2G2WTo2G2Q1L1Nu_M-1000","GluGluToRadionToHHTo2G2WTo2G2Q1L1Nu_M-2000","GluGluToRadionToHHTo2G2WTo2G2Q1L1Nu_M-3000","GluGluToRadionToHHTo2G2ZTo2G4Q_M-250","GluGluToRadionToHHTo2G2ZTo2G4Q_M-500","GluGluToRadionToHHTo2G2ZTo2G4Q_M-1000","GluGluToRadionToHHTo2G2ZTo2G4Q_M-2000","GluGluToRadionToHHTo2G2ZTo2G4Q_M-3000","GluGluToRadionToHHTo2B2G_M-250","GluGluToRadionToHHTo2B2G_M-500","GluGluToRadionToHHTo2B2G_M-1000","GluGluToRadionToHHTo2B2G_M-2000","GluGluToRadionToHHTo2B2G_M-3000","GluGluToRadionToHHTo2G2Tau_M-250","GluGluToRadionToHHTo2G2Tau_M-500","GluGluToRadionToHHTo2G2Tau_M-1000","GluGluToRadionToHHTo2G2Tau_M-2000","GluGluToRadionToHHTo2G2Tau_M-3000" --output_dir "/eos/user/s/shsong/HiggsDNA/allyield/"  --short
-
 ####################################
 #            ttgg          #
 ####################################
@@ -108,3 +99,24 @@ python scripts/run_analysis.py --log-level "DEBUG" --config "metadata/analysis/w
   python scripts/run_analysis.py --log-level "DEBUG" --config "metadata/analysis/wwgg_sys/HHWW_preselection_sig_zzgg_YH_UL16pre_slimed.json" --sample_list "GluGluToRadionToHHTo2G2Tau_M-250_narrow_TuneCP5_13TeV-madgraph-pythia8","GluGluToRadionToHHTo2G2Tau_M-260_narrow_TuneCP5_13TeV-madgraph-pythia8","GluGluToRadionToHHTo2G2Tau_M-270_narrow_TuneCP5_13TeV-madgraph-pythia8","GluGluToRadionToHHTo2G2Tau_M-280_narrow_TuneCP5_13TeV-madgraph-pythia8","GluGluToRadionToHHTo2G2Tau_M-300_narrow_TuneCP5_13TeV-madgraph-pythia8","GluGluToRadionToHHTo2G2Tau_M-320_narrow_TuneCP5_13TeV-madgraph-pythia8","GluGluToRadionToHHTo2G2Tau_M-350_narrow_TuneCP5_13TeV-madgraph-pythia8","GluGluToRadionToHHTo2G2Tau_M-400_narrow_TuneCP5_13TeV-madgraph-pythia8","GluGluToRadionToHHTo2G2Tau_M-450_narrow_TuneCP5_13TeV-madgraph-pythia8","GluGluToRadionToHHTo2G2Tau_M-500_narrow_TuneCP5_13TeV-madgraph-pythia8","GluGluToRadionToHHTo2G2Tau_M-550_narrow_TuneCP5_13TeV-madgraph-pythia8","GluGluToRadionToHHTo2G2Tau_M-600_narrow_TuneCP5_13TeV-madgraph-pythia8","GluGluToRadionToHHTo2G2Tau_M-650_narrow_TuneCP5_13TeV-madgraph-pythia8","GluGluToRadionToHHTo2G2Tau_M-700_narrow_TuneCP5_13TeV-madgraph-pythia8","GluGluToRadionToHHTo2G2Tau_M-750_narrow_TuneCP5_13TeV-madgraph-pythia8","GluGluToRadionToHHTo2G2Tau_M-800_narrow_TuneCP5_13TeV-madgraph-pythia8","GluGluToRadionToHHTo2G2Tau_M-900_narrow_TuneCP5_13TeV-madgraph-pythia8","GluGluToRadionToHHTo2G2Tau_M-1000" --output_dir "/eos/user/s/shsong/HiggsDNA/HHttgg16prelowmass/"  --short
 
 
+
+
+####################################
+#            yield table          #
+####################################
+
+# calculate
+
+python scripts/run_analysis.py --log-level "DEBUG" --config "metadata/analysis/wwgg_nosys/HHWW_preselection_sig_FHSL_YH_UL17_slimed.json" --sample_list "GluGluToRadionToHHTo2G2WTo2G4Q_M-250","GluGluToRadionToHHTo2G2WTo2G4Q_M-500","GluGluToRadionToHHTo2G2WTo2G4Q_M-1000","GluGluToRadionToHHTo2G2WTo2G4Q_M-2000","GluGluToRadionToHHTo2G2WTo2G4Q_M-3000","GluGluToRadionToHHTo2G2WTo2G2Q1L1Nu_M-250","GluGluToRadionToHHTo2G2WTo2G2Q1L1Nu_M-500","GluGluToRadionToHHTo2G2WTo2G2Q1L1Nu_M-1000","GluGluToRadionToHHTo2G2WTo2G2Q1L1Nu_M-2000","GluGluToRadionToHHTo2G2WTo2G2Q1L1Nu_M-3000","GluGluToRadionToHHTo2G2ZTo2G4Q_M-250","GluGluToRadionToHHTo2G2ZTo2G4Q_M-500","GluGluToRadionToHHTo2G2ZTo2G4Q_M-1000","GluGluToRadionToHHTo2G2ZTo2G4Q_M-2000","GluGluToRadionToHHTo2G2ZTo2G4Q_M-3000","GluGluToRadionToHHTo2B2G_M-250","GluGluToRadionToHHTo2B2G_M-500","GluGluToRadionToHHTo2B2G_M-1000","GluGluToRadionToHHTo2B2G_M-2000","GluGluToRadionToHHTo2B2G_M-3000","GluGluToRadionToHHTo2G2Tau_M-250","GluGluToRadionToHHTo2G2Tau_M-500","GluGluToRadionToHHTo2G2Tau_M-1000","GluGluToRadionToHHTo2G2Tau_M-2000","GluGluToRadionToHHTo2G2Tau_M-3000" --output_dir "/eos/user/s/shsong/HiggsDNA/allyield/"  --short
+python scripts/run_analysis.py --log-level "DEBUG" --config "metadata/analysis/wwgg_nosys/HHWW_preselection_sig_FHSL_YH_UL17_slimed.json" --sample_list "GluGluToRadionToHHTo2G2WTo2G4Q_M-250","GluGluToRadionToHHTo2G2WTo2G4Q_M-500","GluGluToRadionToHHTo2G2WTo2G4Q_M-1000","GluGluToRadionToHHTo2G2WTo2G4Q_M-2000","GluGluToRadionToHHTo2G2WTo2G4Q_M-3000" --output_dir "/eos/user/s/shsong/HiggsDNA/allyield2/"  --short
+python scripts/run_analysis.py --log-level "DEBUG" --config "metadata/analysis/wwgg_nosys/HHWW_preselection_sig_FHSL_YH_UL17_slimed.json" --sample_list "GluGluToRadionToHHTo2G2WTo2G4Q_M-250","GluGluToRadionToHHTo2G2WTo2G4Q_M-500","GluGluToRadionToHHTo2G2WTo2G4Q_M-1000","GluGluToRadionToHHTo2G2WTo2G4Q_M-2000","GluGluToRadionToHHTo2G2WTo2G4Q_M-3000" --output_dir "/eos/user/s/shsong/HiggsDNA/allyield3/"  --short
+
+
+####################################
+#            gen          #
+####################################
+
+# calculate
+
+# python scripts/run_analysis.py --log-level "DEBUG" --config "metadata/analysis/wwgg_nosys/HHWW_preselection_sig_FHSL_YH_UL17_slimed.json" --sample_list "GluGluToRadionToHHTo2G2WTo2G4Q_M-250","GluGluToRadionToHHTo2G2WTo2G4Q_M-500","GluGluToRadionToHHTo2G2WTo2G4Q_M-1000","GluGluToRadionToHHTo2G2WTo2G4Q_M-2000","GluGluToRadionToHHTo2G2WTo2G4Q_M-3000","GluGluToRadionToHHTo2G2WTo2G2Q1L1Nu_M-250","GluGluToRadionToHHTo2G2WTo2G2Q1L1Nu_M-500","GluGluToRadionToHHTo2G2WTo2G2Q1L1Nu_M-1000","GluGluToRadionToHHTo2G2WTo2G2Q1L1Nu_M-2000","GluGluToRadionToHHTo2G2WTo2G2Q1L1Nu_M-3000","GluGluToRadionToHHTo2G2ZTo2G4Q_M-250","GluGluToRadionToHHTo2G2ZTo2G4Q_M-500","GluGluToRadionToHHTo2G2ZTo2G4Q_M-1000","GluGluToRadionToHHTo2G2ZTo2G4Q_M-2000","GluGluToRadionToHHTo2G2ZTo2G4Q_M-3000","GluGluToRadionToHHTo2B2G_M-250","GluGluToRadionToHHTo2B2G_M-500","GluGluToRadionToHHTo2B2G_M-1000","GluGluToRadionToHHTo2B2G_M-2000","GluGluToRadionToHHTo2B2G_M-3000","GluGluToRadionToHHTo2G2Tau_M-250","GluGluToRadionToHHTo2G2Tau_M-500","GluGluToRadionToHHTo2G2Tau_M-1000","GluGluToRadionToHHTo2G2Tau_M-2000","GluGluToRadionToHHTo2G2Tau_M-3000" --output_dir "/eos/user/s/shsong/HiggsDNA/allyield/"  --short
+python scripts/run_analysis.py --log-level "DEBUG" --config "metadata/analysis/wwgg_nosys/HHWW_preselection_bkg_FHSL_YH_UL17_slimed.json" --sample_list "bbHToGG_M-125_4FS_yb2_TuneCP5-13TeV-amcatnlo-pythia8","bbHToGG_M-125_4FS_ybyt_TuneCP5-13TeV-amcatnlo-pythia8","bbHToGG_M-125_4FS_yt2_TuneCP5-13TeV-amcatnlo-pythia8","GluGluToHHTo2G2Qlnu_node_SM_TuneCP5_PSWeights_13TeV-madgraph-pythia8" --output_dir "/eos/user/s/shsong/HiggsDNA/SMprocess/"  
