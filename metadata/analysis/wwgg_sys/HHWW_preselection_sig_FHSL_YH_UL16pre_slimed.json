@@ -328,7 +328,7 @@
 
 
     "samples": {
-        "catalog": "metadata/samples/hhww_sig_UL16.json",
+        "catalog": "metadata/samples/yhww_sig_UL16.json",
         "sample_list": [
             
             "GluGluToRadionToHHTo2G2ZTo2G4Q_M-3000_TuneCP5_PSWeights_narrow_13TeV"

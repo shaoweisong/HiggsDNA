@@ -357,7 +357,7 @@ class HHWW_Tagger_combinedYH_FHSL(Tagger):
         )
         e_leadphoton=e_4p+leadpho_4p
         e_leadphoton.mass = numpy.nan_to_num(e_leadphoton.mass,nan=-999)
-        Z_veto_cut = abs(e_leadphoton.mass-91.5)>5
+        Z_veto_cut = abs(e_leadphoton.mass-91.187)>5
 
 
 
