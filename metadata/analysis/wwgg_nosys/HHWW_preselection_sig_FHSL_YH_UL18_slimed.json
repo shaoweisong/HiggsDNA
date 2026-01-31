@@ -38,7 +38,7 @@
 
 
        "samples": {
-        "catalog": "metadata/samples/hhww_sig_UL18.json",
+        "catalog": "metadata/samples/yhww_sig_UL18.json",
         "sample_list": [
             "NMSSM_XToYHTo2G2WTo2G2Q1L1Nu_MX-1000_MY-100_TuneCP5_13TeV-madgraph-pythia8"
         ],

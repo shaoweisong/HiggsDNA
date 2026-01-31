@@ -1,0 +1,20 @@
+name: higgsdna
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python
+  - pyaml
+  - xrootd
+  - uproot
+  - awkward
+  - numba
+  - pyarrow
+  - pandas
+  - rich
+  - matplotlib
+  - vector>=0.8.5
+  - conda-pack
+  - tqdm
+  - dill
+  - enlighten

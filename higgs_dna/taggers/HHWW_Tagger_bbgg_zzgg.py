@@ -504,6 +504,11 @@ class HHWW_Tagger_combinedYH_FHSL(Tagger):
             n_objects=7,
             dummy_value=-999
         )
+        bjets = awkward_utils.add_field(
+            events=events,
+            name="SelectedbJet",
+            data=events.SelectedJet[awkward.argsort(jets.btagDeepFlavB, axis=-1, ascending=False)][ :,:2 ]
+        )
         electrons_noiso = awkward.Array(electrons_noiso, with_name="Momentum4D")
         electron_iso = awkward.Array(electron_iso, with_name="Momentum4D")
         muons_noiso = awkward.Array(muons_noiso, with_name="Momentum4D")

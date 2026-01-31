@@ -179,7 +179,7 @@
                 },
                 "modify_central_weight" : true,
                 "input_collection" : "Jet",
-                "target_collections" : ["SelectedJet"]
+                "target_collections" : ["SelectedbJet"]
             },                             
             "pu_reweight_sf" : {
                 "type" : "event",

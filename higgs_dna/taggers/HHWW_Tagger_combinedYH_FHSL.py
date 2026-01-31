@@ -154,7 +154,10 @@ class HHWW_Tagger_combinedYH_FHSL(Tagger):
 
     def __init__(self, name, options={}, is_data=None, year=None,output_dir=None):
         super(HHWW_Tagger_combinedYH_FHSL, self).__init__(name, options, is_data, year,output_dir)
-
+        self.use_gloParTMDV1 = False
+        logger.debug(f"Checking output_dir: '{output_dir}' (type: {type(output_dir).__name__})")
+        if output_dir and ("MY-250" in output_dir or "ToHH" in output_dir):            
+            self.use_gloParTMDV1 = True
         if not options:
             self.options = DEFAULT_OPTIONS
         else:
@@ -579,11 +582,19 @@ class HHWW_Tagger_combinedYH_FHSL(Tagger):
         dummy_value=-999
         )
         fatjets=fatjets[awkward.argsort(fatjets.pt, ascending=False, axis=-1)]
-        fatjets_1W = awkward_utils.add_field(
-            events = events,
-            name = "SelectedFatJet_1W",
-            data = events.FatJet[((events.FatJet.WvsQCDMD > Wtag)&(events.FatJet.Hqqqq_vsQCDTop < 0.2))&(awkward.num(events.FatJet[(events.FatJet.WvsQCDMD > Wtag)&(events.FatJet.Hqqqq_vsQCDTop < 0.2)])==1)]
-        )   
+        if self.use_gloParTMDV1:
+            logger.debug("MY = 250GeV")
+            fatjets_1W = awkward_utils.add_field(
+                events = events,
+                name = "SelectedFatJet_1W",
+                data = events.FatJet[((events.FatJet.WvsQCDMD > Wtag)&(events.FatJet.Hqqqq_vsQCDTop < 0.2))&(awkward.num(events.FatJet[(events.FatJet.WvsQCDMD > Wtag)&(events.FatJet.Hqqqq_vsQCDTop < 0.2)])==1)]
+            )   
+        else:
+            fatjets_1W = awkward_utils.add_field(
+                events = events,
+                name = "SelectedFatJet_1W",
+                data = events.FatJet[((events.FatJet.WvsQCDMD > Wtag))&(awkward.num(events.FatJet[(events.FatJet.WvsQCDMD > Wtag)])==1)]
+            )   
         awkward_utils.add_object_fields(
         events=events,
         name="fatjet_1W",
@@ -627,12 +638,18 @@ class HHWW_Tagger_combinedYH_FHSL(Tagger):
             )                
                 
             
-            
-        fatjets_W = awkward_utils.add_field(
-            events = events,
-            name = "SelectedFatJet_W",
-            data = events.FatJet[(events.FatJet.WvsQCDMD > Wtag)&(events.FatJet.Hqqqq_vsQCDTop < 0.2)]
-        )   
+        if self.use_gloParTMDV1:
+            fatjets_W = awkward_utils.add_field(
+                events = events,
+                name = "SelectedFatJet_W",
+                data = events.FatJet[(events.FatJet.WvsQCDMD > Wtag)&(events.FatJet.Hqqqq_vsQCDTop < 0.2)]
+            )   
+        else:
+            fatjets_W = awkward_utils.add_field(
+                events = events,
+                name = "SelectedFatJet_W",
+                data = events.FatJet[(events.FatJet.WvsQCDMD > Wtag)]
+            )            
         awkward_utils.add_object_fields(
         events=events,
         name="fatjet_W",
@@ -678,6 +695,12 @@ class HHWW_Tagger_combinedYH_FHSL(Tagger):
             objects=jets[awkward.argsort(jets.pt, ascending=False, axis=-1)],
             n_objects=7,
             dummy_value=-999
+        )
+        #first 2 btagscore jet in each event
+        bjets = awkward_utils.add_field(
+            events=events,
+            name="SelectedbJet",
+            data=events.SelectedJet[awkward.argsort(jets.btagDeepFlavB, axis=-1, ascending=False)][ :,:2 ]
         )
         electrons_noiso = awkward.Array(electrons_noiso, with_name="Momentum4D")
         electron_iso = awkward.Array(electron_iso, with_name="Momentum4D")
@@ -726,7 +749,10 @@ class HHWW_Tagger_combinedYH_FHSL(Tagger):
         boosted_YH_SL_cat = (((n_leptons_iso >= 1) | (n_leptons_noiso >= 1)) & (n_fatjets >=1)) # boosted 1 jet for SL channel with isolated lep
         # boosted_YH_SL_cat_v2 = ((n_leptons_all_electrons==1) & (n_fatjets >=1) & (selection_fatjet_WvsQCD)) # boosted 1 jet for SL channel with isolated lep
         # second category: 0 lepton + 1 Wfatjet or 1 Higgs fatjet
-        selection_fatjet_HvsQCD = awkward.num(fatjets.Hqqqq_vsQCDTop[(fatjets.Hqqqq_vsQCDTop > 0.2)]) >= 1
+        if self.use_gloParTMDV1:
+            selection_fatjet_HvsQCD = awkward.num(fatjets.Hqqqq_vsQCDTop[(fatjets.Hqqqq_vsQCDTop > 0.2)]) >= 1
+        else:
+            selection_fatjet_HvsQCD = awkward.num(fatjets.Hqqqq_vsQCDTop[(fatjets.Hqqqq_vsQCDTop > 1)]) >= 1  #which means no H tagger applied
         boosted_YH_FH_cat = (n_leptons_iso == 0) & (n_leptons_noiso == 0) & (n_fatjets >=1) & ( (selection_fatjet_WvsQCD)|(selection_fatjet_HvsQCD)) # boosted 1 jet for SL channel with isolated lep
         # resolved case
         FH_fully_resovled_cat = (n_leptons_iso==0) & (n_leptons_noiso == 0) & (n_jets>=2)
