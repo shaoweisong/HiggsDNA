@@ -74,7 +74,7 @@ logger = logging.getLogger(__name__)
 
 
 DUMMY_VALUE = -999.
-# need to be updated, muon pt >10, electron pt > 15
+
 DEFAULT_OPTIONS = {
     "electrons_noiso": {
         "pt": 15,
@@ -154,10 +154,7 @@ class HHWW_Tagger_combinedYH_FHSL(Tagger):
 
     def __init__(self, name, options={}, is_data=None, year=None,output_dir=None):
         super(HHWW_Tagger_combinedYH_FHSL, self).__init__(name, options, is_data, year,output_dir)
-        self.use_gloParTMDV1 = False
-        logger.debug(f"Checking output_dir: '{output_dir}' (type: {type(output_dir).__name__})")
-        if output_dir and ("MY-250" in output_dir or "ToHH" in output_dir):            
-            self.use_gloParTMDV1 = True
+        self.use_gloParTMDV1 = True
         if not options:
             self.options = DEFAULT_OPTIONS
         else:

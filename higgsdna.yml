@@ -196,4 +196,3 @@ dependencies:
     - vector==0.8.5
     - wcwidth==0.2.13
     - xrootd==5.6.9
-prefix: /eos/user/s/shsong/Miniconda/envs/higgsdna

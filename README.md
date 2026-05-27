@@ -12,10 +12,10 @@ cd HiggsDNA
 ```  
 **2. Install dependencies**  
   
-The necessary dependencies (listed in ```environment.yml```) can be installed manually, but the suggested way is to create a [conda environment](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/mana  
+The necessary dependencies (listed in ```higgsdna.yml```) can be installed manually, but the suggested way is to create a [conda environment](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/mana  
 ge-environments.html) by running:  
 ```  
-conda env create -f environment.yml  
+conda env create -f higgsdna.yml  
 ```  
 the conda env can become pretty large (multiple GB), so you may want to specify an installation location before running the above step with
 ```
@@ -51,7 +51,7 @@ pip install -e .
 
 If you notice issues with the ```conda pack``` command for creating the tarball, try updating and cleaning your environment with (after running ```conda activate higgs-dna```):
 ```
-conda env update --file environment.yml --prune
+conda env update --file higgsdna.yml --prune
 ```
 
 ## Development Guidelines and Contribution

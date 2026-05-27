@@ -18,7 +18,7 @@
             }
         },
         {
-            "module_name": "higgs_dna.taggers.HHWW_Tagger_combinedYH_FHSL",
+            "module_name": "higgs_dna.taggers.HHWW_Tagger_combinedYH_FHSL_lowmYbkg",
             "tagger": "HHWW_Tagger_combinedYH_FHSL",
             "kwargs": {
                 "name": "HHWW_Tagger_combinedYH_FHSL",
@@ -38,13 +38,13 @@
         }},
 
     "samples": {
-        "catalog": "metadata/samples/hhww_data_bkg_UL16.json",
+        "catalog": "metadata/samples/hhww_data_bkg_UL18.json",
         "sample_list": [
             "DoubleEG_Run2017B","DoubleEG_Run2017C","DoubleEG_Run2017D","DoubleEG_Run2017E","DoubleEG_Run2017F",
             "DiPhotonJetsBox_M40_80-sherpa","DiPhotonJetsBox_MGG-80toInf_13TeV-sherpa"
          ],
         "years": [
-            "2016UL_postVFP"
+            "2018"
         ]
     },
     "variables_of_interest" : [
