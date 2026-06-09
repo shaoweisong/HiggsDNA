@@ -1,5 +1,7 @@
 #test without systematics
-python scripts/run_analysis.py --log-level "DEBUG" --config "metadata/analysis/wwgg_nosys/HHWW_preselection_sig_FHSL_YH_UL17_slimed_nosys.json" --sample_list "NMSSM_XToYHTo2G2WTo2G2Q1L1Nu_MX-400_MY-250_TuneCP5_13TeV-madgraph-pythia8","NMSSM_XToYHTo2G2WTo2G2Q1L1Nu_MX-500_MY-300_TuneCP5_13TeV-madgraph-pythia8" --short --output_dir "/eos/cms/store/group/phys_b2g/shsong/HiggsDNA/test"
+python scripts/run_analysis.py --log-level "DEBUG" --config "metadata/analysis/wwgg_nosys/HHWW_preselection_sig_FHSL_YH_UL17_slimed_nosys.json" --sample_list "NMSSM_XToYHTo2G2WTo2G2Q1L1Nu_MX-1000_MY-250_TuneCP5_13TeV-madgraph-pythia8" --short --output_dir "/eos/cms/store/group/phys_b2g/shsong/HiggsDNA/YHtestnew"
+
+python scripts/run_analysis.py --log-level "DEBUG" --config "metadata/analysis/wwgg_sys/HHWW_preselection_sig_FHSL_YH_UL17_slimed.json" --sample_list "NMSSM_XToYHTo2G2WTo2G2Q1L1Nu_MX-1000_MY-250_TuneCP5_13TeV-madgraph-pythia8" --output_dir "/eos/user/s/shsong/HiggsDNA/YHtest"  --short --batch_system "local" 
 
 #############################################################
 ###            YHSL17 Xfrom 1TeV to 4TeV                  ###
